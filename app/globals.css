@@ -51,3 +51,7 @@ body {
   transform: rotateX(-90deg);
   transform-origin: bottom;
 }
+
+.navbar {
+  width: 100%;
+}

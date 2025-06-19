@@ -12,13 +12,14 @@ const getAlignment = (alignment) => {
 export function ProgressBarObj({
   callback = () => {},
   positionPercentage = 0,
+  start = 0,
   type = "circle",
   reached = false,
 }) {
   return (
     (type === "circle" && (
       <div
-        id={`animate-perc-${positionPercentage.toFixed(0)}`}
+        id={`animate-perc-${start}`}
         onClick={callback}
         style={{ left: `${positionPercentage}%` }}
         className={
@@ -29,7 +30,7 @@ export function ProgressBarObj({
     )) ||
     (type === "checkpoint" && (
       <div
-        id={`animate-perc-${positionPercentage.toFixed(0)}`}
+        id={`animate-perc-${start}`}
         style={{ left: `${positionPercentage}%` }}
         className={
           "origin-bottom absolute cursor-pointer w-9 bottom-1/2 -translate-x-1/2" +
@@ -42,7 +43,7 @@ export function ProgressBarObj({
     )) ||
     (type === "flagpole" && (
       <div
-        id={`animate-perc-${positionPercentage.toFixed(0)}`}
+        id={`animate-perc-${start}`}
         style={{ left: `${positionPercentage}%` }}
         className={
           "origin-bottom absolute cursor-pointer w-9 bottom-1/2 -translate-x-1/2" +
@@ -68,6 +69,7 @@ export function ProgressBarObj({
 export default function ProgressBarObjWithText({
   callback = () => {},
   positionPercentage = 0,
+  start = 0,
   type = "circle",
   reached = false,
   text = "",
@@ -78,6 +80,7 @@ export default function ProgressBarObjWithText({
       <ProgressBarObj
         callback={callback}
         positionPercentage={positionPercentage}
+        start={start}
         type={type}
         reached={reached}
       />

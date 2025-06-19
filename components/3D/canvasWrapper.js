@@ -12,7 +12,7 @@ export default function CanvasWrapper() {
   const [useSupportCamera, setUseSupportCamera] = useState(false);
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-full">
       {debugConfig.showSupportCamera && (
         <button
           className="absolute top-4 left-4 z-10 bg-white p-2 rounded shadow"

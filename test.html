@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scroll Demo</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .scroll-container {
+        height: 100vh;
+        overflow-y: scroll;
+        background: #f4f4f4;
+      }
+
+      .spacer {
+        height: 200vh;
+        background: linear-gradient(#ccc, #aaa);
+      }
+
+      .sticky-tracker {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 200, 200, 0.8);
+        padding: 1em;
+        z-index: 1;
+      }
+
+      .info {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background: white;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-container" id="scrollContainer">
+      <div class="sticky-tracker" id="stickyTracker">I'm a sticky div</div>
+      <div class="spacer"></div>
+    </div>
+
+    <div class="info" id="info">
+      ScrollTop: 0<br />
+      Sticky top: 0
+    </div>
+
+    <script>
+      const initialTop = stickyTracker.getBoundingClientRect().top;
+
+      scrollContainer.addEventListener("scroll", () => {
+        const currentTop = stickyTracker.getBoundingClientRect().top;
+        const distanceMoved = initialTop - currentTop;
+
+        const scrollRange =
+          scrollContainer.scrollHeight - scrollContainer.clientHeight;
+        const progress = distanceMoved / scrollRange;
+
+        info.innerHTML = `
+    ScrollTop: ${scrollContainer.scrollTop.toFixed(2)}<br/>
+    Sticky top: ${currentTop.toFixed(2)}<br/>
+    Progress: ${Math.max(0, Math.min(1, progress)).toFixed(2)}
+  `;
+      });
+    </script>
+  </body>
+</html>

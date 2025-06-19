@@ -1,4 +1,28 @@
 {
   "width": 64,
-  "height": 48
+  "height": 78,
+  "sections": [
+    {
+      "start": 0,
+      "text": "Start",
+      "type": "circle",
+      "color": "#B8745B",
+      "textAlignment": "center"
+    },
+
+    {
+      "start": 34,
+      "text": "My Projects",
+      "type": "checkpoint",
+      "color": "#48bc8d"
+    },
+
+    {
+      "start": 75,
+      "text": "End",
+      "type": "flagpole",
+      "color": "#A0A8C9",
+      "textAlignment": "center"
+    }
+  ]
 }

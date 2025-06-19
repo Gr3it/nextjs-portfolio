@@ -1,5 +1,5 @@
 {
   "showStats": false,
-  "showLightHelper": true,
+  "showLightHelper": false,
   "showSupportCamera": true
 }

@@ -9,8 +9,6 @@ export default function MainCamera({ helper }) {
   const { scene } = useThree();
   const helperRef = useRef();
 
-  console.log(cameraConfig);
-
   // Ensure camera always looks at target
   useEffect(() => {
     if (cameraRef.current) {

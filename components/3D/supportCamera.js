@@ -8,7 +8,7 @@ export default function SupportCamera() {
         makeDefault
         fov={50}
         position={[0, 10, 10]}
-        near={0.1}
+        near={1}
         far={1000}
       />
       <CameraControls />

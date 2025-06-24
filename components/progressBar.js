@@ -45,7 +45,7 @@ export default function ProgressBar() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [reachedPositions, setReachedPositions] = useState(new Set());
 
-  useScrollProxyListener("scrollProxy", (offset) => {
+  useScrollProxyListener((offset) => {
     const percentage = offset * 100;
 
     setScrollPosition(percentage);
@@ -64,20 +64,6 @@ export default function ProgressBar() {
       return newPositions;
     });
   });
-
-  // Calculate positions at startup
-
-  /*           callback: () => {
-            const targetPosition =
-              element.getBoundingClientRect().top +
-              window.pageYOffset -
-              (id === "End" ? 0 : window.innerHeight / 2);
-
-            window.scrollTo({
-              top: targetPosition,
-              behavior: "smooth",
-            });
-          }, */
 
   return (
     <div className="bg-white/70 flex flex-col w-full h-full rounded-2xl p-2">
@@ -111,7 +97,7 @@ export default function ProgressBar() {
                     (window.innerHeight * start) /
                     cameraConfig.frustumHeightOnPlane;
 
-                  document.getElementById("scrollProxy").scrollTo({
+                  window.scrollTo({
                     top: targetPosition,
                     behavior: "smooth",
                   });

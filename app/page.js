@@ -11,7 +11,6 @@ import Navbar from "@/components/navbar";
 export default function World() {
   return (
     <>
-      {/* <div id="nav-portal" className="flex flex-col items-center" /> */}
       <Navbar />
       <CanvasWrapper />
       <ScrollProxy

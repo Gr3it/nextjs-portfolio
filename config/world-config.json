@@ -1,6 +1,6 @@
 {
   "width": 64,
-  "height": 78,
+  "height": 480,
   "sections": [
     {
       "start": 0,
@@ -11,14 +11,49 @@
     },
 
     {
-      "start": 34,
+      "start": 32,
       "text": "My Projects",
       "type": "checkpoint",
       "color": "#48bc8d"
     },
 
     {
-      "start": 75,
+      "start": 88,
+      "text": null,
+      "type": null,
+      "color": "#8ed9a3"
+    },
+
+    {
+      "start": 160,
+      "text": null,
+      "type": null,
+      "color": "#c8855f"
+    },
+
+    {
+      "start": 232,
+      "text": null,
+      "type": null,
+      "color": "#daae7e"
+    },
+
+    {
+      "start": 280,
+      "text": "About Me",
+      "type": "checkpoint",
+      "color": "#48d6e1"
+    },
+
+    {
+      "start": 408,
+      "text": "Contact Me",
+      "type": "checkpoint",
+      "color": "#e0e9ee"
+    },
+
+    {
+      "start": 448,
       "text": "End",
       "type": "flagpole",
       "color": "#A0A8C9",

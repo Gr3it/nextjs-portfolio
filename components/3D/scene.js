@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Model as WorldModel } from "@/models/World";
 import ScrollWrapper from "./scrollWrapper";
 import DirectionalLightWithHelper from "./directionalLightWithHelper";
@@ -6,8 +6,7 @@ import { Stats, Text } from "@react-three/drei";
 
 import debugConfig from "@/config/debug-config.json";
 import { GridOverlay } from "./gridHelper";
-import Navbar from "../navbar";
-import ProgressBarPortal from "./progressBarPortal";
+import Curve from "./vehicles/curve";
 
 export default function Scene() {
   return (
@@ -17,8 +16,8 @@ export default function Scene() {
       {debugConfig.showStats && <Stats />}
 
       <ScrollWrapper>
-        {/* <ProgressBarPortal /> */}
-        <GridOverlay show={true} />
+        <GridOverlay show={debugConfig.showGrid} />
+        <Curve />
         <WorldModel />
         <Text
           color="#daae7e"
@@ -33,6 +32,7 @@ export default function Scene() {
         <Text
           color="#daae7e"
           anchorX="left"
+          s
           position={[-4, -0.1, 25]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={2.75}

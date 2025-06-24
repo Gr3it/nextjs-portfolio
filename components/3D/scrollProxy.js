@@ -5,57 +5,73 @@ export function ScrollProxy({ id, height = 2 }) {
   return (
     <div
       id={id}
+      className="w-full pointer-events-none select-none"
       style={{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        overflowX: "hidden",
-        overflowY: "auto",
-        top: 0,
-        left: 0,
+        minHeight: `${height * 100}vh`,
       }}
-    >
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          overflow: "hidden",
-        }}
-      ></div>
-      <div
-        style={{
-          height: `${height * 100 - 100}%`,
-          width: "100%",
-          pointerEvents: "none",
-        }}
-      />
-    </div>
+    ></div>
   );
 }
 
-export const useScrollProxyListener = (
-  id,
-  callback,
-  damping = 0.2,
-  threshold = 0.0001
-) => {
+export const useScrollProxyListener = (callback, options = {}) => {
   const target = useRef(0);
   const current = useRef(0);
   const previous = useRef(0);
   const rafRef = useRef(null);
+  const initialized = useRef(false);
 
   useEffect(() => {
-    const container = document.getElementById(id);
-    if (!container) return;
+    const damping = options.damping || 0.2;
+    const threshold = 0.0001;
+    const {
+      start = 0,
+      end = document.documentElement.scrollHeight - window.innerHeight,
+    } = options;
+
+    // Initialize with current scroll position
+    const initializePosition = () => {
+      if (initialized.current) return;
+
+      const scrollTop = window.scrollY;
+
+      if (scrollTop < start) {
+        // Before start range - set to 0
+        target.current = 0;
+        current.current = 0;
+        previous.current = 0;
+      } else if (scrollTop >= start && scrollTop <= end) {
+        // Within range - calculate normalized value
+        const normalizedValue =
+          end > start ? (scrollTop - start) / (end - start) : 0;
+        const clampedValue = Math.max(0, Math.min(1, normalizedValue));
+        target.current = clampedValue;
+        current.current = clampedValue;
+        previous.current = clampedValue;
+      } else {
+        // After end range - set to 1
+        target.current = 1;
+        current.current = 1;
+        previous.current = 1;
+      }
+
+      initialized.current = true;
+      // Call callback in next frame to avoid render issues
+      requestAnimationFrame(() => callback(current.current));
+    };
 
     const onScroll = () => {
-      const scrollTop = container.scrollTop;
-      const scrollHeight = container.scrollHeight - container.clientHeight;
-      const verticalPercent = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
-      target.current = verticalPercent;
+      const scrollTop = window.scrollY;
+
+      // Check if scroll position is within the specified range (in pixels)
+      if (scrollTop >= start && scrollTop <= end) {
+        // Normalize the value between 0 and 1 within the start-end range
+        const normalizedValue =
+          end > start ? (scrollTop - start) / (end - start) : 0;
+        target.current = Math.max(0, Math.min(1, normalizedValue));
+      } else {
+        // Don't update target if outside range
+        return;
+      }
     };
 
     const update = () => {
@@ -69,12 +85,16 @@ export const useScrollProxyListener = (
       rafRef.current = requestAnimationFrame(update);
     };
 
+    // Initialize position on mount
+    initializePosition();
+
     rafRef.current = requestAnimationFrame(update);
-    container.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
+      initialized.current = false;
       cancelAnimationFrame(rafRef.current);
-      container.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
     };
-  }, [callback, id, damping, threshold]);
+  }, [callback, options]);
 };

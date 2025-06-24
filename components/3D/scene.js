@@ -22,7 +22,7 @@ export default function Scene() {
         <Text
           color="#daae7e"
           anchorX="left"
-          position={[-4, -0.1, 21]}
+          position={[-4, 0, 21]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={1}
           fontWeight={400}
@@ -32,8 +32,7 @@ export default function Scene() {
         <Text
           color="#daae7e"
           anchorX="left"
-          s
-          position={[-4, -0.1, 25]}
+          position={[-4, 0, 25]}
           rotation={[-Math.PI / 2, 0, 0]}
           fontSize={2.75}
           fontWeight={800}

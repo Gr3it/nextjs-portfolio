@@ -47,7 +47,7 @@ export default function MainCamera({ helper }) {
       fov={cameraConfig.FOV}
       position={cameraConfig.position}
       near={cameraConfig.near}
-      far={cameraConfig.far}
+      far={cameraConfig.far + 7}
     />
   );
 }

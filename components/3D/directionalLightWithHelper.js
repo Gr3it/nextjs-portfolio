@@ -43,7 +43,7 @@ export default function DirectionalLightWithHelper({ showHelper }) {
         shadow-camera-bottom={-30}
         shadow-camera-near={1}
         shadow-camera-far={60}
-        shadow-bias={-0.0005}
+        shadow-bias={-0.001}
         shadow-normalBias={0}
       />
       <object3D ref={targetRef} position={[0, 0, 20]} />

@@ -22,7 +22,7 @@ export const useScrollProxyListener = (callback, options = {}) => {
 
   useEffect(() => {
     const damping = options.damping || 0.2;
-    const threshold = 0.0001;
+    const threshold = 0.000001;
     const {
       start = 0,
       end = document.documentElement.scrollHeight - window.innerHeight,
@@ -62,15 +62,18 @@ export const useScrollProxyListener = (callback, options = {}) => {
     const onScroll = () => {
       const scrollTop = window.scrollY;
 
-      // Check if scroll position is within the specified range (in pixels)
-      if (scrollTop >= start && scrollTop <= end) {
-        // Normalize the value between 0 and 1 within the start-end range
+      // Always update target based on scroll position
+      if (scrollTop < start) {
+        // Before start range - set to 0
+        target.current = 0;
+      } else if (scrollTop >= start && scrollTop <= end) {
+        // Within range - calculate normalized value
         const normalizedValue =
           end > start ? (scrollTop - start) / (end - start) : 0;
         target.current = Math.max(0, Math.min(1, normalizedValue));
       } else {
-        // Don't update target if outside range
-        return;
+        // After end range - set to 1
+        target.current = 1;
       }
     };
 

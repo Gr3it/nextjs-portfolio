@@ -1,11 +1,13 @@
-import { SedanSports } from "@/models/Sedan-sports";
 import { useRef } from "react";
-import * as THREE from "three";
-import { useScrollProxyListener } from "../scrollProxy";
+import { useScrollProxyListener } from "../scrollProxy/scrollProxy";
 
-import cameraConfig from "@/config/camera-config.json";
-
-export default function Car({ curve }) {
+export default function VehicleController({
+  curve,
+  start,
+  end,
+  damping = 5,
+  children,
+}) {
   const carGroupRef = useRef();
 
   useScrollProxyListener(
@@ -15,15 +17,11 @@ export default function Car({ curve }) {
       const point = curve.getPointAt(scrollProgress);
       const tangent = curve.getTangentAt(scrollProgress).normalize();
 
-      // Move the car
       carGroupRef.current.position.copy(point);
 
-      // Calculate Y rotation (left/right turning)
       const yAngle = Math.atan2(tangent.x, tangent.z);
       carGroupRef.current.rotation.y = yAngle;
 
-      // Calculate X rotation (up/down pitching)
-      // Project tangent onto XZ plane to get horizontal distance
       const horizontalDistance = Math.sqrt(
         tangent.x * tangent.x + tangent.z * tangent.z
       );
@@ -31,15 +29,11 @@ export default function Car({ curve }) {
       carGroupRef.current.rotation.x = xAngle;
     },
     {
-      damping: 0.5,
-      start: (10 / cameraConfig.frustumHeightOnPlane) * window.innerHeight,
-      end: (40 / cameraConfig.frustumHeightOnPlane) * window.innerHeight,
+      damping: damping,
+      start: start,
+      end: end,
     }
   );
 
-  return (
-    <group ref={carGroupRef}>
-      <SedanSports />
-    </group>
-  );
+  return <group ref={carGroupRef}>{children}</group>;
 }

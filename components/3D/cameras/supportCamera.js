@@ -7,7 +7,7 @@ export default function SupportCamera() {
       <PerspectiveCamera
         makeDefault
         fov={50}
-        position={[0, 10, 10]}
+        position={[75, 50, 50]}
         near={1}
         far={1000}
       />

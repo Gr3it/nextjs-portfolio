@@ -1,7 +1,7 @@
 import React from "react";
-import Checkpoint from "./icons/checkpoint";
-import FlagPole from "./icons/flagPole";
-import Star from "./icons/star";
+import Checkpoint from "../icons/checkpoint";
+import FlagPole from "../icons/flagPole";
+import Star from "../icons/star";
 
 const getAlignment = (alignment) => {
   if (alignment === "left") return " ml-1";

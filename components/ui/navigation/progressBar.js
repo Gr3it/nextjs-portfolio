@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { animate, createSpring } from "animejs";
 import ProgressBarObjWithText, { ProgressBarObj } from "./progressBarObj";
-import { useScrollProxyListener } from "./3D/scrollProxy";
+import { useScrollProxyListener } from "../../3D/scrollProxy/scrollProxy";
 
 import worldConfig from "@/config/world-config.json";
 import cameraConfig from "@/config/camera-config.json";

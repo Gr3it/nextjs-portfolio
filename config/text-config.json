@@ -1,0 +1,23 @@
+[
+  {
+    "id": "subtitle",
+    "content": "Creative Coder",
+    "color": "#daae7e",
+    "anchorX": "left",
+    "position": [-4, 0, 21],
+    "rotation": [-1.5707963267948966, 0, 0],
+    "fontSize": 1,
+    "fontWeight": 400
+  },
+  {
+    "id": "name",
+    "content": "Emanuele\nZini",
+    "color": "#daae7e",
+    "anchorX": "left",
+    "position": [-4, 0, 25],
+    "rotation": [-1.5707963267948966, 0, 0],
+    "fontSize": 2.75,
+    "fontWeight": 800,
+    "lineHeight": 1.25
+  }
+]

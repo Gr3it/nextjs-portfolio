@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import VehicleController from "./vehicleController";
+import VehicleController from "./vehicleRenderer";
 import * as THREE from "three";
 import { SedanSports } from "@/models/SedanSports";
 import { BoatSail } from "@/models/BoatSail";
@@ -8,7 +8,7 @@ import { Spaceship } from "@/models/Spaceship";
 import cameraConfig from "@/config/camera-config.json";
 import debugConfig from "@/config/debug-config.json";
 import vehicleConfigs from "@/config/vehicles-config.json";
-import CurveEditor from "./curveEditor";
+import CurveEditor from "./curveEditor_old";
 
 // Utility to convert 3D value to screen Y offset
 function convertToScreenHeightOffset(value) {

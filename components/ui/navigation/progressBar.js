@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { animate, createSpring } from "animejs";
 import ProgressBarObjWithText, { ProgressBarObj } from "./progressBarObj";
-import { useScrollProxyListener } from "../../3D/scrollProxy/scrollProxy";
 
 import worldConfig from "@/config/world-config.json";
 import cameraConfig from "@/config/camera-config.json";
+import { AttachCallbackToScrollEvent } from "@/components/3D/scrollProxy/scrollControls";
 
 function getPositionInPercentage(value) {
   return Math.min(
@@ -45,7 +45,7 @@ export default function ProgressBar() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [reachedPositions, setReachedPositions] = useState(new Set());
 
-  useScrollProxyListener((offset) => {
+  const handleScroll = useCallback((offset) => {
     const percentage = offset * 100;
 
     setScrollPosition(percentage);
@@ -63,7 +63,9 @@ export default function ProgressBar() {
       });
       return newPositions;
     });
-  });
+  }, []);
+
+  AttachCallbackToScrollEvent(handleScroll);
 
   return (
     <div className="bg-white/70 flex flex-col w-full h-full rounded-2xl p-2">

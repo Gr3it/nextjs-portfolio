@@ -1,1 +1,2 @@
-fix remove and re-add scroll event listener on window resize to avoid over or undershoot of the target if window is resized
+fix last flag activation time
+remove shadow generateed by background?

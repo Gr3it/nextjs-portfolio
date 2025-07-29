@@ -39,6 +39,8 @@ export default function CurveEditor({
   }, [curve]);
 
   const updateLineGeometry = useCallback(() => {
+    pathCurveRef.current.updateArcLengths();
+
     const lineRef = lineGeometryRef.current;
     if (!lineRef?.geometry) return;
 
@@ -84,6 +86,37 @@ export default function CurveEditor({
     setSelectedPoint(index);
   }, []);
 
+  // Handle ESC key to deselect
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedPoint(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key.toLowerCase() === "e") {
+        console.log(
+          "🚗 Exported curve points:\n",
+          JSON.stringify(
+            pathCurveRef.current.points.map(([x, y, z]) => [
+              x.toFixed(1),
+              y.toFixed(1),
+              z.toFixed(1),
+            ])
+          )
+        );
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const addPointAfter = useCallback((index) => {
     const points = pathCurveRef.current.points;
 
@@ -118,32 +151,19 @@ export default function CurveEditor({
     needsUpdate.current = true;
   }, []);
 
-  const removePoint = useCallback(
-    (index) => {
-      const points = pathCurveRef.current.points;
+  const removePoint = useCallback((index) => {
+    const points = pathCurveRef.current.points;
 
-      // Ensure minimum of 2 points
-      if (points.length <= 2) return;
+    // Ensure minimum of 2 points
+    if (points.length <= 2) return;
 
-      // Remove the point
-      points.splice(index, 1);
+    // Remove the point
+    points.splice(index, 1);
 
-      // Adjust selected point index
-      if (selectedPoint === index) {
-        // If we removed the last point, select the previous one
-        if (index >= points.length) {
-          setSelectedPoint(points.length - 1);
-        }
-        // Otherwise keep the same index (which now points to the next point)
-      } else if (selectedPoint > index) {
-        // Adjust selected index if it's after the removed point
-        setSelectedPoint(null);
-      }
+    setSelectedPoint(null);
 
-      needsUpdate.current = true;
-    },
-    [selectedPoint]
-  );
+    needsUpdate.current = true;
+  }, []);
 
   const normalizedStart = useMemo(() => start / worldHeight, [start]);
   const normalizedEnd = useMemo(() => end / worldHeight, [end]);
@@ -164,7 +184,7 @@ export default function CurveEditor({
       {/* Point editors */}
       {curvePoints.map((point, index) => (
         <PointEditor
-          key={`point-${index}`}
+          key={`point-${point.x}_${point.y}_${point.z}`}
           position={point}
           selected={selectedPoint === index}
           onClick={() => handlePointSelect(index)}
@@ -182,6 +202,7 @@ export default function CurveEditor({
           start={normalizedStart}
           end={normalizedEnd}
           type={type}
+          forceUpdate={needsUpdate}
         />
       )}
     </>

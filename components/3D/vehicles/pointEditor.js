@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from "react";
+import React, { useRef, useCallback, useEffect } from "react";
 import { Html, PivotControls } from "@react-three/drei";
 
 export default function PointEditor({
@@ -10,6 +10,11 @@ export default function PointEditor({
   removePoint,
 }) {
   const initialPosition = useRef(position.clone());
+
+  // Update initialPosition when position reference changes
+  useEffect(() => {
+    initialPosition.current = position.clone();
+  }, [position]);
 
   const handleDrag = useCallback(
     (matrix) => {

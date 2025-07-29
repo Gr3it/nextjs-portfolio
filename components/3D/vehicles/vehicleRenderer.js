@@ -17,7 +17,13 @@ function getVehicleComponent(type) {
   return Component ? <Component /> : null;
 }
 
-export default function VehicleRenderer({ curve, start, end, type }) {
+export default function VehicleRenderer({
+  curve,
+  start,
+  end,
+  type,
+  forceUpdate = false,
+}) {
   const vehicleRef = useRef();
   const lastScrollOffset = useRef(null);
   const lastCurve = useRef(null);
@@ -32,7 +38,8 @@ export default function VehicleRenderer({ curve, start, end, type }) {
     // Skip calculations if scroll hasn't changed and curve is the same
     if (
       lastScrollOffset.current === currentOffset &&
-      lastCurve.current === curve
+      lastCurve.current === curve &&
+      !forceUpdate?.current
     ) {
       return;
     }

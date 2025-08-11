@@ -3,7 +3,8 @@
   "showGrid": false,
   "showLightHelper": false,
   "showSupportCamera": true,
-  "vehiclePathEditor": true,
   "hideVehicle": false,
-  "showVehicleSafeZone": true
+  "vehiclePathEditor": true,
+  "showVehicleSafeZone": false,
+  "instantVehicleMovement": false
 }

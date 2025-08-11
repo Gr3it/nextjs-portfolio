@@ -6,6 +6,12 @@ import { SedanSports } from "@/models/SedanSports";
 import { BoatSail } from "@/models/BoatSail";
 import { Spaceship } from "@/models/Spaceship";
 
+import debugConfig from "@/config/debug-config.json";
+
+const { instantVehicleMovement } = debugConfig;
+
+const VEHICLE_SPEED = 0.4;
+
 const VEHICLE_COMPONENTS = {
   car: SedanSports,
   boat: BoatSail,
@@ -28,7 +34,7 @@ export default function VehicleRenderer({
   const lastScrollOffset = useRef(null);
   const lastCurve = useRef(null);
 
-  const scroll = useScroll(0.5);
+  const scroll = useScroll(instantVehicleMovement ? 0.2 : VEHICLE_SPEED);
 
   useFrame(() => {
     if (!vehicleRef.current || !curve) return;

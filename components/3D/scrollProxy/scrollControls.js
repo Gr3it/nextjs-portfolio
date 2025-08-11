@@ -21,6 +21,7 @@ const getScrollThreshold = () => {
 // Create context with proper typing
 const ScrollContext = React.createContext(null);
 
+console.log(easing);
 /**
  * Custom hook for scroll-based animations with smooth easing
  * @param {number} damping - Damping factor for easing (0-1)
@@ -53,7 +54,12 @@ export function useScroll(
       damping,
       frameDelta,
       maxSpeed,
-      undefined,
+      (t) => {
+        if (damping == 0.2) {
+          console.log(t);
+        }
+        return 1 / (1 + t + 0.48 * t * t + 0.235 * t * t * t);
+      },
       eps
     );
 

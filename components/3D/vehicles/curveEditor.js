@@ -105,9 +105,9 @@ export default function CurveEditor({
           "🚗 Exported curve points:\n",
           JSON.stringify(
             pathCurveRef.current.points.map(([x, y, z]) => [
-              x.toFixed(1),
-              y.toFixed(1),
-              z.toFixed(1),
+              parseFloat(x.toFixed(1)),
+              parseFloat(y.toFixed(1)),
+              parseFloat(z.toFixed(1)),
             ])
           )
         );

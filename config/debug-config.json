@@ -4,7 +4,7 @@
   "showLightHelper": false,
   "showSupportCamera": true,
   "hideVehicle": false,
-  "vehiclePathEditor": true,
+  "vehiclePathEditor": false,
   "showVehicleSafeZone": false,
   "instantVehicleMovement": false
 }

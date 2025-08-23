@@ -72,5 +72,9 @@ export default function VehicleRenderer({
     vehicleRef.current.rotation.x = xAngle;
   });
 
-  return <group ref={vehicleRef}>{getVehicleComponent(type)}</group>;
+  return (
+    <>
+      <group ref={vehicleRef}>{getVehicleComponent(type)}</group>
+    </>
+  );
 }

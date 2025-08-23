@@ -24,6 +24,7 @@ export default function MainCamera({ mainCamera = true }) {
       position={cameraConfig.position}
       near={cameraConfig.near}
       far={cameraConfig.far + 7}
+      zoom={1}
     >
       {!mainCamera && <Helper type={CameraHelper} />}
     </PerspectiveCamera>

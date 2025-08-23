@@ -1,7 +1,7 @@
 {
   "width": 64,
   "maxWidth": 96,
-  "height": 508,
+  "height": 570,
   "sections": [
     {
       "start": 0,
@@ -19,42 +19,42 @@
     },
 
     {
-      "start": 88,
+      "start": 142,
       "text": null,
       "type": null,
       "color": "#8ed9a3"
     },
 
     {
-      "start": 160,
+      "start": 238,
       "text": null,
       "type": null,
       "color": "#c8855f"
     },
 
     {
-      "start": 232,
+      "start": 286,
       "text": null,
       "type": null,
       "color": "#daae7e"
     },
 
     {
-      "start": 280,
+      "start": 334,
       "text": "About Me",
       "type": "checkpoint",
       "color": "#48d6e1"
     },
 
     {
-      "start": 428,
+      "start": 484,
       "text": "Contact Me",
       "type": "checkpoint",
       "color": "#e0e9ee"
     },
 
     {
-      "start": 448,
+      "start": 522,
       "text": "End",
       "type": "flagpole",
       "color": "#A0A8C9",

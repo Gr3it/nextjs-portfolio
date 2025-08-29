@@ -16,6 +16,7 @@ import worldConfig from "@/config/world-config.json";
 import textConfig from "@/config/text-config.json";
 import cameraConfig from "@/config/camera-config.json";
 import VehicleManager from "./vehicles/vehicleManager";
+import Flags from "./flags";
 
 // Extract constants for better readability
 const AMBIENT_LIGHT_COLOR = "#d4e3fc";
@@ -107,6 +108,7 @@ export default function Scene() {
           <WorldModel />
           <VehicleManager />
           <TextElements />
+          <Flags />
         </ScrollContent>
       </ScrollControls>
     </>

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useScroll } from "../scrollProxy/scrollControls";
+import { ANIMATION_MODES, useScroll } from "../scrollProxy/scrollControls";
 
 import { SedanSports } from "@/models/SedanSports";
 import { BoatSail } from "@/models/BoatSail";
@@ -34,12 +34,17 @@ export default function VehicleRenderer({
   const lastScrollOffset = useRef(null);
   const lastCurve = useRef(null);
 
-  const scroll = useScroll(instantVehicleMovement ? 0.2 : VEHICLE_SPEED);
+  const scroll = useScroll({
+    mode: ANIMATION_MODES.ACCELERATION,
+    damping: 0.4,
+    duration: 1,
+    from: start,
+    to: end,
+  });
 
   useFrame(() => {
     if (!vehicleRef.current || !curve) return;
-
-    const currentOffset = scroll.range(start, end - start);
+    const currentOffset = scroll();
 
     // Skip calculations if scroll hasn't changed and curve is the same
     if (

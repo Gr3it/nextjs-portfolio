@@ -4,7 +4,10 @@ import { useFrame } from "@react-three/fiber";
 
 import DirectionalLight from "./lighting/directionalLight";
 import { GridOverlay } from "./helpers/gridHelper";
-import ScrollControls, { useScroll } from "./scrollProxy/scrollControls";
+import ScrollControls, {
+  ANIMATION_MODES,
+  useScroll,
+} from "./scrollProxy/scrollControls";
 
 import { Model as WorldModel } from "@/models/World";
 
@@ -69,11 +72,14 @@ ConditionalGrid.displayName = "ConditionalGrid";
 // Main scroll content component with performance optimizations
 function ScrollContent({ children }) {
   const groupRef = useRef();
-  const scroll = useScroll();
+  const scroll = useScroll({
+    mode: ANIMATION_MODES.DAMPING,
+    damping: 0.4,
+  });
 
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.position.z = getSceneZOffset(-scroll.clampedOffset());
+      groupRef.current.position.z = getSceneZOffset(-scroll());
     }
   });
 

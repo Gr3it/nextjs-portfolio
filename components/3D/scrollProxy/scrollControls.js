@@ -263,8 +263,6 @@ export function useScroll(options = {}) {
       }
     } else if (mode === ANIMATION_MODES.ACCELERATION && vehicleRef.current) {
       // Map global scroll to interval progress
-
-      console.log("a");
       let intervalProgress = 0;
       if (rawScrollTarget <= start) {
         intervalProgress = 0;

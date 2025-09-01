@@ -5,14 +5,34 @@ Command: npx gltfjsx@6.5.3 .\Flag.glb -o C:\Users\emanu\nextjs-portfolio\public\
 
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useSpring, animated } from '@react-spring/three'
 
 export function Flag(props) {
   const { nodes, materials } = useGLTF('/Flag.glb')
+
+  const poleSpring = useSpring({
+    color: props.reached ? "#FFA500" : "#FFFFFF"
+  })
+  
+  const flagSpring = useSpring({
+    color: props.reached ? "#E10600" : "#FFFFFF"
+  })
+
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.flag001.geometry} material={materials.Body} />
-      <mesh castShadow receiveShadow geometry={nodes.flag001_1.geometry} material={materials.Top} material-color="gold"/>
-      <mesh castShadow receiveShadow geometry={nodes.flag001_2.geometry} material={materials.Flag} material-color="red"/>
+      <mesh castShadow receiveShadow geometry={nodes.flag001_1.geometry}>
+        <animated.meshStandardMaterial 
+          {...materials.Top} 
+          color={poleSpring.color}
+        />
+      </mesh>
+      <mesh castShadow receiveShadow geometry={nodes.flag001_2.geometry}>
+        <animated.meshStandardMaterial 
+          {...materials.Flag} 
+          color={flagSpring.color}
+        />
+      </mesh>
     </group>
   )
 }

@@ -1,5 +1,5 @@
 [
-  { "position": [0.5, 0, 46.75], "trigger": 32 },
-  { "position": [-20.3, 2.25, 355], "trigger": 334 },
-  { "position": [8.5, 4, 504], "trigger": 484 }
+  { "position": [0.5, 0, 46.75], "reached": 32 },
+  { "position": [-20.3, 2.25, 355], "reached": 334 },
+  { "position": [8.5, 4, 504], "reached": 484 }
 ]

@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 
-import { Flag } from "@/models/Flag";
+import { FlagWithStars } from "./flagWithStars";
+
 import { AttachCallbackToScrollEvent } from "@/components/3D/scrollProxy/scrollControls";
 
 import flags from "@/config/flags.json";
@@ -20,6 +21,11 @@ export default function Flags() {
     flags.map(() => ({ reached: false }))
   );
 
+  const playCheckpointSound = () => {
+    const sound = new Audio("/sounds/checkpoint.wav");
+    //sound.play();
+  };
+
   // Define the scroll callback function with useCallback
   const handleScroll = useCallback((offset) => {
     const scrollPercentage = offset * 100;
@@ -32,10 +38,11 @@ export default function Flags() {
 
         // Get the flag's reach threshold in percentage
         const flag = flags[index];
-        const flagReachPercentage = getPositionInPercentage(flag.reached);
+        const flagReachPercentage = getPositionInPercentage(flag.reached) - 0.1;
 
         // Check if scroll percentage has reached or passed the flag's threshold
         if (scrollPercentage >= flagReachPercentage) {
+          playCheckpointSound();
           return { reached: true };
         }
 
@@ -49,7 +56,7 @@ export default function Flags() {
   return (
     <>
       {flags.map((flag, index) => (
-        <Flag
+        <FlagWithStars
           key={index}
           position={flag.position || [0, 0, 0]}
           reached={flagStates[index].reached}

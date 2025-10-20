@@ -1,0 +1,96 @@
+[
+  {
+    "position": [7, 0, 52],
+    "title": "Portfolio",
+    "description": "3D and creative personal portfolio presenting web and software projects with an immersive, interactive design."
+  },
+  {
+    "position": [-25, 0, 76],
+    "title": "Space Pirates",
+    "description": "A booking system built with HTML, CSS, JS, PHP, and MySQL, featuring room management and reservations.",
+    "component": {
+      "type": "PirateShip",
+      "options": {
+        "scale": 0.75,
+        "position": [1, 3, 2],
+        "rotation": [-0.46202268170610143, 1.0576556814580145, 0.4]
+      }
+    }
+  },
+  {
+    "position": [7, 0, 100],
+    "title": "Survivor.Io Sniping Bot",
+    "description": "Bot for Survivor.io auctions event providing a live P/L profile to assist players in sniping optimal prices.",
+    "component": {
+      "type": "SlotMachine",
+      "options": {
+        "scale": 8
+      }
+    }
+  },
+  {
+    "position": [-25, 0, 124],
+    "title": "Survivor.Io Event Tool",
+    "description": "Website tool for Survivor.io events that calculates the optimal path for players to follow during in-game challenges.",
+    "component": {
+      "type": "ClawMachine",
+      "options": {
+        "scale": 8
+      }
+    }
+  },
+
+  {
+    "position": [7, 0, 148],
+    "title": "Crypto Price Tracker",
+    "description": "Website tracking cryptocurrency prices in real-time and generating historical price graphs for analysis."
+  },
+  {
+    "position": [-25, 0, 172],
+    "title": "Color Screen Test",
+    "description": "Mobile app allowing users to set the screen to preset or custom RGB colors for display testing and color analysis."
+  },
+  {
+    "position": [7, 0, 196],
+    "title": "Meta Empire",
+    "description": "NFT crypto collection featuring Dutch auction mechanics, allowing dynamic pricing and engaging minting experience.",
+    "component": {
+      "type": "Statue",
+      "options": {
+        "scale": 6
+      }
+    }
+  },
+  {
+    "position": [-25, 0, 220],
+    "title": "Wallet Tracker",
+    "description": "Cross-chain wallet analyzer enabling users to track and review all holdings from a single wallet address."
+  },
+  {
+    "position": [7, 0, 244],
+    "title": "Plan It",
+    "description": "University project: Calendar app that auto-schedules tasks with full features, focused on requirements analysis."
+  },
+  {
+    "position": [-25, 0, 268],
+    "title": "Smart Parking App",
+    "description": "University project: designed a parking app prototype with booking, occupancy tracking, and user feedback tools."
+  },
+  {
+    "position": [7, 0, 292],
+    "title": "Hotel Meano",
+    "description": "High school project: built a hotel website with booking system, service pages, and network infrastructure redesign.",
+    "component": {
+      "type": "Hotel",
+      "options": {
+        "position": [0, 0, -0.5],
+        "scale": 4
+      }
+    }
+  },
+  {
+    "position": [-25, 0, 316],
+    "title": "Flynet",
+    "description": "High school project: designed an airport website with flight data, search features, and admin panel."
+  }
+]

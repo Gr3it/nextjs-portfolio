@@ -8,6 +8,10 @@ import ScrollControls, {
   ANIMATION_MODES,
   useScroll,
 } from "./scrollProxy/scrollControls";
+import VehicleManager from "./vehicles/vehicleManager";
+import Flags from "./flag/flags";
+import ProjectCard from "./card/projectCard";
+import fontMap from "../fontMap";
 
 import { Model as WorldModel } from "@/models/World";
 
@@ -15,8 +19,7 @@ import debugConfig from "@/config/debug-config.json";
 import worldConfig from "@/config/world-config.json";
 import textConfig from "@/config/text-config.json";
 import cameraConfig from "@/config/camera-config.json";
-import VehicleManager from "./vehicles/vehicleManager";
-import Flags from "./flags";
+import projectCards from "@/config/project-cards.json";
 
 // Extract constants for better readability
 const AMBIENT_LIGHT_COLOR = "#d4e3fc";
@@ -35,14 +38,16 @@ const TextElements = React.memo(() => {
     () =>
       textConfig.map((textItem, index) => (
         <Text
+          anchorX={"left"}
+          anchorY={"top"}
           key={textItem.id || `text-${index}`}
           color={textItem.color}
-          anchorX={textItem.anchorX}
           position={textItem.position}
           rotation={textItem.rotation}
           fontSize={textItem.fontSize}
           fontWeight={textItem.fontWeight}
           lineHeight={textItem.lineHeight}
+          font={fontMap[textItem.fontWeight]}
         >
           {textItem.content}
         </Text>
@@ -109,6 +114,9 @@ export default function Scene() {
           <VehicleManager />
           <TextElements />
           <Flags />
+          {projectCards.map((project) => (
+            <ProjectCard project={project} key={project.title} />
+          ))}
         </ScrollContent>
       </ScrollControls>
     </>

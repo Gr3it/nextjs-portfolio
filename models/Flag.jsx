@@ -11,11 +11,13 @@ export function Flag(props) {
   const { nodes, materials } = useGLTF('/Flag.glb')
 
   const poleSpring = useSpring({
-    color: props.reached ? "#FFA500" : "#FFFFFF"
+    color: props.reached ? "#FFA500" : "#FFFFFF",
+    config: { duration: 1500 }
   })
   
   const flagSpring = useSpring({
-    color: props.reached ? "#E10600" : "#FFFFFF"
+    color: props.reached ? "#E10600" : "#FFFFFF",
+    config: { duration: 1500 }
   })
 
   return (
@@ -31,6 +33,7 @@ export function Flag(props) {
         <animated.meshStandardMaterial 
           {...materials.Flag} 
           color={flagSpring.color}
+
         />
       </mesh>
     </group>

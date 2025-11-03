@@ -2,18 +2,32 @@ import fontMap from "@/components/fontMap";
 import { Billboard, Text } from "@react-three/drei";
 import React, { useState } from "react";
 
-import { PirateShip } from "@/models/PirateShip";
-import { SlotMachine } from "@/models/SlotMachine";
-import { ClawMachine } from "@/models/ClawMachine";
-import { Statue } from "@/models/Statue";
-import { Hotel } from "@/models/Hotel";
+import { SpacePiratesPreview } from "@/models/ProjectPreviews/SpacePiratesPreview";
+import { SnipingBotPreview } from "@/models/ProjectPreviews/SnipingBotPreview";
+import { EventToolPreview } from "@/models/ProjectPreviews/EventToolPreview";
+import { FlynetPreview } from "@/models/ProjectPreviews/FlynetPreview";
+import { HotelMeanoPreview } from "@/models/ProjectPreviews/HotelMeanoPreview";
+import { MetaEmpirePreview } from "@/models/ProjectPreviews/MetaEmpirePreview";
+import { SmartParkingAppPreview } from "@/models/ProjectPreviews/SmartParkingAppPreview";
+import { CryptoPriceTrackerPreview } from "@/models/ProjectPreviews/CryptoPriceTrackerPreview";
+import { ColorScreenTestPreview } from "@/models/ProjectPreviews/ColorScreenTestPreview";
+import { PlanItPreview } from "@/models/ProjectPreviews/PlanItPreview";
+import { WalletTrackerPreview } from "@/models/ProjectPreviews/WalletTrackerPreview";
+import { PortfolioPreview } from "@/models/ProjectPreviews/PortfolioPreview";
 
 const PROJECT_COMPONENTS = {
-  PirateShip,
-  SlotMachine,
-  ClawMachine,
-  Statue,
-  Hotel,
+  SpacePiratesPreview,
+  SnipingBotPreview,
+  EventToolPreview,
+  FlynetPreview,
+  HotelMeanoPreview,
+  MetaEmpirePreview,
+  SmartParkingAppPreview,
+  CryptoPriceTrackerPreview,
+  ColorScreenTestPreview,
+  PlanItPreview,
+  WalletTrackerPreview,
+  PortfolioPreview,
 };
 
 function getProjectComponent(type, options) {
@@ -45,24 +59,26 @@ export default function ProjectCard({ project, children }) {
         <meshBasicMaterial transparent opacity={0} />
       </mesh>
 
-      <group position={[9, 0, 9]}>
+      <group position={[9, 0, 7.5]}>
         {getProjectComponent(
           project?.component?.type,
           project?.component?.options
         )}
       </group>
 
-      <group position={[9, 1, 0]}>
-        <Billboard follow={true} lockX={false} lockY={false} lockZ={false}>
-          <Text fontSize={1}>{"I'm a billboard"}</Text>
-        </Billboard>
-        <Billboard position={[0, 0, 0]} args={[10, 10]}>
-          <mesh>
-            <planeGeometry args={[10, 10]} />
-            <meshBasicMaterial color={"red"} />
-          </mesh>
-        </Billboard>
-      </group>
+      {hover && (
+        <group position={[9, 1, 0]}>
+          <Billboard follow={true} lockX={false} lockY={false} lockZ={false}>
+            <Text fontSize={1}>{"I'm a billboard"}</Text>
+          </Billboard>
+          <Billboard position={[0, 0, 0]} args={[10, 10]}>
+            <mesh>
+              <planeGeometry args={[10, 10]} />
+              <meshBasicMaterial color={"red"} />
+            </mesh>
+          </Billboard>
+        </group>
+      )}
 
       <group position={[1, 0.01, 12]}>
         <Text

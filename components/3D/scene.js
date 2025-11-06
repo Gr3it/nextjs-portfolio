@@ -20,6 +20,7 @@ import worldConfig from "@/config/world-config.json";
 import textConfig from "@/config/text-config.json";
 import cameraConfig from "@/config/camera-config.json";
 import projectCards from "@/config/project-cards.json";
+import World from "@/models/world/World";
 
 // Extract constants for better readability
 const AMBIENT_LIGHT_COLOR = "#d4e3fc";
@@ -110,7 +111,7 @@ export default function Scene() {
       <ScrollControls>
         <ScrollContent>
           <ConditionalGrid />
-          <WorldModel />
+          <World />
           <VehicleManager />
           <TextElements />
           <Flags />

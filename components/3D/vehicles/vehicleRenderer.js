@@ -2,9 +2,9 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { ANIMATION_MODES, useScroll } from "../scrollProxy/scrollControls";
 
-import { SedanSports } from "@/models/SedanSports";
-import { BoatSail } from "@/models/BoatSail";
-import { Spaceship } from "@/models/Spaceship";
+import { SedanSports } from "@/models/vehicles/SedanSports";
+import { BoatSail } from "@/models/vehicles/BoatSail";
+import { Spaceship } from "@/models/vehicles/Spaceship";
 
 const VEHICLE_COMPONENTS = {
   car: SedanSports,

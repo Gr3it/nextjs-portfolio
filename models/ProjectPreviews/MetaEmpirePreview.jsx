@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function MetaEmpirePreview(props) {
-  const { nodes, materials } = useGLTF('/MetaEmpirePreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/MetaEmpirePreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.statue.geometry} material={materials.colormap} position={[0, 0, 2]} scale={5} />
@@ -16,4 +16,4 @@ export function MetaEmpirePreview(props) {
   )
 }
 
-useGLTF.preload('/MetaEmpirePreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/MetaEmpirePreview-transformed.glb')

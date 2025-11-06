@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function SpacePiratesPreview(props) {
-  const { nodes, materials } = useGLTF('/SpacePiratesPreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/SpacePiratesPreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes['ship-pirate-medium'].geometry} material={materials.colormap} position={[2.62, 3, 3.375]} rotation={[-0.454, Math.PI / 3, 0.401]} scale={0.75} />
@@ -19,4 +19,4 @@ export function SpacePiratesPreview(props) {
   )
 }
 
-useGLTF.preload('/SpacePiratesPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/SpacePiratesPreview-transformed.glb')

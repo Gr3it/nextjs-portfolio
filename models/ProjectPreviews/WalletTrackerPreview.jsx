@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function WalletTrackerPreview(props) {
-  const { nodes, materials } = useGLTF('/WalletTrackerPreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/WalletTrackerPreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.MeshInstance3D3.geometry} material={materials.PaletteMaterial001} position={[-2.865, 2.784, -1.273]} scale={3} />
@@ -18,4 +18,4 @@ export function WalletTrackerPreview(props) {
   )
 }
 
-useGLTF.preload('/WalletTrackerPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/WalletTrackerPreview-transformed.glb')

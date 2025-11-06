@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function SedanSports(props) {
-  const { nodes, materials } = useGLTF('/sedan-sports-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/vehicles/sedan-sports-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <group>
@@ -18,4 +18,4 @@ export function SedanSports(props) {
   )
 }
 
-useGLTF.preload('/sedan-sports-transformed.glb')
+useGLTF.preload('/models/vehicles/sedan-sports-transformed.glb')

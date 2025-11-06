@@ -2,18 +2,18 @@ import fontMap from "@/components/fontMap";
 import { Billboard, Text } from "@react-three/drei";
 import React, { useState } from "react";
 
-import { SpacePiratesPreview } from "@/models/ProjectPreviews/SpacePiratesPreview";
-import { SnipingBotPreview } from "@/models/ProjectPreviews/SnipingBotPreview";
-import { EventToolPreview } from "@/models/ProjectPreviews/EventToolPreview";
-import { FlynetPreview } from "@/models/ProjectPreviews/FlynetPreview";
-import { HotelMeanoPreview } from "@/models/ProjectPreviews/HotelMeanoPreview";
-import { MetaEmpirePreview } from "@/models/ProjectPreviews/MetaEmpirePreview";
-import { SmartParkingAppPreview } from "@/models/ProjectPreviews/SmartParkingAppPreview";
-import { CryptoPriceTrackerPreview } from "@/models/ProjectPreviews/CryptoPriceTrackerPreview";
-import { ColorScreenTestPreview } from "@/models/ProjectPreviews/ColorScreenTestPreview";
-import { PlanItPreview } from "@/models/ProjectPreviews/PlanItPreview";
-import { WalletTrackerPreview } from "@/models/ProjectPreviews/WalletTrackerPreview";
-import { PortfolioPreview } from "@/models/ProjectPreviews/PortfolioPreview";
+import { SpacePiratesPreview } from "@/models/projectPreviews/SpacePiratesPreview";
+import { SnipingBotPreview } from "@/models/projectPreviews/SnipingBotPreview";
+import { EventToolPreview } from "@/models/projectPreviews/EventToolPreview";
+import { FlynetPreview } from "@/models/projectPreviews/FlynetPreview";
+import { HotelMeanoPreview } from "@/models/projectPreviews/HotelMeanoPreview";
+import { MetaEmpirePreview } from "@/models/projectPreviews/MetaEmpirePreview";
+import { SmartParkingAppPreview } from "@/models/projectPreviews/SmartParkingAppPreview";
+import { CryptoPriceTrackerPreview } from "@/models/projectPreviews/CryptoPriceTrackerPreview";
+import { ColorScreenTestPreview } from "@/models/projectPreviews/ColorScreenTestPreview";
+import { PlanItPreview } from "@/models/projectPreviews/PlanItPreview";
+import { WalletTrackerPreview } from "@/models/projectPreviews/WalletTrackerPreview";
+import { PortfolioPreview } from "@/models/projectPreviews/PortfolioPreview";
 
 const PROJECT_COMPONENTS = {
   SpacePiratesPreview,

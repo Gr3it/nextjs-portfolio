@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function SmartParkingAppPreview(props) {
-  const { nodes, materials } = useGLTF('/SmartParkingAppPreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/SmartParkingAppPreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes['brick-wall'].geometry} material={materials.colormap} position={[-7, 0, 3.5]} rotation={[-Math.PI, 0, -Math.PI]} />
@@ -17,4 +17,4 @@ export function SmartParkingAppPreview(props) {
   )
 }
 
-useGLTF.preload('/SmartParkingAppPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/SmartParkingAppPreview-transformed.glb')

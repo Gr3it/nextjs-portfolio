@@ -6,7 +6,7 @@ import * as THREE from 'three'
 
 export function AnimatedStar({ isAnimating, starIndex = 0, ...props }) {
   const starRef = useRef()
-  const { nodes, materials } = useGLTF('/star-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/star-transformed.glb')
   
   // Animation values
   const scale = useSpringValue(0) // Start from size 0
@@ -97,4 +97,4 @@ export function AnimatedStar({ isAnimating, starIndex = 0, ...props }) {
   )
 }
 
-useGLTF.preload('/star-transformed.glb')
+useGLTF.preload('/models/star-transformed.glb')

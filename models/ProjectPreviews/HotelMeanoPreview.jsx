@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function HotelMeanoPreview(props) {
-  const { nodes, materials } = useGLTF('/HotelMeanoPreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/HotelMeanoPreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes['building-j'].geometry} material={materials.colormap} position={[2.5, 0, 1.5]} scale={4} />
@@ -19,4 +19,4 @@ export function HotelMeanoPreview(props) {
   )
 }
 
-useGLTF.preload('/HotelMeanoPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/HotelMeanoPreview-transformed.glb')

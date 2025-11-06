@@ -9,7 +9,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function SnipingBotPreview(props) {
   const group = React.useRef()
-  const { nodes, materials, animations } = useGLTF('/SnipingBotPreview-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('/models/projectPreviews/SnipingBotPreview-transformed.glb')
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
@@ -32,4 +32,4 @@ export function SnipingBotPreview(props) {
   )
 }
 
-useGLTF.preload('/SnipingBotPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/SnipingBotPreview-transformed.glb')

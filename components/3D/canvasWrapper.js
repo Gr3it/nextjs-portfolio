@@ -8,6 +8,7 @@ import SupportCamera from "./cameras/supportCamera";
 import Scene from "./scene";
 
 import debugConfig from "@/config/debug-config.json";
+import { Perf } from "r3f-perf";
 
 const { showSupportCamera } = debugConfig;
 
@@ -44,6 +45,7 @@ export default function CanvasWrapper() {
         {useSupportCamera && <SupportCamera />}
         <MainCamera mainCamera={!useSupportCamera} />
         <Scene />
+        <Perf position="bottom-right" />
       </Canvas>
     </div>
   );

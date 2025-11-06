@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function FlynetPreview(props) {
-  const { nodes, materials } = useGLTF('/FlynetPreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/FlynetPreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.landingpad_large.geometry} material={materials.spacebits_texture} position={[0, 0, 0.6]} scale={2} />
@@ -23,4 +23,4 @@ export function FlynetPreview(props) {
   )
 }
 
-useGLTF.preload('/FlynetPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/FlynetPreview-transformed.glb')

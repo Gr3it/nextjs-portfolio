@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function PlanItPreview(props) {
-  const { nodes, materials } = useGLTF('/PlanItPreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/PlanItPreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <group position={[7.125, 0, -2.625]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]} scale={7.5}>
@@ -24,4 +24,4 @@ export function PlanItPreview(props) {
   )
 }
 
-useGLTF.preload('/PlanItPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/PlanItPreview-transformed.glb')

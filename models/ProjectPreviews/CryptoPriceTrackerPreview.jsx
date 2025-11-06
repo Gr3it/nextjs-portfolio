@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function CryptoPriceTrackerPreview(props) {
-  const { nodes, materials } = useGLTF('/CryptoPriceTrackerPreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/CryptoPriceTrackerPreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes['ride-entrance'].geometry} material={materials.colormap} position={[1.5, 0, 2.125]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.75} />
@@ -21,4 +21,4 @@ export function CryptoPriceTrackerPreview(props) {
   )
 }
 
-useGLTF.preload('/CryptoPriceTrackerPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/CryptoPriceTrackerPreview-transformed.glb')

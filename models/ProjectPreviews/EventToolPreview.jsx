@@ -9,8 +9,9 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function EventToolPreview(props) {
   const group = React.useRef()
-  const { nodes, materials, animations } = useGLTF('/EventToolPreview-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('/models/projectPreviews/EventToolPreview-transformed.glb')
   const { actions } = useAnimations(animations, group)
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group>
@@ -23,4 +24,4 @@ export function EventToolPreview(props) {
   )
 }
 
-useGLTF.preload('/EventToolPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/EventToolPreview-transformed.glb')

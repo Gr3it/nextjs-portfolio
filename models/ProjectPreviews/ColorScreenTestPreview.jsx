@@ -8,7 +8,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function ColorScreenTestPreview(props) {
-  const { nodes, materials } = useGLTF('/ColorScreenTestPreview-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/projectPreviews/ColorScreenTestPreview-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes['rotate-z'].geometry} material={materials.colormap} position={[0, 2.2, 0.2]} scale={4} />
@@ -17,4 +17,4 @@ export function ColorScreenTestPreview(props) {
   )
 }
 
-useGLTF.preload('/ColorScreenTestPreview-transformed.glb')
+useGLTF.preload('/models/projectPreviews/ColorScreenTestPreview-transformed.glb')

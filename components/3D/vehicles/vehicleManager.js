@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import * as THREE from "three";
 
-import VehicleRenderer from "./vehicleRenderer";
+import VehicleRenderer, { VehicleRendererCurve } from "./vehicleRenderer";
 import CurveEditor from "./curveEditor";
 
 import worldConfig from "@/config/world-config.json";
@@ -31,15 +31,25 @@ export default function VehicleManager() {
             <CurveEditor key={vehicle.id} {...vehicle} />
           ))
         : hideVehicle ||
-          vehicleCurvesData.map((vehicle) => (
-            <VehicleRenderer
-              key={vehicle.id}
-              curve={vehicle.curve}
-              start={(vehicle.start || 0) / worldHeight}
-              end={(vehicle.end || worldHeight) / worldHeight}
-              type={vehicle.type}
-            />
-          ))}
+          vehicleCurvesData.map((vehicle) =>
+            vehicle.type == "train" ? (
+              <VehicleRendererCurve
+                key={vehicle.id}
+                curve={vehicle.curve}
+                start={(vehicle.start || 0) / worldHeight}
+                end={(vehicle.end || worldHeight) / worldHeight}
+                type={vehicle.type}
+              />
+            ) : (
+              <VehicleRenderer
+                key={vehicle.id}
+                curve={vehicle.curve}
+                start={(vehicle.start || 0) / worldHeight}
+                end={(vehicle.end || worldHeight) / worldHeight}
+                type={vehicle.type}
+              />
+            )
+          )}
     </>
   );
 }

@@ -47,13 +47,13 @@ export default function ProjectCard({ project, children }) {
     setHover(false);
     document.body.style.cursor = "auto";
   };
+
   return (
     <group
       position={project.position}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
     >
-      {children}
       <mesh position={[9, 0, 9]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[18, 18]} />
         <meshBasicMaterial transparent opacity={0} />
@@ -66,19 +66,17 @@ export default function ProjectCard({ project, children }) {
         )}
       </group>
 
-      {hover && (
-        <group position={[9, 1, 0]}>
-          <Billboard follow={true} lockX={false} lockY={false} lockZ={false}>
-            <Text fontSize={1}>{"I'm a billboard"}</Text>
-          </Billboard>
-          <Billboard position={[0, 0, 0]} args={[10, 10]}>
-            <mesh>
-              <planeGeometry args={[10, 10]} />
-              <meshBasicMaterial color={"red"} />
-            </mesh>
-          </Billboard>
-        </group>
-      )}
+      <group position={[9, 1, 0]} visible={hover}>
+        <Billboard follow={true} lockX={false} lockY={false} lockZ={false}>
+          <Text fontSize={1}>{"I'm a billboard"}</Text>
+        </Billboard>
+        <Billboard position={[0, 0, 0]} args={[10, 10]}>
+          <mesh>
+            <planeGeometry args={[10, 10]} />
+            <meshBasicMaterial color={"red"} />
+          </mesh>
+        </Billboard>
+      </group>
 
       <group position={[1, 0.01, 12]}>
         <Text

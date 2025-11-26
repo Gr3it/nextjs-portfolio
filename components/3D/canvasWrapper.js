@@ -42,8 +42,8 @@ export default function CanvasWrapper() {
       />
 
       <Canvas shadows>
-        {useSupportCamera && <SupportCamera />}
-        <MainCamera mainCamera={!useSupportCamera} />
+        <SupportCamera isActive={useSupportCamera} />
+        <MainCamera isActive={!useSupportCamera} />
         <Scene />
         <Perf position="bottom-right" />
       </Canvas>

@@ -1,17 +1,19 @@
+import React, { useRef, useState } from "react";
 import { PerspectiveCamera, CameraControls } from "@react-three/drei";
-import React from "react";
 
-export default function SupportCamera() {
+export default function SupportCamera({ isActive }) {
+  const [camera, setCamera] = useState();
   return (
     <>
       <PerspectiveCamera
-        makeDefault
+        ref={setCamera}
+        makeDefault={isActive}
         fov={50}
         position={[75, 50, 50]}
         near={1}
         far={1000}
       />
-      <CameraControls />
+      {camera && <CameraControls camera={camera} />}
     </>
   );
 }

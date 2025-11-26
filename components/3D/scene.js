@@ -13,14 +13,13 @@ import Flags from "./flag/flags";
 import ProjectCard from "./card/projectCard";
 import fontMap from "../fontMap";
 
-import { Model as WorldModel } from "@/models/World";
-
 import debugConfig from "@/config/debug-config.json";
 import worldConfig from "@/config/world-config.json";
 import textConfig from "@/config/text-config.json";
 import cameraConfig from "@/config/camera-config.json";
 import projectCards from "@/config/project-cards.json";
-import World from "@/models/world/World";
+import World from "@/models/World";
+import MovingCubeTest from "./textCurve";
 
 // Extract constants for better readability
 const AMBIENT_LIGHT_COLOR = "#d4e3fc";
@@ -118,6 +117,7 @@ export default function Scene() {
           {projectCards.map((project) => (
             <ProjectCard project={project} key={project.title} />
           ))}
+          <MovingCubeTest />
         </ScrollContent>
       </ScrollControls>
     </>

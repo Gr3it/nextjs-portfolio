@@ -100,6 +100,8 @@ const direction = [
 ];
 const forwardDirection = normalizeVector(direction);
 
+console.log(cameraPos3D, cameraLookAt3D, direction);
+
 // Calculate frustum boundaries
 const topRayDir = rotateAroundXAxis(forwardDirection, -HALF_FOV);
 const bottomRayDir = rotateAroundXAxis(forwardDirection, HALF_FOV);
@@ -116,6 +118,7 @@ const cameraConfig = {
   FOV,
   position: cameraPos3D,
   lookAt: cameraLookAt3D,
+  lookAtDirection: forwardDirection,
   frustumHeightOnPlane,
 };
 

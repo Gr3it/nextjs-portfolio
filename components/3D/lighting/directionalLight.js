@@ -13,8 +13,8 @@ const DEFAULT_SHADOW_CONFIG = {
     near: 1,
     far: 60,
   },
-  bias: -0.001,
-  normalBias: 0,
+  bias: -0.0002,
+  normalBias: 0.05,
 };
 
 export default function DirectionalLight({

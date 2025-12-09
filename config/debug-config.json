@@ -1,7 +1,7 @@
 {
   "showStats": true,
   "showGrid": false,
-  "showLightHelper": false,
+  "showLightHelper": true,
   "showSupportCamera": true,
   "hideVehicle": false,
   "vehiclePathEditor": false,

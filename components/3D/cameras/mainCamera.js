@@ -5,7 +5,6 @@ import { Helper, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 
 import cameraConfig from "@/config/camera-config.json";
-import { useFrame } from "@react-three/fiber";
 
 const { lookAtDirection, FOV, position, near, far } = cameraConfig;
 
@@ -22,10 +21,6 @@ export default function MainCamera({ isActive = true }) {
       camera.updateMatrixWorld();
     }
   }, []);
-
-  useFrame(() => {
-    if (cameraRef.current) cameraRef.current.position.z += 0.01;
-  });
 
   return (
     <PerspectiveCamera

@@ -1,16 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
+import { useFrame } from "@react-three/fiber";
 import MainCamera from "./cameras/mainCamera";
 import SupportCamera from "./cameras/supportCamera";
 import Scene from "./scene";
 
 import debugConfig from "@/config/debug-config.json";
 import { Perf } from "r3f-perf";
+import { Stats } from "@react-three/drei";
+import DirectionalLight from "./lighting/directionalLight";
+import ScrollControls, {
+  ANIMATION_MODES,
+  useScroll,
+} from "./scrollProxy/scrollControls";
 
-const { showSupportCamera } = debugConfig;
+import worldConfig from "@/config/world-config.json";
+import cameraConfig from "@/config/camera-config.json";
+
+const { height } = worldConfig;
+const { frustumHeightOnPlane } = cameraConfig;
+
+// Memoize the calculation function to avoid recreating it
+const getSceneZOffset = (offset) => offset * (height - frustumHeightOnPlane);
+
+// Extract constants for better readability
+const AMBIENT_LIGHT_COLOR = "#d4e3fc";
+const AMBIENT_LIGHT_INTENSITY = 1.25;
+
+const { showLightHelper, showStats, showSupportCamera } = debugConfig;
 
 // Debug controls component for better separation of concerns
 function DebugControls({ useSupportCamera, onToggleCamera }) {
@@ -29,6 +49,22 @@ function DebugControls({ useSupportCamera, onToggleCamera }) {
   );
 }
 
+function ScrollContent({ children }) {
+  const groupRef = useRef();
+  const scroll = useScroll({
+    mode: ANIMATION_MODES.DAMPING,
+    damping: 0.4,
+  });
+
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.position.z = getSceneZOffset(scroll());
+    }
+  });
+
+  return <group ref={groupRef}>{children}</group>;
+}
+
 export default function CanvasWrapper() {
   const [useSupportCamera, setUseSupportCamera] = useState(false);
 
@@ -42,10 +78,23 @@ export default function CanvasWrapper() {
       />
 
       <Canvas shadows>
-        <SupportCamera isActive={useSupportCamera} />
-        <MainCamera isActive={!useSupportCamera} />
-        <Scene />
-        <Perf position="bottom-right" />
+        <ScrollControls>
+          <ScrollContent>
+            <MainCamera isActive={!useSupportCamera} />
+
+            {/* Lighting setup */}
+            <ambientLight
+              color={AMBIENT_LIGHT_COLOR}
+              intensity={AMBIENT_LIGHT_INTENSITY}
+            />
+            <DirectionalLight showHelper={showLightHelper} />
+          </ScrollContent>
+          {/* Debug stats - conditionally rendered */}
+
+          {showStats && <Stats />}
+          <Scene />
+          <Perf position="bottom-right" />
+        </ScrollControls>
       </Canvas>
     </div>
   );

@@ -90,7 +90,7 @@ export default function CanvasWrapper() {
             <DirectionalLight showHelper={showLightHelper} />
           </ScrollContent>
           {/* Debug stats - conditionally rendered */}
-
+          <SupportCamera isActive={useSupportCamera} />
           {showStats && <Stats />}
           <Scene />
           <Perf position="bottom-right" />

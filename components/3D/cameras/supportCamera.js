@@ -13,7 +13,7 @@ export default function SupportCamera({ isActive }) {
         near={1}
         far={1000}
       />
-      {camera && <CameraControls camera={camera} />}
+      {isActive && camera && <CameraControls camera={camera} />}
     </>
   );
 }

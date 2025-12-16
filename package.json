@@ -15,7 +15,7 @@
     "@react-three/postprocessing": "^3.0.4",
     "@types/three": "^0.177.0",
     "animejs": "^4.0.2",
-    "next": "15.3.2",
+    "next": "^15.3.8",
     "r3f-perf": "^7.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

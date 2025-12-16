@@ -11,14 +11,13 @@ import fontMap from "../fontMap";
 import debugConfig from "@/config/debug-config.json";
 import worldConfig from "@/config/world-config.json";
 import textConfig from "@/config/text-config.json";
-import cameraConfig from "@/config/camera-config.json";
 import projectCards from "@/config/project-cards.json";
+import footerCards from "@/config/footer-cards.json";
 import World from "@/models/World";
-import MovingCubeTest from "./textCurve";
+import FooterCard from "./card/footerCard";
 
 const { showGrid } = debugConfig;
 const { height } = worldConfig;
-const { frustumHeightOnPlane } = cameraConfig;
 
 // Memoized text components to prevent unnecessary re-renders
 const TextElements = React.memo(() => {
@@ -77,8 +76,11 @@ export default function Scene() {
         <ProjectCard project={project} key={project.title} />
       ))}
 
+      {footerCards.map((card) => (
+        <FooterCard card={card} key={card.title} />
+      ))}
+
       <ConditionalGrid />
-      <MovingCubeTest />
     </>
   );
 }

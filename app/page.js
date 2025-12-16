@@ -3,7 +3,7 @@
 import React from "react";
 
 import Navbar from "@/components/ui/navigation/navbar";
-import CanvasWrapper from "@/components/3D/canvasWrapper";
+import CanvasWrapper from "@/components/canvasWrapper";
 import { ScrollControlsProxy } from "@/components/3D/scrollProxy/scrollControls";
 import VehicleSafeZone from "@/components/ui/debug/vehicleSafeZone";
 

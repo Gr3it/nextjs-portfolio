@@ -56,7 +56,7 @@
     ],
     "start": 10,
     "end": 334,
-    "type": "car"
+    "type": "Car"
   },
   {
     "points": [
@@ -76,7 +76,7 @@
     ],
     "start": 345,
     "end": 485,
-    "type": "boat"
+    "type": "Boat"
   },
   {
     "points": [
@@ -92,23 +92,24 @@
     ],
     "start": 490,
     "end": 550,
-    "type": "spaceship"
+    "type": "Spaceship"
   },
   {
     "points": [
-      [48, 0, 552],
-      [21, 0, 552],
-      [20, 0, 552],
-      [16.5, 0, 554],
-      [16, 0, 557.5],
-      [15.5, 0, 561.6],
-      [12, 0, 564],
-      [11, 0, 564],
-      [-48, 0, 564]
+      [48, 0, 556],
+      [-48, 0, 556]
     ],
-    "start": 560,
-    "end": 1000,
-    "type": "train",
-    "curve": true
+    "start": 552,
+    "end": 584,
+    "type": "CommercialTrain"
+  },
+  {
+    "points": [
+      [48, 0, 580],
+      [-48, 0, 580]
+    ],
+    "start": 576,
+    "end": 608,
+    "type": "Train"
   }
 ]

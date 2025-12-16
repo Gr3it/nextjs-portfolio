@@ -4,18 +4,18 @@ import React, { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import { useFrame } from "@react-three/fiber";
-import MainCamera from "./cameras/mainCamera";
-import SupportCamera from "./cameras/supportCamera";
-import Scene from "./scene";
+import MainCamera from "./3D/cameras/mainCamera";
+import SupportCamera from "./3D/cameras/supportCamera";
+import Scene from "./3D/scene";
 
 import debugConfig from "@/config/debug-config.json";
 import { Perf } from "r3f-perf";
 import { Stats } from "@react-three/drei";
-import DirectionalLight from "./lighting/directionalLight";
+import DirectionalLight from "./3D/lighting/directionalLight";
 import ScrollControls, {
   ANIMATION_MODES,
   useScroll,
-} from "./scrollProxy/scrollControls";
+} from "./3D/scrollProxy/scrollControls";
 
 import worldConfig from "@/config/world-config.json";
 import cameraConfig from "@/config/camera-config.json";
@@ -89,11 +89,17 @@ export default function CanvasWrapper() {
             />
             <DirectionalLight showHelper={showLightHelper} />
           </ScrollContent>
-          {/* Debug stats - conditionally rendered */}
+
           <SupportCamera isActive={useSupportCamera} />
-          {showStats && <Stats />}
+          {/* Debug stats - conditionally rendered */}
+          {showStats && (
+            <>
+              <Stats />
+              <Perf position="bottom-right" />
+            </>
+          )}
+
           <Scene />
-          <Perf position="bottom-right" />
         </ScrollControls>
       </Canvas>
     </div>

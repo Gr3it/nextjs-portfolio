@@ -1,7 +1,7 @@
 {
   "width": 64,
   "maxWidth": 96,
-  "height": 588,
+  "height": 604,
   "sections": [
     {
       "start": 0,
@@ -48,14 +48,20 @@
 
     {
       "start": 484,
-      "text": "Contact Me",
+      "text": "Contacts",
       "type": "checkpoint",
       "color": "#e0e9ee"
     },
-
     {
       "start": 522,
-      "text": "End",
+      "text": "Links",
+      "type": "checkpoint",
+      "color": "#A0A8C9"
+    },
+
+    {
+      "start": 604,
+      "text": "Finish",
       "type": "flagpole",
       "color": "#A0A8C9",
       "textAlignment": "center"

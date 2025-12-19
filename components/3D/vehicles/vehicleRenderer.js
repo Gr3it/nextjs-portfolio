@@ -2,18 +2,20 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { ANIMATION_MODES, useScroll } from "../scrollProxy/scrollControls";
 
-import { Car } from "@/models/vehicles/Car";
-import { Boat } from "@/models/vehicles/Boat";
-import { Spaceship } from "@/models/vehicles/Spaceship";
-import { Train } from "@/models/vehicles/Train";
-import { CommercialTrain } from "@/models/vehicles/CommercialTrain";
+import {
+  BoatTrail,
+  CarTrail,
+  CommercialTrainTrail,
+  SpaceshipTrail,
+  TrainTrail,
+} from "./vehicleTrails";
 
 const VEHICLE_COMPONENTS = {
-  Car,
-  Boat,
-  Spaceship,
-  Train,
-  CommercialTrain,
+  Car: CarTrail,
+  Boat: BoatTrail,
+  Spaceship: SpaceshipTrail,
+  Train: TrainTrail,
+  CommercialTrain: CommercialTrainTrail,
 };
 
 function getVehicleComponent(type) {

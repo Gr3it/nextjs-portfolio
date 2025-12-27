@@ -13,8 +13,11 @@ import worldConfig from "@/config/world-config.json";
 import textConfig from "@/config/text-config.json";
 import projectCards from "@/config/project-cards.json";
 import footerCards from "@/config/footer-cards.json";
+import aboutCards from "@/config/about-cards.json";
+
 import World from "@/models/World";
 import FooterCard from "./card/footerCard";
+import AboutCard from "./card/aboutCard";
 
 const { showGrid } = debugConfig;
 const { height } = worldConfig;
@@ -78,6 +81,10 @@ export default function Scene() {
 
       {footerCards.map((card) => (
         <FooterCard card={card} key={card.title} />
+      ))}
+
+      {aboutCards.map((card) => (
+        <AboutCard card={card} key={card.title} />
       ))}
 
       <ConditionalGrid />

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { ANIMATION_MODES, useScroll } from "../scrollProxy/scrollControls";
 
@@ -23,6 +23,24 @@ function getVehicleComponent(type) {
   return Component ? <Component /> : null;
 }
 
+function applyVehicleTransform(vehicle, curve, offset) {
+  if (!vehicle || !curve || offset == null) return;
+
+  const point = curve.getPointAt(offset);
+  const tangent = curve.getTangentAt(offset).normalize();
+
+  vehicle.position.copy(point);
+
+  const yAngle = Math.atan2(tangent.x, tangent.z);
+  vehicle.rotation.y = yAngle;
+
+  const horizontalDistance = Math.sqrt(
+    tangent.x * tangent.x + tangent.z * tangent.z
+  );
+  const xAngle = Math.atan2(-tangent.y, horizontalDistance);
+  vehicle.rotation.x = xAngle;
+}
+
 export default function VehicleRenderer({
   curve,
   start,
@@ -43,10 +61,8 @@ export default function VehicleRenderer({
   });
 
   useFrame(() => {
-    if (!vehicleRef.current || !curve) return;
     const currentOffset = scroll();
 
-    // Skip calculations if scroll hasn't changed and curve is the same
     if (
       lastScrollOffset.current === currentOffset &&
       lastCurve.current === curve &&
@@ -55,31 +71,11 @@ export default function VehicleRenderer({
       return;
     }
 
-    // Cache current values
     lastScrollOffset.current = currentOffset;
     lastCurve.current = curve;
 
-    // Get point and tangent from curve
-    const point = curve.getPointAt(currentOffset);
-    const tangent = curve.getTangentAt(currentOffset).normalize();
-
-    // Update position
-    vehicleRef.current.position.copy(point);
-
-    // Calculate and apply rotations
-    const yAngle = Math.atan2(tangent.x, tangent.z);
-    vehicleRef.current.rotation.y = yAngle;
-
-    const horizontalDistance = Math.sqrt(
-      tangent.x * tangent.x + tangent.z * tangent.z
-    );
-    const xAngle = Math.atan2(-tangent.y, horizontalDistance);
-    vehicleRef.current.rotation.x = xAngle;
+    applyVehicleTransform(vehicleRef.current, curve, currentOffset);
   });
 
-  return (
-    <>
-      <group ref={vehicleRef}>{getVehicleComponent(type)}</group>
-    </>
-  );
+  return <group ref={vehicleRef}>{getVehicleComponent(type)}</group>;
 }

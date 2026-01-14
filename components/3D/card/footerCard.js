@@ -8,6 +8,7 @@ import { LinkedinLogo } from "@/models/footerCards/Linkedin";
 import { GithubLogo } from "@/models/footerCards/Github";
 import { PaperPlaneLogo } from "@/models/footerCards/PaperPlane";
 import { DocumentLogo } from "@/models/footerCards/Document";
+import { usePointerHover } from "@/lib/usePointerHover";
 
 const CARD_COMPONENTS = {
   LinkedinLogo,
@@ -22,18 +23,8 @@ function getCardComponent(type) {
 }
 
 export default function FooterCard({ card }) {
-  const [hover, setHover] = useState(false);
   const groupRef = useRef();
-
-  const handlePointerOver = () => {
-    setHover(true);
-    document.body.style.cursor = "pointer";
-  };
-
-  const handlePointerOut = () => {
-    setHover(false);
-    document.body.style.cursor = "auto";
-  };
+  const { hover, handlePointerOver, handlePointerOut } = usePointerHover();
 
   useFrame((_, delta) => {
     if (!groupRef.current) return;

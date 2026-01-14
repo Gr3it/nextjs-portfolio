@@ -18,8 +18,10 @@
     "next": "^15.3.8",
     "r3f-perf": "^7.2.3",
     "react": "^19.0.0",
+    "react-colorful": "^5.6.1",
     "react-dom": "^19.0.0",
-    "three": "^0.177.0"
+    "three": "^0.177.0",
+    "valtio": "^2.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

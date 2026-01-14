@@ -55,3 +55,64 @@ body {
 .navbar {
   width: 100%;
 }
+
+.code {
+  width: 29rem;
+  height: 15.2rem;
+  padding: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  white-space: pre;
+}
+
+/* Syntax */
+.kw {
+  color: #c586c0;
+}
+.id {
+  color: #9cdcfe;
+}
+.fn {
+  color: #dcdcaa;
+}
+.str {
+  color: #ce9178;
+}
+.cmp {
+  color: #4ec9b0;
+}
+.prop {
+  color: #9cdcfe;
+}
+.sym {
+  color: #d4d4d4;
+}
+
+/* Editable slots */
+.value {
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid #555;
+  outline: none;
+  padding: 0 1px;
+
+  text-align: center;
+}
+
+.value.number {
+  color: #b5cea8;
+}
+.value.boolean {
+  color: #569cd6;
+}
+.value.color {
+  color: #ce9178;
+}
+
+.value:focus {
+  border-bottom-color: #ffd700;
+}

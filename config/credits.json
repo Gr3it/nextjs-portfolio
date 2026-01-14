@@ -1,0 +1,18 @@
+{
+  "assets3D": [
+    {
+      "Asset": "Nome asset",
+      "Author": "Nome autore",
+      "Source": "link",
+      "License": "CC BY-SA 3.0",
+      "Changes": "yes (modellazione / texture / scale)"
+    },
+    {
+      "Asset": "Clair Obscur Expedition 33 | Esquie head",
+      "Author": "Marko3DStudio",
+      "Source": "https://skfb.ly/pwQ7v",
+      "License": "Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)",
+      "Changes": "no"
+    }
+  ]
+}

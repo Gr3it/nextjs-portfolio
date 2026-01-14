@@ -11,17 +11,6 @@ const { lookAtDirection, FOV, position, near, far } = cameraConfig;
 export default function MainCamera({ isActive = true }) {
   const cameraRef = useRef();
 
-  // Ensure camera always looks at target
-  useEffect(() => {
-    const camera = cameraRef.current;
-    if (camera) {
-      camera.lookAt(
-        camera.position.clone().add(new THREE.Vector3(...lookAtDirection))
-      );
-      camera.updateMatrixWorld();
-    }
-  }, []);
-
   return (
     <PerspectiveCamera
       ref={cameraRef}
@@ -31,6 +20,10 @@ export default function MainCamera({ isActive = true }) {
       near={near}
       far={far + 7}
       zoom={1}
+      onUpdate={(camera) => {
+        const dir = new THREE.Vector3(...lookAtDirection).normalize();
+        camera.lookAt(camera.position.clone().add(dir));
+      }}
     >
       {!isActive && <Helper type={CameraHelper} />}
     </PerspectiveCamera>

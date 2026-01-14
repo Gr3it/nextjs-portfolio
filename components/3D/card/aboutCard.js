@@ -1,35 +1,19 @@
 import fontMap from "@/components/fontMap";
-import { Billboard, Text } from "@react-three/drei";
-import React, { useState } from "react";
+import { Text } from "@react-three/drei";
+import React from "react";
 
-import { SpacePiratesPreview } from "@/models/projectPreviews/SpacePiratesPreview";
-import { SnipingBotPreview } from "@/models/projectPreviews/SnipingBotPreview";
-import { EventToolPreview } from "@/models/projectPreviews/EventToolPreview";
-import { FlynetPreview } from "@/models/projectPreviews/FlynetPreview";
-import { HotelMeanoPreview } from "@/models/projectPreviews/HotelMeanoPreview";
-import { MetaEmpirePreview } from "@/models/projectPreviews/MetaEmpirePreview";
-import { SmartParkingAppPreview } from "@/models/projectPreviews/SmartParkingAppPreview";
-import { CryptoPriceTrackerPreview } from "@/models/projectPreviews/CryptoPriceTrackerPreview";
-import { ColorScreenTestPreview } from "@/models/projectPreviews/ColorScreenTestPreview";
-import { PlanItPreview } from "@/models/projectPreviews/PlanItPreview";
-import { WalletTrackerPreview } from "@/models/projectPreviews/WalletTrackerPreview";
-import { PortfolioPreview } from "@/models/projectPreviews/PortfolioPreview";
 import { Minecraft } from "@/models/aboutCards/Minecraft";
+import { Blockchain } from "@/models/aboutCards/Blockchain";
+import { Games } from "@/models/aboutCards/Games";
+import { Design } from "@/models/aboutCards/Design";
+import Coding from "@/models/aboutCards/Coding";
 
 const PROJECT_COMPONENTS = {
-  SpacePiratesPreview,
-  SnipingBotPreview,
-  EventToolPreview,
-  FlynetPreview,
-  HotelMeanoPreview,
-  MetaEmpirePreview,
-  SmartParkingAppPreview,
-  CryptoPriceTrackerPreview,
-  ColorScreenTestPreview,
-  PlanItPreview,
-  WalletTrackerPreview,
-  PortfolioPreview,
   Minecraft,
+  Blockchain,
+  Games,
+  Design,
+  Coding,
 };
 
 function getCardComponent(type) {
@@ -42,12 +26,14 @@ export default function AboutCard({ card }) {
     <group position={card.position}>
       <mesh position={[9, 0.001, 9]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[18, 18]} />
-        <meshBasicMaterial transparent opacity={0} color={"hotpink"} />
+        <meshBasicMaterial transparent opacity={1} color={"hotpink"} />
       </mesh>
 
-      <group position={[9, 0, 4]}>{getCardComponent(card?.component)}</group>
+      <group position={[9, 0, card?.main ? 3 : 4.5]}>
+        {getCardComponent(card?.component)}
+      </group>
 
-      <group position={[1, 0.01, 6]}>
+      <group position={[1, 0.01, card?.main ? 6 : 9]}>
         <Text
           position={[8, 0, 1.75]}
           anchorX={"center"}
@@ -65,7 +51,7 @@ export default function AboutCard({ card }) {
           anchorX={"left"}
           anchorY={"top"}
           rotation={[-1.5707963267948966, 0, 0]}
-          fontSize={0.75}
+          fontSize={0.6}
           maxWidth={16}
           font={fontMap[400]}
         >

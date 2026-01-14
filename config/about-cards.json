@@ -3,30 +3,31 @@
     "position": [7, 0, 354],
     "title": "About Me",
     "description": "I am a bachelor's student based in Trento, Italy. While following an IT study formation, I am also a passionate in Blockchain Development, Web Development and UI/UX design. I have long been interested in the field of computer science, for instance by participating in a robotics competition.\n\nFurthermore, I am passionate about marketing and advertising, personal finance and investment, pc hardware, and cryptocurrency. In my free time, I enjoy reading books and sometimes playing video games with friends.",
-    "component": "Minecraft"
+    "component": "Minecraft",
+    "main": true
   },
   {
     "position": [-25, 0, 382],
-    "title": "Crypto",
+    "title": "Blockchain",
     "description": "In recent times I got more and more interested in cryptocurrency. I studied the characteristics of Defi and Cefi and, more specifically, the functioning and code behind smart contracts. With the expertise gained, I developed Web Applications that interact with Blockchains.",
-    "component": "SpacePiratesPreview"
+    "component": "Blockchain"
   },
   {
     "position": [7, 0, 410],
     "title": "Coding",
     "description": "I am passionate about learning new programming languages, how they work, their diversity and strengths. My interest expanded to gaining basic knowledge in Machine Learning and Data Science.",
-    "component": "PortfolioPreview"
+    "component": "Coding"
   },
   {
     "position": [-25, 0, 438],
     "title": "Design",
     "description": "In recent years I became more and more interested in the world of design. I learned how to use Photoshop and Illustrator while applying the skills learned in projects and the creation of this website. I additionally followed courses in logo and illustration creation and UI & UX Design.",
-    "component": "SpacePiratesPreview"
+    "component": "Design"
   },
   {
     "position": [7, 0, 466],
     "title": "Gaming",
     "description": "In my free time, I enjoy playing collaborative computer games. In particular, playing puzzles which require the coordination and mutual effort of six players to reach the goal. I have been often involved in the creation of strategies and management of the rest of my team.",
-    "component": "SpacePiratesPreview"
+    "component": "Games"
   }
 ]

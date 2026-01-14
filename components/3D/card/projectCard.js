@@ -14,6 +14,7 @@ import { ColorScreenTestPreview } from "@/models/projectPreviews/ColorScreenTest
 import { PlanItPreview } from "@/models/projectPreviews/PlanItPreview";
 import { WalletTrackerPreview } from "@/models/projectPreviews/WalletTrackerPreview";
 import { PortfolioPreview } from "@/models/projectPreviews/PortfolioPreview";
+import { usePointerHover } from "@/lib/usePointerHover";
 
 const PROJECT_COMPONENTS = {
   SpacePiratesPreview,
@@ -35,18 +36,8 @@ function getProjectComponent(type, options) {
   return Component ? <Component {...options} /> : null;
 }
 
-export default function ProjectCard({ project, children }) {
-  const [hover, setHover] = useState(false);
-
-  const handlePointerOver = () => {
-    setHover(true);
-    document.body.style.cursor = "pointer";
-  };
-
-  const handlePointerOut = () => {
-    setHover(false);
-    document.body.style.cursor = "auto";
-  };
+export default function ProjectCard({ project }) {
+  const { hover, handlePointerOver, handlePointerOut } = usePointerHover();
 
   return (
     <group

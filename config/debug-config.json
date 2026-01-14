@@ -6,6 +6,5 @@
   "hideVehicle": false,
   "vehiclePathEditor": false,
   "showVehicleSafeZone": false,
-  "instantVehicleMovement": false,
-  "enableSceneReporter": true
+  "instantVehicleMovement": false
 }

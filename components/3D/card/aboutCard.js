@@ -26,7 +26,7 @@ export default function AboutCard({ card }) {
     <group position={card.position}>
       <mesh position={[9, 0.001, 9]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[18, 18]} />
-        <meshBasicMaterial transparent opacity={1} color={"hotpink"} />
+        <meshBasicMaterial transparent opacity={0} color={"hotpink"} />
       </mesh>
 
       <group position={[9, 0, card?.main ? 3 : 4.5]}>

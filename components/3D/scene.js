@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { Text } from "@react-three/drei";
+import { useSnapshot } from "valtio";
 
 import { GridOverlay } from "./helpers/gridHelper";
 
@@ -8,7 +9,7 @@ import Flags from "./flag/flags";
 import ProjectCard from "./card/projectCard";
 import fontMap from "../fontMap";
 
-import debugConfig from "@/config/debug-config.json";
+import { debugStore } from "@/valatio/debugStorage";
 import worldConfig from "@/config/world-config.json";
 import textConfig from "@/config/text-config.json";
 import projectCards from "@/config/project-cards.json";
@@ -19,10 +20,8 @@ import World from "@/models/World";
 import FooterCard from "./card/footerCard";
 import AboutCard from "./card/aboutCard";
 
-const { showGrid } = debugConfig;
 const { height } = worldConfig;
 
-// Memoized text components to prevent unnecessary re-renders
 const TextElements = React.memo(() => {
   const textElements = useMemo(
     () =>
@@ -42,7 +41,7 @@ const TextElements = React.memo(() => {
           {textItem.content}
         </Text>
       )),
-    [] // Empty dependency array since textConfig is imported
+    [],
   );
 
   return <>{textElements}</>;
@@ -50,9 +49,10 @@ const TextElements = React.memo(() => {
 
 TextElements.displayName = "TextElements";
 
-// Separate grid component for better organization
-const ConditionalGrid = React.memo(() => {
-  if (!showGrid) return null;
+const ConditionalGrid = () => {
+  const snap = useSnapshot(debugStore);
+
+  if (!snap.showGrid) return null;
 
   return (
     <GridOverlay
@@ -61,13 +61,8 @@ const ConditionalGrid = React.memo(() => {
       divisions={height / 2}
     />
   );
-});
+};
 
-ConditionalGrid.displayName = "ConditionalGrid";
-
-// Main scroll content component with performance optimizations
-
-// Main scene component with better organization
 export default function Scene() {
   return (
     <>

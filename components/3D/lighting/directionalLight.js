@@ -1,8 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { CameraHelper } from "three";
 import { Helper } from "@react-three/drei";
+import { useSnapshot } from "valtio";
 
-// Default shadow camera configuration
+import { lightsStore } from "@/valatio/lightsStorage";
+import { debugStore } from "@/valatio/debugStorage";
+
 const DEFAULT_SHADOW_CONFIG = {
   mapSize: { width: 4096, height: 4096 },
   camera: {
@@ -18,17 +21,16 @@ const DEFAULT_SHADOW_CONFIG = {
 };
 
 export default function DirectionalLight({
-  showHelper = false,
-  position = [-15, 30, 35],
   targetPosition = [0, 0, 20],
-  color = "#ffffff",
-  intensity = 1.5,
   shadowConfig = DEFAULT_SHADOW_CONFIG,
 }) {
   const lightRef = useRef();
   const targetRef = useRef();
 
-  // Set up light target
+  // Snapshot dei due store
+  const lightSnap = useSnapshot(lightsStore);
+  const debugSnap = useSnapshot(debugStore);
+
   useEffect(() => {
     const light = lightRef.current;
     const target = targetRef.current;
@@ -43,15 +45,14 @@ export default function DirectionalLight({
     <>
       <directionalLight
         ref={lightRef}
-        position={position}
-        color={color}
-        intensity={intensity}
-        castShadow
+        position={lightSnap.directional.position}
+        color={lightSnap.directional.color}
+        intensity={lightSnap.directional.intensity}
+        castShadow={lightSnap.directional.castShadow}
         shadow-mapSize-width={shadowConfig.mapSize.width}
         shadow-mapSize-height={shadowConfig.mapSize.height}
         shadow-bias={shadowConfig.bias}
         shadow-normalBias={shadowConfig.normalBias}
-        target={targetRef}
       >
         <orthographicCamera
           attach="shadow-camera"
@@ -62,7 +63,7 @@ export default function DirectionalLight({
           near={shadowConfig.camera.near}
           far={shadowConfig.camera.far}
         >
-          {showHelper && <Helper type={CameraHelper} />}
+          {debugSnap.showLightHelper && <Helper type={CameraHelper} />}
         </orthographicCamera>
       </directionalLight>
       <object3D ref={targetRef} position={targetPosition} />

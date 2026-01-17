@@ -57,14 +57,15 @@ body {
 }
 
 .code {
-  width: 29rem;
-  height: 15.2rem;
-  padding: 8px;
+  width: 58rem;
+  height: 31rem;
+  padding: 16px;
   font-family: "JetBrains Mono", monospace;
-  font-size: 10px;
+  font-size: 20px;
   line-height: 1.5;
   color: #d4d4d4;
   white-space: pre;
+  user-select: none;
 }
 
 /* Syntax */
@@ -98,8 +99,6 @@ body {
   border: none;
   border-bottom: 0.5px solid #555;
   outline: none;
-  padding: 0 1px;
-
   text-align: center;
 }
 

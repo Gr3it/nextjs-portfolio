@@ -7,14 +7,14 @@ import React, {
 } from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
+import { useSnapshot } from "valtio";
 
 import VehicleRenderer from "./vehicleRenderer";
 import PointEditor from "./pointEditor";
 
+import { debugStore } from "@/valatio/debugStorage";
 import worldConfig from "@/config/world-config.json";
-import debugConfig from "@/config/debug-config.json";
 
-const { hideVehicle } = debugConfig;
 const { height: worldHeight } = worldConfig;
 
 const ARC_SEGMENTS = 1000;
@@ -27,13 +27,14 @@ export default function CurveEditor({
   type,
   id,
 }) {
+  const snap = useSnapshot(debugStore);
+
   const pathCurveRef = useRef(curve);
   const lineGeometryRef = useRef(null);
   const tempPoint = useRef(new THREE.Vector3());
   const needsUpdate = useRef(false);
   const [selectedPoint, setSelectedPoint] = useState(null);
 
-  // Update curve reference when prop changes
   useEffect(() => {
     pathCurveRef.current = curve;
   }, [curve]);
@@ -56,7 +57,7 @@ export default function CurveEditor({
     }
 
     positionAttribute.needsUpdate = true;
-    needsUpdate.current = false; // Reset flag after update
+    needsUpdate.current = false;
   }, []);
 
   useFrame(() => {
@@ -71,7 +72,6 @@ export default function CurveEditor({
     const positionAttribute = new THREE.BufferAttribute(positions, 3);
     geometry.setAttribute("position", positionAttribute);
 
-    // Initialize line geometry with curve points
     const point = new THREE.Vector3();
     for (let i = 0; i < ARC_SEGMENTS; i++) {
       const t = i / (ARC_SEGMENTS - 1);
@@ -86,7 +86,6 @@ export default function CurveEditor({
     setSelectedPoint(index);
   }, []);
 
-  // Handle ESC key to deselect
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -104,12 +103,12 @@ export default function CurveEditor({
         console.log(
           "🚗 Exported curve points:\n",
           JSON.stringify(
-            pathCurveRef.current.points.map(([x, y, z]) => [
-              parseFloat(x.toFixed(1)),
-              parseFloat(y.toFixed(1)),
-              parseFloat(z.toFixed(1)),
-            ])
-          )
+            pathCurveRef.current.points.map((p) => [
+              parseFloat(p.x.toFixed(1)),
+              parseFloat(p.y.toFixed(1)),
+              parseFloat(p.z.toFixed(1)),
+            ]),
+          ),
         );
       }
     };
@@ -122,20 +121,17 @@ export default function CurveEditor({
 
     let newPoint;
     if (index >= points.length - 1) {
-      // If it's the last point, extend the curve forward
       const lastPoint = points[points.length - 1];
       const secondLastPoint = points[points.length - 2];
 
-      // Calculate direction vector and extend
       const direction = new THREE.Vector3()
         .subVectors(lastPoint, secondLastPoint)
         .normalize();
 
       newPoint = new THREE.Vector3()
         .copy(lastPoint)
-        .add(direction.multiplyScalar(2)); // Extend by 2 units
+        .add(direction.multiplyScalar(2));
     } else {
-      // Calculate midpoint between current point and next point
       const currentPoint = points[index];
       const nextPoint = points[index + 1];
       newPoint = new THREE.Vector3()
@@ -143,25 +139,17 @@ export default function CurveEditor({
         .multiplyScalar(0.5);
     }
 
-    // Insert new point after current index
     points.splice(index + 1, 0, newPoint);
 
-    // Update selected point to the newly created point
     setSelectedPoint(index + 1);
     needsUpdate.current = true;
   }, []);
 
   const removePoint = useCallback((index) => {
     const points = pathCurveRef.current.points;
-
-    // Ensure minimum of 2 points
     if (points.length <= 2) return;
-
-    // Remove the point
     points.splice(index, 1);
-
     setSelectedPoint(null);
-
     needsUpdate.current = true;
   }, []);
 
@@ -172,7 +160,6 @@ export default function CurveEditor({
 
   return (
     <>
-      {/* Curve visualization */}
       <line
         ref={lineGeometryRef}
         position={[0, LINE_Y_OFFSET, 0]}
@@ -181,10 +168,9 @@ export default function CurveEditor({
         <lineBasicMaterial color="white" />
       </line>
 
-      {/* Point editors */}
       {curvePoints.map((point, index) => (
         <PointEditor
-          key={`point-${point.x}_${point.y}_${point.z}`}
+          key={`point-${index}-${point.x}_${point.z}`}
           position={point}
           selected={selectedPoint === index}
           onClick={() => handlePointSelect(index)}
@@ -194,8 +180,7 @@ export default function CurveEditor({
         />
       ))}
 
-      {/* Vehicle renderer (conditionally rendered) */}
-      {!hideVehicle && (
+      {!snap.hideVehicle && (
         <VehicleRenderer
           key={`vehicle-${id}`}
           curve={curve}

@@ -4,7 +4,7 @@ import { useGLTF, useAnimations, Html } from "@react-three/drei";
 export function Bee(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "/models/aboutCards/minecraft/Bee-transformed.glb"
+    "/models/aboutCards/minecraft/Bee-transformed.glb",
   );
   const { actions } = useAnimations(animations, group);
 
@@ -47,7 +47,7 @@ export function Bee(props) {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            gap: "6px",
+            gap: "10px",
             pointerEvents: "auto",
             userSelect: "none",
           }}

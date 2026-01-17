@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useSnapshot } from "valtio";
 
 import Navbar from "@/components/ui/navigation/navbar";
 import CanvasWrapper from "@/components/canvasWrapper";
@@ -9,19 +10,20 @@ import VehicleSafeZone from "@/components/ui/debug/vehicleSafeZone";
 
 import worldConfig from "@/config/world-config.json";
 import cameraConfig from "@/config/camera-config.json";
-import debugConfig from "@/config/debug-config.json";
+import { debugStore } from "@/valatio/debugStorage";
 
 const { height: worldHeight } = worldConfig;
 const { frustumHeightOnPlane } = cameraConfig;
-const { showVehicleSafeZone } = debugConfig;
 
 export default function World() {
+  const snap = useSnapshot(debugStore);
+
   return (
     <>
       <Navbar />
       <CanvasWrapper />
       <ScrollControlsProxy pages={worldHeight / frustumHeightOnPlane} />
-      {showVehicleSafeZone && <VehicleSafeZone />}
+      {snap.showVehicleSafeZone && <VehicleSafeZone />}
     </>
   );
 }

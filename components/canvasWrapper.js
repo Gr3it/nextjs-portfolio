@@ -2,13 +2,16 @@
 
 import React, { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
+import { useSnapshot } from "valtio";
 
 import { useFrame } from "@react-three/fiber";
 import MainCamera from "./3D/cameras/mainCamera";
 import SupportCamera from "./3D/cameras/supportCamera";
 import Scene from "./3D/scene";
 
-import debugConfig from "@/config/debug-config.json";
+import { debugStore } from "@/valatio/debugStorage";
+import { lightsStore } from "@/valatio/lightsStorage";
+
 import { Perf } from "r3f-perf";
 import { Stats } from "@react-three/drei";
 import DirectionalLight from "./3D/lighting/directionalLight";
@@ -23,18 +26,10 @@ import cameraConfig from "@/config/camera-config.json";
 const { height } = worldConfig;
 const { frustumHeightOnPlane } = cameraConfig;
 
-// Memoize the calculation function to avoid recreating it
 const getSceneZOffset = (offset) => offset * (height - frustumHeightOnPlane);
 
-// Extract constants for better readability
-const AMBIENT_LIGHT_COLOR = "#d4e3fc";
-const AMBIENT_LIGHT_INTENSITY = 1.25;
-
-const { showLightHelper, showStats, showSupportCamera } = debugConfig;
-
-// Debug controls component for better separation of concerns
-function DebugControls({ useSupportCamera, onToggleCamera }) {
-  if (!showSupportCamera) return null;
+function DebugControls({ useSupportCamera, onToggleCamera, visible }) {
+  if (!visible) return null;
 
   return (
     <div className="absolute top-4 right-4 z-10 space-y-2">
@@ -67,6 +62,8 @@ function ScrollContent({ children }) {
 
 export default function CanvasWrapper() {
   const [useSupportCamera, setUseSupportCamera] = useState(false);
+  const debugSnap = useSnapshot(debugStore);
+  const lightsSnap = useSnapshot(lightsStore);
 
   const handleCameraToggle = () => setUseSupportCamera((prev) => !prev);
 
@@ -75,6 +72,7 @@ export default function CanvasWrapper() {
       <DebugControls
         useSupportCamera={useSupportCamera}
         onToggleCamera={handleCameraToggle}
+        visible={debugSnap.showSupportCamera}
       />
 
       <Canvas shadows>
@@ -82,17 +80,16 @@ export default function CanvasWrapper() {
           <ScrollContent>
             <MainCamera isActive={!useSupportCamera} />
 
-            {/* Lighting setup */}
             <ambientLight
-              color={AMBIENT_LIGHT_COLOR}
-              intensity={AMBIENT_LIGHT_INTENSITY}
+              color={lightsSnap.ambient.color}
+              intensity={lightsSnap.ambient.intensity}
             />
-            <DirectionalLight showHelper={showLightHelper} />
+            <DirectionalLight />
           </ScrollContent>
 
           <SupportCamera isActive={useSupportCamera} />
-          {/* Debug stats - conditionally rendered */}
-          {showStats && (
+
+          {debugSnap.showStats && (
             <>
               <Stats />
               <Perf position="bottom-right" />

@@ -35,7 +35,6 @@ export function Bee(props) {
         center
         distanceFactor={10}
         transform
-        occlude
       >
         <div
           style={{

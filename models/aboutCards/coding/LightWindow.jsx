@@ -3,11 +3,9 @@ import { Window } from "./Window";
 import addSpace from "@/lib/addSpace";
 import ControlledInput from "./ControlledInput";
 
-import { useSnapshot } from "valtio";
-import { lightsStore, resetLightsStore } from "@/valatio/lightsStorage";
+import { lightsStore, resetLightsStore } from "@/stores/lightsStorage";
 
 export default function LightsWindow(props) {
-  const snap = useSnapshot(lightsStore);
   const [version, setVersion] = useState(0);
 
   const resetAll = () => {
@@ -17,7 +15,12 @@ export default function LightsWindow(props) {
 
   return (
     <group {...props} dispose={null}>
-      <Window file={"Lights.jsx"} position={[3, 6, 4]} reset={resetAll}>
+      <Window
+        file={"Lights.jsx"}
+        position={[3, 6, 4]}
+        reset={resetAll}
+        isFocused={props.isFocused}
+      >
         <pre className="code">
           <span className="kw">import</span> <span className="id">React</span>{" "}
           <span className="kw">from</span> <span className="str">"react"</span>;

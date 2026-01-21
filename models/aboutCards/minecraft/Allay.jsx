@@ -7,7 +7,7 @@ export function Allay(props) {
   const [dragging, setDragging] = useState(false);
 
   const { scene, animations } = useGLTF(
-    "/models/aboutCards/minecraft/Allay-transformed.glb"
+    "/models/aboutCards/minecraft/Allay-transformed.glb",
   );
   const { actions } = useAnimations(animations, group);
 
@@ -46,7 +46,6 @@ export function Allay(props) {
           scale={[0.5, 0.5, 0.5]}
           rotation={[0, -Math.PI / 6, 0]}
         />
-        {/* Icona drag */}
         {!dragging && (
           <Html center position={[0.2, -0.2, 0]}>
             <svg

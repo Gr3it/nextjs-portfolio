@@ -21,7 +21,7 @@ export function Tree(props) {
   return (
     /* Spostata la posizione originale del modello [6, 2, -3] qui sul genitore */
     <group {...props} position={[6, 2, -3]} dispose={null}>
-      <Html position={[0.5, 7, 0]} center distanceFactor={10} transform occlude>
+      <Html position={[0.5, 7, 0]} center distanceFactor={10} transform>
         <div
           style={{
             padding: "8px 12px",

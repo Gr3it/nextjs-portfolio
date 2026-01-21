@@ -3,12 +3,10 @@ import { useGLTF, Html } from "@react-three/drei";
 import { HexColorPicker } from "react-colorful";
 import { proxy, useSnapshot } from "valtio";
 
-// --- Stato condiviso ---
 const sheepState = proxy({
   fur: "#ffffff",
 });
 
-// --- Component Picker separato ---
 function SheepPicker() {
   const snap = useSnapshot(sheepState);
   return (
@@ -25,11 +23,10 @@ function SheepPicker() {
   );
 }
 
-// --- Componente Modello 3D separato ---
 function SheepModel() {
   const snap = useSnapshot(sheepState);
   const { nodes, materials } = useGLTF(
-    "/models/aboutCards/minecraft/Sheep-transformed.glb"
+    "/models/aboutCards/minecraft/Sheep-transformed.glb",
   );
 
   return (
@@ -55,16 +52,13 @@ function SheepModel() {
   );
 }
 
-// --- Componente principale che unisce Html + Model ---
 export function Sheep(props) {
   return (
     <group position={[2.25, 1, 0]}>
-      {/* Html con picker */}
-      <Html position={[0, 4, -1]} distanceFactor={6} center transform occlude>
+      <Html position={[0, 4, -1]} distanceFactor={6} center transform>
         <SheepPicker />
       </Html>
 
-      {/* Modello 3D separato */}
       <SheepModel {...props} />
     </group>
   );

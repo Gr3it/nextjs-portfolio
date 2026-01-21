@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.5.3 .\Design.glb --transform -o C:\Users\emanu\next-portf
 Files: .\Design.glb [1.01MB] > C:\Users\emanu\next-portfolio\public\Design-transformed.glb [121.78KB] (88%)
 */
 
-import React from "react";
+import React, { useMemo } from "react";
 import { GizmoViewport, Grid, useGLTF } from "@react-three/drei";
 import { Tree } from "./minecraft/Tree";
 import { Model } from "./minecraft/model";
@@ -15,9 +15,14 @@ import { enableShadows } from "@/lib/enableShadows";
 
 export function Design(props) {
   const { scene } = useGLTF("/models/aboutCards/Design-transformed.glb");
+
+  const optimizedScene = useMemo(() => {
+    return enableShadows(scene.clone());
+  }, [scene]);
   return (
     <group {...props} dispose={null}>
-      <primitive object={enableShadows(scene)} />
+      <primitive object={optimizedScene} />
+
       <group scale={[0.9, 0.9, 0.9]}>
         <GizmoViewport
           position={[9, 7, 4]}

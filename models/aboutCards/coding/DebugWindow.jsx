@@ -3,13 +3,9 @@ import { Window } from "./Window";
 import addSpace from "@/lib/addSpace";
 import ControlledInput from "./ControlledInput";
 
-import { useSnapshot } from "valtio";
-import { debugStore, resetDebugStore } from "@/valatio/debugStorage";
+import { debugStore, resetDebugStore } from "@/stores/debugStorage";
 
 export default function DebugWindow(props) {
-  // snap serve a React per sapere QUANDO ri-renderizzare la UI
-  // se i valori cambiano dall'esterno
-  const snap = useSnapshot(debugStore);
   const [version, setVersion] = useState(0);
 
   const handleReset = () => {
@@ -23,129 +19,132 @@ export default function DebugWindow(props) {
         file={"Debug-config.json"}
         position={[-3, 6, 2]}
         reset={handleReset}
+        isFocused={props.isFocused}
       >
-        <pre className="code">
-          <span className="sym">{"{"}</span>
-          {"\n"}
+        {props.hide || (
+          <pre className="code">
+            <span className="sym">{"{"}</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="cmt">// Visual debug</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="cmt">// Visual debug</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="key">"showGrid"</span>
-          <span className="sym">: </span>
-          <ControlledInput
-            target={debugStore} // Passiamo il proxy
-            prop="showGrid" // La chiave da mutare
-            type="boolean"
-            className="value boolean"
-            resetKey={version}
-          />
-          <span className="sym">,</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="key">"showGrid"</span>
+            <span className="sym">: </span>
+            <ControlledInput
+              target={debugStore}
+              prop="showGrid"
+              type="boolean"
+              className="value boolean"
+              resetKey={version}
+            />
+            <span className="sym">,</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="key">"showStats"</span>
-          <span className="sym">: </span>
-          <ControlledInput
-            target={debugStore}
-            prop="showStats"
-            type="boolean"
-            className="value boolean"
-            resetKey={version}
-          />
-          <span className="sym">,</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="key">"showStats"</span>
+            <span className="sym">: </span>
+            <ControlledInput
+              target={debugStore}
+              prop="showStats"
+              type="boolean"
+              className="value boolean"
+              resetKey={version}
+            />
+            <span className="sym">,</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="key">"showLightHelper"</span>
-          <span className="sym">: </span>
-          <ControlledInput
-            target={debugStore}
-            prop="showLightHelper"
-            type="boolean"
-            className="value boolean"
-            resetKey={version}
-          />
-          <span className="sym">,</span>
-          {"\n\n"}
+            {addSpace(1)}
+            <span className="key">"showLightHelper"</span>
+            <span className="sym">: </span>
+            <ControlledInput
+              target={debugStore}
+              prop="showLightHelper"
+              type="boolean"
+              className="value boolean"
+              resetKey={version}
+            />
+            <span className="sym">,</span>
+            {"\n\n"}
 
-          {addSpace(1)}
-          <span className="cmt">// Camera / support</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="cmt">// Camera / support</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="key">"showSupportCamera"</span>
-          <span className="sym">: </span>
-          <ControlledInput
-            target={debugStore}
-            prop="showSupportCamera"
-            type="boolean"
-            className="value boolean"
-            resetKey={version}
-          />
-          <span className="sym">,</span>
-          {"\n\n"}
+            {addSpace(1)}
+            <span className="key">"showSupportCamera"</span>
+            <span className="sym">: </span>
+            <ControlledInput
+              target={debugStore}
+              prop="showSupportCamera"
+              type="boolean"
+              className="value boolean"
+              resetKey={version}
+            />
+            <span className="sym">,</span>
+            {"\n\n"}
 
-          {addSpace(1)}
-          <span className="cmt">// Vehicle</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="cmt">// Vehicle</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="key">"enablePathEditor"</span>
-          <span className="sym">: </span>
-          <ControlledInput
-            target={debugStore}
-            prop="enablePathEditor"
-            type="boolean"
-            className="value boolean"
-            resetKey={version}
-          />
-          <span className="sym">,</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="key">"enablePathEditor"</span>
+            <span className="sym">: </span>
+            <ControlledInput
+              target={debugStore}
+              prop="enablePathEditor"
+              type="boolean"
+              className="value boolean"
+              resetKey={version}
+            />
+            <span className="sym">,</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="key">"disableVehicleSmoothing"</span>
-          <span className="sym">: </span>
-          <ControlledInput
-            target={debugStore}
-            prop="disableVehicleSmoothing"
-            type="boolean"
-            className="value boolean"
-            resetKey={version}
-          />
-          <span className="sym">,</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="key">"disableVehicleSmoothing"</span>
+            <span className="sym">: </span>
+            <ControlledInput
+              target={debugStore}
+              prop="disableVehicleSmoothing"
+              type="boolean"
+              className="value boolean"
+              resetKey={version}
+            />
+            <span className="sym">,</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="key">"showVehicleSafeZone"</span>
-          <span className="sym">: </span>
-          <ControlledInput
-            target={debugStore}
-            prop="showVehicleSafeZone"
-            type="boolean"
-            className="value boolean"
-            resetKey={version}
-          />
-          <span className="sym">,</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="key">"showVehicleSafeZone"</span>
+            <span className="sym">: </span>
+            <ControlledInput
+              target={debugStore}
+              prop="showVehicleSafeZone"
+              type="boolean"
+              className="value boolean"
+              resetKey={version}
+            />
+            <span className="sym">,</span>
+            {"\n"}
 
-          {addSpace(1)}
-          <span className="key">"hideVehicle"</span>
-          <span className="sym">: </span>
-          <ControlledInput
-            target={debugStore}
-            prop="hideVehicle"
-            type="boolean"
-            className="value boolean"
-            resetKey={version}
-          />
-          <span className="cmt"> // Only in editor</span>
-          {"\n"}
+            {addSpace(1)}
+            <span className="key">"hideVehicle"</span>
+            <span className="sym">: </span>
+            <ControlledInput
+              target={debugStore}
+              prop="hideVehicle"
+              type="boolean"
+              className="value boolean"
+              resetKey={version}
+            />
+            <span className="cmt"> // Only in editor</span>
+            {"\n"}
 
-          <span className="sym">{"}"}</span>
-        </pre>
+            <span className="sym">{"}"}</span>
+          </pre>
+        )}
       </Window>
     </group>
   );

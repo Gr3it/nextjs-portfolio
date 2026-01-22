@@ -22,7 +22,7 @@ export default function Flags() {
   );
 
   const playCheckpointSound = () => {
-    const sound = new Audio("/sounds/checkpoint.wav");
+    //const sound = new Audio("/sounds/checkpoint.wav");
     //sound.play();
   };
 

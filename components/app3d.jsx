@@ -1,15 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Canvas } from "@react-three/fiber";
-import { useSnapshot } from "valtio";
-
-import { debugStore } from "@/stores/debugStorage";
 
 import ZoomControls from "./ui/hud/zoomControls";
 import Navbar from "./ui/hud/navbar";
 import CameraSwitchButton from "./ui/debug/cameraSwitchButton";
 import Scene from "./3D/scene";
+import { Preload } from "@react-three/drei";
 
 export default function App3d() {
   return (
@@ -20,6 +18,7 @@ export default function App3d() {
 
       <Canvas shadows>
         <Scene />
+        <Preload all />
       </Canvas>
     </div>
   );

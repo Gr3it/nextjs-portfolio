@@ -3,7 +3,7 @@ import { proxy } from "valtio";
 // Questo è l'oggetto reattivo accessibile ovunque
 export const debugStore = proxy({
   showGrid: false,
-  showStats: true,
+  showStats: false,
   showLightHelper: false,
   showSupportCamera: false,
   enablePathEditor: false,
@@ -17,7 +17,7 @@ export const resetDebugStore = () => {
     showGrid: false,
     showStats: false,
     showLightHelper: false,
-    showSupportCamera: true,
+    showSupportCamera: false,
     enablePathEditor: false,
     disableVehicleSmoothing: false,
     showVehicleSafeZone: false,

@@ -87,8 +87,8 @@ export default function SceneObjects() {
       <WorldFog
         topLeft={[-48, -16]}
         bottomRight={[48, 618]}
-        softness={10}
-        margin={40}
+        softness={5}
+        margin={10}
       />
     </>
   );

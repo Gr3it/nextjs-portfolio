@@ -59,12 +59,12 @@ export default function WorldFog({
     return {
       width: w,
       height: h,
-      center: [(minX + maxX) / 2, 0.01, (minZ + maxZ) / 2],
+      center: [(minX + maxX) / 2, 0.15, (minZ + maxZ) / 2],
     };
   }, [topLeft, bottomRight, margin]);
 
   return (
-    <mesh position={center} rotation={[-Math.PI / 2, 0, 0]} renderOrder={999}>
+    <mesh position={center} rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[width, height]} />
       <worldMaskMaterial
         uMin={
@@ -82,8 +82,6 @@ export default function WorldFog({
         uColor={new THREE.Color("white")}
         uEdgeSoftness={softness}
         transparent={true}
-        depthTest={false}
-        depthWrite={false}
       />
     </mesh>
   );

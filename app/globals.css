@@ -115,3 +115,26 @@ body {
 .value:focus {
   border-bottom-color: #ffd700;
 }
+
+@keyframes road {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes car-bounce {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -4px);
+  }
+}
+
+.animate-car-bounce {
+  animation: car-bounce 0.3s ease-in-out infinite;
+}

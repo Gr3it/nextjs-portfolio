@@ -19,6 +19,7 @@ import World from "@/models/World";
 import FooterCard from "./entities/cards/footerCard";
 import AboutCard from "./entities/cards/aboutCard";
 import VehicleManager from "./entities/vehicles/vehicleManager";
+import WorldFog from "./core/worldFog";
 
 const { height } = worldConfig;
 
@@ -83,6 +84,12 @@ export default function SceneObjects() {
       ))}
 
       <ConditionalGrid />
+      <WorldFog
+        topLeft={[-48, -16]}
+        bottomRight={[48, 618]}
+        softness={10}
+        margin={40}
+      />
     </>
   );
 }

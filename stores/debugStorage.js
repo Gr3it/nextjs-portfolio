@@ -5,7 +5,7 @@ export const debugStore = proxy({
   showGrid: false,
   showStats: false,
   showLightHelper: false,
-  showSupportCamera: true,
+  showSupportCamera: false,
   enablePathEditor: false,
   disableVehicleSmoothing: false,
   showVehicleSafeZone: false,

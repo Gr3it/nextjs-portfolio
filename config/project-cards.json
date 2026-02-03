@@ -2,10 +2,13 @@
   {
     "position": [7, 0, 52],
     "title": "Portfolio",
-    "description": "3D and creative personal portfolio presenting web and software projects with an immersive, interactive design.",
+    "description": "A 3D journey through code. Each section unfolds via unique vehicles, turning standard scrolling into an immersive exploration. High performance, game-inspired UX, zero friction.",
     "component": {
       "type": "PortfolioPreview"
-    }
+    },
+    "previewHeight": 9,
+    "previewImage": "/images/Portfolio/Home.png",
+    "link": "projects/portfolio"
   },
   {
     "position": [-25, 0, 76],
@@ -13,7 +16,9 @@
     "description": "A booking system built with HTML, CSS, JS, PHP, and MySQL, featuring room management and reservations.",
     "component": {
       "type": "SpacePiratesPreview"
-    }
+    },
+    "previewHeight": 11,
+    "link": "projects/space-pirates"
   },
   {
     "position": [7, 0, 100],
@@ -21,7 +26,9 @@
     "description": "Bot for Survivor.io auctions event providing a live P/L profile to assist players in sniping optimal prices.",
     "component": {
       "type": "SnipingBotPreview"
-    }
+    },
+    "previewHeight": 8,
+    "link": "projects/survivor-io-bot"
   },
   {
     "position": [-25, 0, 124],
@@ -29,14 +36,19 @@
     "description": "Website tool for Survivor.io events that calculates the optimal path for players to follow during in-game challenges.",
     "component": {
       "type": "EventToolPreview"
-    }
+    },
+    "previewHeight": 9,
+    "link": "projects/survivor-io-event"
   },
 
   {
     "position": [7, 0, 148],
     "title": "Crypto Price Tracker",
     "description": "Website tracking cryptocurrency prices in real-time and generating historical price graphs for analysis.",
-    "component": { "type": "CryptoPriceTrackerPreview" }
+    "component": { "type": "CryptoPriceTrackerPreview" },
+    "previewHeight": 10,
+    "previewImage": "/images/CryptoPriceTracker/BinanceCoin.png",
+    "link": "projects/crypto-price-tracker"
   },
   {
     "position": [-25, 0, 172],
@@ -44,7 +56,10 @@
     "description": "Mobile app allowing users to set the screen to preset or custom RGB colors for display testing and color analysis.",
     "component": {
       "type": "ColorScreenTestPreview"
-    }
+    },
+    "previewHeight": 7,
+    "previewImage": "/images/ColorScreentest/3Devices.jpg",
+    "link": "projects/color-screen-test"
   },
   {
     "position": [7, 0, 196],
@@ -52,7 +67,9 @@
     "description": "NFT crypto collection featuring Dutch auction mechanics, allowing dynamic pricing and engaging minting experience.",
     "component": {
       "type": "MetaEmpirePreview"
-    }
+    },
+    "previewHeight": 9,
+    "link": "projects/meta-empire"
   },
   {
     "position": [-25, 0, 220],
@@ -60,7 +77,9 @@
     "description": "Cross-chain wallet analyzer enabling users to track and review all holdings from a single wallet address.",
     "component": {
       "type": "WalletTrackerPreview"
-    }
+    },
+    "previewHeight": 10,
+    "link": "projects/wallet-tracker"
   },
   {
     "position": [7, 0, 244],
@@ -68,7 +87,9 @@
     "description": "University project: Calendar app that auto-schedules tasks with full features, focused on requirements analysis.",
     "component": {
       "type": "PlanItPreview"
-    }
+    },
+    "previewHeight": 5,
+    "link": "projects/plan-it"
   },
   {
     "position": [-25, 0, 268],
@@ -76,7 +97,9 @@
     "description": "University project: designed a parking app prototype with booking, occupancy tracking, and user feedback tools.",
     "component": {
       "type": "SmartParkingAppPreview"
-    }
+    },
+    "previewHeight": 4,
+    "link": "projects/smart-parking-app"
   },
   {
     "position": [7, 0, 292],
@@ -84,7 +107,10 @@
     "description": "High school project: built a hotel website with booking system, service pages, and network infrastructure redesign.",
     "component": {
       "type": "HotelMeanoPreview"
-    }
+    },
+    "previewHeight": 10,
+    "previewImage": "/images/HotelMeano/Home.jpg",
+    "link": "projects/hotel-meano"
   },
   {
     "position": [-25, 0, 316],
@@ -92,6 +118,9 @@
     "description": "High school project: designed an airport website with flight data, search features, and admin panel.",
     "component": {
       "type": "FlynetPreview"
-    }
+    },
+    "previewHeight": 7,
+    "previewImage": "/images/Flynet/Home.jpg",
+    "link": "projects/flynet"
   }
 ]

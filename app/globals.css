@@ -12,16 +12,11 @@
   --bg-contact: oklch(70.7% 0.165 254.624);
   --bg-footer: oklch(37.3% 0.034 259.733);
 
-  --perspective: calc(3 * 100vh);
-  --perspective-origin: 50% -200%;
-  --tilemap-width: 32;
-  --tile-size: clamp(
-    calc(100vw / var(--tilemap-width)),
-    calc(200vh / var(--tilemap-width)),
-    calc(150vw / var(--tilemap-width))
-  );
+  --accent-color: #000;
 
-  --card-height: 70px;
+  scrollbar-color: var(--accent-color) var(--background);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 @theme inline {
@@ -29,13 +24,6 @@
   --color-foreground: var(--foreground);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
- */
 body {
   background: var(--background);
   color: var(--foreground);

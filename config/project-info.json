@@ -1,0 +1,151 @@
+{
+  "portfolio": {
+    "links": [
+      {
+        "label": "3D World (Godot)",
+        "type": "github",
+        "url": "https://github.com/Gr3it/godot-portfolio-world"
+      },
+      {
+        "label": "Source Code",
+        "type": "github",
+        "url": "https://github.com/Gr3it/nextjs-portfolio"
+      }
+    ],
+    "keyColor": "#49AF8E"
+  },
+  "space-pirates": {
+    "links": [
+      {
+        "label": "Thesis Paper",
+        "type": "drive",
+        "url": "https://drive.google.com/file/d/10jup54dqeCXW8L_3bRwP2TIca3w8uNCJ/view?usp=sharing"
+      },
+      {
+        "label": "Game Design Document",
+        "type": "notion",
+        "url": "https://space-pirates-labs.notion.site/gdd-space-pirates"
+      },
+      {
+        "label": "Legacy Contracts",
+        "type": "github",
+        "url": "https://github.com/Gr3it/space-pirates-contracts"
+      }
+    ],
+    "keyColor": "#6467FD"
+  },
+  "survivor-io-bot": {
+    "links": [],
+    "keyColor": "#FEF20B"
+  },
+  "survivor-io-event": {
+    "links": [
+      {
+        "label": "View Site",
+        "type": "live",
+        "url": "https://snowsteps-toward-spring.netlify.app/"
+      }
+    ],
+    "keyColor": "#cd79e1"
+  },
+  "crypto-price-tracker": {
+    "links": [
+      {
+        "label": "Source Code",
+        "type": "github",
+        "url": "https://github.com/Gr3it/Crypto-Price-Tracker-Web"
+      },
+      {
+        "label": "View Site",
+        "type": "live",
+        "url": "https://crypto-price-tracker-site.netlify.app/"
+      }
+    ],
+    "keyColor": "#a9febc"
+  },
+  "color-screen-test": {
+    "links": [
+      {
+        "label": "Source Code",
+        "type": "github",
+        "url": "https://github.com/Gr3it/Color-Screentest"
+      }
+    ],
+    "keyColor": "#C0CBD0"
+  },
+  "meta-empire": {
+    "links": [
+      {
+        "label": "Source Code",
+        "type": "github",
+        "url": "https://github.com/Gr3it/Meta-Empire"
+      }
+    ],
+    "keyColor": "#C27E47"
+  },
+  "wallet-tracker": {
+    "links": [
+      {
+        "label": "Source Code",
+        "type": "github",
+        "url": "https://github.com/Gr3it/Defi-Tracker-Demo"
+      }
+    ],
+    "keyColor": "#6ae6b2"
+  },
+  "plan-it": {
+    "links": [
+      {
+        "label": "Technical Report",
+        "type": "drive",
+        "url": "https://github.com/Life-planner/Deliverables"
+      },
+      {
+        "label": "Source Code",
+        "type": "github",
+        "url": "https://github.com/Life-planner/Codice"
+      },
+      {
+        "label": "UI Prototype",
+        "type": "figma",
+        "url": "https://www.figma.com/proto/cO66hx25OizBABGtWp8XlT/Planify?node-id=25-82&t=VQ5lRDtrMgLgy1pQ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=25%3A82&show-proto-sidebar=1"
+      }
+    ],
+    "keyColor": "#8338EC"
+  },
+  "smart-parking-app": {
+    "links": [
+      {
+        "label": "Technical Report",
+        "type": "drive",
+        "url": "https://drive.google.com/file/d/1sKMXJNq3rHd1tBNwfYNm3AAMmygecOre/view?usp=sharing"
+      },
+      {
+        "label": "UI Prototype",
+        "type": "azure",
+        "url": "https://4ilm1t.axshare.com/"
+      }
+    ],
+    "keyColor": "#ce0e2d"
+  },
+  "hotel-meano": {
+    "links": [
+      {
+        "label": "Source Code",
+        "type": "github",
+        "url": "https://github.com/Gr3it/School-Elaborate"
+      }
+    ],
+    "keyColor": "#fd871f"
+  },
+  "flynet": {
+    "links": [
+      {
+        "label": "Source Code",
+        "type": "github",
+        "url": "https://github.com/Gr3it/Servlet-Flynet"
+      }
+    ],
+    "keyColor": "#bf2431"
+  }
+}

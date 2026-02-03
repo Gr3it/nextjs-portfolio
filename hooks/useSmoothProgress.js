@@ -23,8 +23,8 @@ export function useSmoothProgress() {
   }, [progress]);
 
   useEffect(() => {
-    if (progress === 100 && smoothProgress >= 99.9) {
-      const timeout = setTimeout(() => setIsLoading(false), 800);
+    if (progress === 100) {
+      const timeout = setTimeout(() => setIsLoading(false), 200); //mask browser saved scroll animation
       return () => clearTimeout(timeout);
     }
   }, [progress, smoothProgress]);

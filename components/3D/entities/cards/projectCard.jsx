@@ -1,6 +1,6 @@
 import fontMap from "@/components/fontMap";
-import { Billboard, Text } from "@react-three/drei";
-import React, { useState } from "react";
+import { Text } from "@react-three/drei";
+import React from "react";
 
 import { SpacePiratesPreview } from "@/models/projectPreviews/SpacePiratesPreview";
 import { SnipingBotPreview } from "@/models/projectPreviews/SnipingBotPreview";
@@ -15,6 +15,8 @@ import { PlanItPreview } from "@/models/projectPreviews/PlanItPreview";
 import { WalletTrackerPreview } from "@/models/projectPreviews/WalletTrackerPreview";
 import { PortfolioPreview } from "@/models/projectPreviews/PortfolioPreview";
 import { usePointerHover } from "@/hooks/usePointerHover";
+import { ProjectImagePreview } from "./projectImagePreview";
+import { useRouter } from "next/navigation";
 
 const PROJECT_COMPONENTS = {
   SpacePiratesPreview,
@@ -38,38 +40,34 @@ function getProjectComponent(type, options) {
 
 export default function ProjectCard({ project }) {
   const { hover, handlePointerOver, handlePointerOut } = usePointerHover();
+  const router = useRouter();
 
   return (
     <group
       position={project.position}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
+      onClick={() => {
+        router.push(project.link || "");
+      }}
     >
       <mesh position={[9, 0, 9]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[18, 18]} />
-        <meshBasicMaterial transparent opacity={0} />
+        <meshBasicMaterial transparent opacity={1} color={"hotpink"} />
       </mesh>
 
-      <group position={[9, 0, 7.5]}>
+      <group position={[9, 0, 5.5]}>
         {getProjectComponent(
           project?.component?.type,
           project?.component?.options,
         )}
       </group>
 
-      <group position={[9, 1, 0]} visible={hover}>
-        <Billboard follow={true} lockX={false} lockY={false} lockZ={false}>
-          <Text fontSize={1}>{"I'm a billboard"}</Text>
-        </Billboard>
-        <Billboard position={[0, 0, 0]} args={[10, 10]}>
-          <mesh>
-            <planeGeometry args={[10, 10]} />
-            <meshBasicMaterial color={"red"} />
-          </mesh>
-        </Billboard>
+      <group position={[9, project?.previewHeight || 8, 4.5]}>
+        <ProjectImagePreview images={project?.previewImage} hover={hover} />
       </group>
 
-      <group position={[1, 0.01, 12]}>
+      <group position={[1, 0.01, 10]}>
         <Text
           position={[0, 0, 1.75]}
           anchorX={"left"}
@@ -87,7 +85,7 @@ export default function ProjectCard({ project }) {
           anchorX={"left"}
           anchorY={"top"}
           rotation={[-1.5707963267948966, 0, 0]}
-          fontSize={0.75}
+          fontSize={0.7}
           maxWidth={16}
           font={fontMap[400]}
         >

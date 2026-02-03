@@ -20,6 +20,7 @@ import FooterCard from "./entities/cards/footerCard";
 import AboutCard from "./entities/cards/aboutCard";
 import VehicleManager from "./entities/vehicles/vehicleManager";
 import WorldFog from "./core/worldFog";
+import { RiggedCar } from "@/models/vehicles/RiggedCar";
 
 const { height } = worldConfig;
 

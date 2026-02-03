@@ -41,7 +41,7 @@ export default function MainCamera() {
       fov={FOV}
       position={position}
       near={near}
-      far={2 * far}
+      far={1.25 * far}
       zoom={zoom}
     >
       {!isActive && <Helper type={CameraHelper} />}

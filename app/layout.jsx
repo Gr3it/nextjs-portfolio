@@ -4,8 +4,8 @@ import { Poppins } from "next/font/google";
 // Configurazione del font
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
-  variable: "--font-poppins", // Opzionale: per usare una variabile CSS
+  weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
+  variable: "--font-poppins",
 });
 
 export const metadata = {

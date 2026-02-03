@@ -59,7 +59,7 @@ export default function WorldFog({
     return {
       width: w,
       height: h,
-      center: [(minX + maxX) / 2, 0.15, (minZ + maxZ) / 2],
+      center: [(minX + maxX) / 2, 0.0001, (minZ + maxZ) / 2],
     };
   }, [topLeft, bottomRight, margin]);
 

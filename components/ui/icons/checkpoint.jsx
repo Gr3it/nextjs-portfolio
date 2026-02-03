@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Checkpoint({ properties }) {
+export default function Checkpoint() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

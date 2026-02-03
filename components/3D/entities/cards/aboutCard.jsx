@@ -24,7 +24,7 @@ function getCardComponent(type) {
 export default function AboutCard({ card }) {
   return (
     <group position={card.position}>
-      <mesh position={[9, 0.001, 9]} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh position={[9, 0, 9]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[18, 18]} />
         <meshBasicMaterial transparent opacity={0} color={"hotpink"} />
       </mesh>
@@ -43,10 +43,12 @@ export default function AboutCard({ card }) {
           lineHeight={1.2}
           maxWidth={16}
           font={fontMap[600]}
+          frustumCulled={false}
         >
           {card.title}
         </Text>
         <Text
+          frustumCulled={false}
           position={[0, 0, 2]}
           anchorX={"left"}
           anchorY={"top"}

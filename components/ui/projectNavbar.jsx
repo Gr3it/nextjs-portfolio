@@ -65,7 +65,7 @@ export default function ProjectNavbar() {
           <p>Back</p>
         </Link>
 
-        {project.links?.map((link, index) => (
+        {project?.links?.map((link, index) => (
           <NavLink
             key={index}
             href={link.url}

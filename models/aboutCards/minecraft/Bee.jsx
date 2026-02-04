@@ -35,6 +35,7 @@ export function Bee(props) {
         center
         distanceFactor={10}
         transform
+        zIndexRange={[40, 0]}
       >
         <div
           style={{

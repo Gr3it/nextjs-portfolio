@@ -5,9 +5,9 @@ export default function Page() {
   return (
     <>
       <ProjectHero
-        title={"Hotel Meano"}
+        title={"Cripto Price Tracker"}
         description={
-          "Redefining hospitality through interactive booking and 3D visualization"
+          "Live crypto data visualization and interactive market charts"
         }
       />
     </>

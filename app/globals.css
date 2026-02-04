@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1f1f1f;
+  --foreground: #ffffff;
+  --grey: var(--color-zinc-500);
+  --borderColor: #ffffff1a;
+  --hoverBg: var(--color-zinc-800);
 
   --bg-home: oklch(70.7% 0.022 261.325);
   --bg-project-sec-1: oklch(87.2% 0.01 258.338);

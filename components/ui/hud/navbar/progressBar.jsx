@@ -73,11 +73,8 @@ export default function ProgressBar() {
   AttachCallbackToScrollEvent(handleScroll);
 
   return (
-    <div className="shadow-md bg-white/70 flex flex-col w-full h-full rounded-2xl p-2 select-none">
-      <div
-        className="w-full mt-6 rounded-lg h-6 border-2 border-neutral-700 px-4"
-        style={mainGradient}
-      >
+    <div className="shadow-md bg-zinc-800/80 flex flex-col w-full h-full rounded-2xl p-2 select-none">
+      <div className="w-full mt-6 rounded-lg h-6 px-4" style={mainGradient}>
         <div className="w-full relative h-full" style={gradientStyle}>
           {sections.map(({ start, text, type, textAlignment }) => (
             <ProgressBarObj

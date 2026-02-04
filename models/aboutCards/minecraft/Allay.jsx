@@ -47,7 +47,7 @@ export function Allay(props) {
           rotation={[0, -Math.PI / 6, 0]}
         />
         {!dragging && (
-          <Html center position={[0.2, -0.2, 0]}>
+          <Html center position={[0.2, -0.2, 0]} zIndexRange={[40, 0]}>
             <svg
               width="20"
               height="20"

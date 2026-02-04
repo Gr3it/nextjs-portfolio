@@ -19,9 +19,14 @@ export function Tree(props) {
   const [showWireframe, setShowWireframe] = useState(true);
 
   return (
-    /* Spostata la posizione originale del modello [6, 2, -3] qui sul genitore */
     <group {...props} position={[6, 2, -3]} dispose={null}>
-      <Html position={[0.5, 7, 0]} center distanceFactor={10} transform>
+      <Html
+        position={[0.5, 7, 0]}
+        center
+        distanceFactor={10}
+        transform
+        zIndexRange={[40, 0]}
+      >
         <div
           style={{
             padding: "8px 12px",
@@ -37,7 +42,6 @@ export function Tree(props) {
             userSelect: "none",
           }}
         >
-          {/* Checkbox stilizzata */}
           <input
             type="checkbox"
             checked={showWireframe}
@@ -55,7 +59,6 @@ export function Tree(props) {
         </div>
       </Html>
 
-      {/* Rimosso position/rotation da qui per non sommarli al genitore */}
       <group rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           castShadow

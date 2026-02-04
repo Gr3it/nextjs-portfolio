@@ -9,8 +9,8 @@ export default function ProjectFooter() {
   const [hover, setHover] = useState(false);
 
   return (
-    <footer className="w-full py-24 flex flex-col items-center justify-center border-t border-[#0000001a]">
-      <p className="text-zinc-400 font-light text-xl mb-4 tracking-widest uppercase">
+    <footer className="w-full py-24 flex flex-col items-center justify-center border-t border-[var(--borderColor)]">
+      <p className="text-[var(--grey)] font-light text-xl mb-4 tracking-widest uppercase">
         Enjoyed the journey?
       </p>
 
@@ -21,7 +21,7 @@ export default function ProjectFooter() {
           onMouseLeave={() => setHover(false)}
         >
           <h2
-            className={`text-6xl md:text-8xl font-bold tracking-tighter transition-all duration-500 ${hover ? "text-[var(--accent-color)]" : "text-zinc-900"}`}
+            className={`text-6xl md:text-8xl font-bold tracking-tighter transition-all duration-500 ${hover ? "text-[var(--accent-color)]" : ""}`}
           >
             See other projects
             <span className="text-[var(--accent-color)]">.</span>

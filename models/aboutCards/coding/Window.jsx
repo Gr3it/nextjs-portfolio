@@ -80,6 +80,7 @@ export function Window({
       </group>
 
       <Html
+        zIndexRange={[40, 0]}
         position={[-0.02, -0.43, 0.001]}
         distanceFactor={5}
         transform

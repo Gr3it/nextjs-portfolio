@@ -17,7 +17,7 @@ export default function ZoomControls() {
   const isMin = zoomValue <= MIN;
 
   const btnClass =
-    "flex items-center justify-center w-10 h-10 text-xl font-bold text-white transition-opacity duration-200 bg-[#373737] rounded-full shadow-lg cursor-pointer active:scale-95 disabled:opacity-60 disabled:grayscale disabled:cursor-auto";
+    "flex items-center justify-center w-10 h-10 text-xl font-bold transition-opacity duration-200 bg-[var(--background)] rounded-full shadow-lg cursor-pointer active:scale-95 disabled:opacity-60 disabled:grayscale disabled:cursor-auto";
 
   return (
     <div className="absolute bottom-6 right-6 flex gap-[15px] z-[20] pointer-events-auto">

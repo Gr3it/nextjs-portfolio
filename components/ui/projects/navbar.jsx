@@ -5,10 +5,10 @@ import projectsConfig from "@/config/project-info.json";
 import Link from "next/link";
 import { useEffect, useMemo } from "react";
 
-import ArrowBack from "./icons/arrowBack";
-import Github from "./icons/github";
-import OpenInNew from "./icons/openInNew";
-import Document from "./icons/document";
+import ArrowBack from "../icons/arrowBack";
+import Github from "../icons/github";
+import OpenInNew from "../icons/openInNew";
+import Document from "../icons/document";
 
 const ICON_MAP = {
   github: Github,
@@ -21,7 +21,7 @@ const ICON_MAP = {
 };
 
 const BASE_BUTTON_CLASS =
-  "flex items-center gap-2 select-none font-medium py-2 px-4 rounded-2xl transition-all duration-200 hover:bg-gray-100";
+  "flex items-center gap-2 select-none font-medium py-2 px-4 rounded-2xl transition-all duration-200 hover:bg-[var(--hoverBg)]";
 const ICON_WRAPPER_CLASS = "w-5 h-5 flex items-center justify-center";
 
 export default function ProjectNavbar() {
@@ -56,7 +56,7 @@ export default function ProjectNavbar() {
   };
 
   return (
-    <div className="fixed top-0 w-full z-50 px-8 flex justify-center bg-[var(--background)] border-b border-[#0000001a] backdrop-blur-md">
+    <div className="fixed top-0 w-full z-50 px-8 flex justify-center bg-[var(--background)] border-b border-[var(--borderColor)] backdrop-blur-md">
       <nav className="container w-full flex gap-4 py-2">
         <Link href="/" className={`${BASE_BUTTON_CLASS} mr-auto`}>
           <span className={ICON_WRAPPER_CLASS}>

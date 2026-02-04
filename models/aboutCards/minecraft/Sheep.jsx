@@ -55,7 +55,13 @@ function SheepModel() {
 export function Sheep(props) {
   return (
     <group position={[2.25, 1, 0]}>
-      <Html position={[0, 4, -1]} distanceFactor={6} center transform>
+      <Html
+        position={[0, 4, -1]}
+        distanceFactor={6}
+        center
+        transform
+        zIndexRange={[40, 0]}
+      >
         <SheepPicker />
       </Html>
 

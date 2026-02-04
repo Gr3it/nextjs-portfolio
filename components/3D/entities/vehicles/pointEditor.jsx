@@ -21,7 +21,7 @@ export default function PointEditor({
       position.copy(initialPosition.current).applyMatrix4(matrix);
       onDrag();
     },
-    [position, onDrag]
+    [position, onDrag],
   );
 
   const handleClick = useCallback(
@@ -29,7 +29,7 @@ export default function PointEditor({
       event.stopPropagation();
       onClick?.();
     },
-    [onClick]
+    [onClick],
   );
 
   return (
@@ -50,7 +50,10 @@ export default function PointEditor({
         <meshStandardMaterial color={selected ? "#ff8c00" : "#0080ff"} />
       </mesh>
       {selected && (
-        <Html position={[position.x + 0.5, position.y, position.z - 2]}>
+        <Html
+          position={[position.x + 0.5, position.y, position.z - 2]}
+          zIndexRange={[40, 0]}
+        >
           <div
             style={{
               display: "flex",

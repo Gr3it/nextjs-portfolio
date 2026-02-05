@@ -1,10 +1,10 @@
+import { preload } from "react-dom";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 
-// Configurazione del font
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
+  weight: ["300", "500", "700", "900"],
   variable: "--font-poppins",
 });
 
@@ -14,6 +14,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  preload("/video/car-animation.webm", {
+    as: "video",
+    type: "video/webm",
+    fetchPriority: "high",
+  });
   return (
     <html lang="en">
       <body

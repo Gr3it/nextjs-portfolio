@@ -1,27 +1,32 @@
 "use client";
 
-import React from "react";
-import { useSnapshot } from "valtio";
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
+import { useSmoothProgress } from "@/hooks/useSmoothProgress";
+import LoadingScreen from "@/components/ui/loadingScreen";
 
-import { ScrollControlsProxy } from "@/components/3D/core/scrollControls";
-import VehicleSafeZone from "@/components/ui/debug/vehicleSafeZone";
-
-import worldConfig from "@/config/world-config.json";
-import cameraConfig from "@/config/camera-config.json";
-import { debugStore } from "@/stores/debugStorage";
-import App3d from "@/components/app3d";
-
-const { height: worldHeight } = worldConfig;
-const { frustumHeightOnPlane } = cameraConfig;
+const App3d = dynamic(() => import("@/components/app3d"), {
+  ssr: false,
+});
 
 export default function World() {
-  const snap = useSnapshot(debugStore);
+  const [startFetchingJS, setStartFetchingJS] = useState(false);
+  const { smoothProgress, isLoading } = useSmoothProgress(startFetchingJS);
+
+  const handleVideoLoaded = () => {
+    setStartFetchingJS(true);
+  };
 
   return (
     <>
-      <App3d />
-      <ScrollControlsProxy pages={worldHeight / frustumHeightOnPlane} />
-      {snap.showVehicleSafeZone && <VehicleSafeZone />}
+      {isLoading && (
+        <LoadingScreen
+          progress={smoothProgress}
+          onVideoReady={handleVideoLoaded}
+        />
+      )}
+
+      {startFetchingJS && <App3d />}
     </>
   );
 }

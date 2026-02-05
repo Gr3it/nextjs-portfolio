@@ -8,12 +8,10 @@ export default function ControlledInput({
   resetKey,
   className,
 }) {
-  // target è l'oggetto proxy, prop è la stringa della chiave (es. "showGrid")
   const [internal, setInternal] = useState(String(target[prop]));
   const validator = validators[type];
   const isValid = useMemo(() => validator(internal), [internal, validator]);
 
-  // Sync su reset
   useEffect(() => {
     setInternal(String(target[prop]));
   }, [target[prop], resetKey]);
@@ -23,7 +21,6 @@ export default function ControlledInput({
     setInternal(val);
 
     if (validator(val)) {
-      // Valtio: Mutazione diretta! Super clean.
       if (type === "boolean") target[prop] = val === "true";
       else if (type === "number") target[prop] = Number(val);
       else target[prop] = val;

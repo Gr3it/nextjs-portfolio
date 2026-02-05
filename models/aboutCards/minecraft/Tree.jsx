@@ -63,7 +63,9 @@ export function Tree(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["Portfolio__102_-61_34_to_106_319_38_1"].geometry}
+          geometry={nodes[
+            "Portfolio__102_-61_34_to_106_319_38_1"
+          ].geometry.toNonIndexed()}
           material={materials.oak_log}
         >
           {showWireframe && <Wireframe {...wireFrameOptions} />}
@@ -71,7 +73,9 @@ export function Tree(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["Portfolio__102_-61_34_to_106_319_38_2"].geometry}
+          geometry={nodes[
+            "Portfolio__102_-61_34_to_106_319_38_2"
+          ].geometry.toNonIndexed()}
           material={materials.oak_log_top}
         >
           {showWireframe && <Wireframe {...wireFrameOptions} />}
@@ -79,7 +83,9 @@ export function Tree(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["Portfolio__102_-61_34_to_106_319_38_3"].geometry}
+          geometry={nodes[
+            "Portfolio__102_-61_34_to_106_319_38_3"
+          ].geometry.toNonIndexed()}
           material={materials.oak_leaves}
         >
           {showWireframe && <Wireframe {...wireFrameOptions} />}

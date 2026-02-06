@@ -22,7 +22,7 @@ const { height: worldHeight } = worldConfig;
 const { frustumHeightOnPlane } = cameraConfig;
 
 const HUD = () => (
-  <div className="fixed inset-0 z-50 pointer-events-none">
+  <div className="fixed inset-0 z-50 pointer-events-none w-screen ">
     <div className="pointer-events-auto">
       <Navbar />
       <CameraSwitchButton />

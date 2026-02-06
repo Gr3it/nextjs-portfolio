@@ -16,7 +16,7 @@ export default function CameraSwitchButton() {
   };
 
   return (
-    <div className="fixed z-[30] right-4 top-[112px] 2xl:top-4 space-y-2">
+    <div className="absolute z-[30] right-4 top-[112px] 2xl:top-4 space-y-2">
       <button
         onClick={handleToggle}
         className="flex items-center justify-center gap-2 w-full bg-white/70 hover:bg-gray-200/70 text-gray-800 px-3 py-2 rounded-2xl shadow-md transition-colors duration-200 text-sm font-medium cursor-pointer"

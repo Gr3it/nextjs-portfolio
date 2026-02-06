@@ -2,17 +2,19 @@ import React, { useEffect, useRef, useCallback, useMemo } from "react";
 import * as THREE from "three";
 import { easing } from "maath";
 import { invalidate, useFrame } from "@react-three/fiber";
+import { useSnapshot } from "valtio";
+import { scrollControlStore } from "@/stores/scrollControlStorage";
 
-// Constants
+// Assicurati che lo store contenga: { freeze: false, internalPhaseReady: false, frozenScrollY: 0 }
+
 const DEFAULT_DAMPING = 0.2;
 const DEFAULT_MAX_SPEED = Infinity;
 const DEFAULT_EPS = 0.00001;
 const DEFAULT_PAGES = 2;
 const DEFAULT_DURATION = 2.0;
 
-// Animation modes
 export const ANIMATION_MODES = {
-  INSTANT: "instant", // Nuova modalità
+  INSTANT: "instant",
   DAMPING: "damping",
   ACCELERATION: "acceleration",
 };
@@ -23,7 +25,6 @@ const getScrollThreshold = () => {
   return Math.max(scrollHeight - containerHeight, 1);
 };
 
-// ... (Classe Vehicle1D invariata) ...
 class Vehicle1D {
   constructor(duration = DEFAULT_DURATION) {
     this.duration = duration;
@@ -184,7 +185,6 @@ export function useScroll(options = {}) {
     let finalOffset = 0;
     let shouldInvalidate = false;
 
-    // Helper per mappare lo scroll globale all'intervallo locale [0, 1]
     const getLocalTarget = (raw) => {
       if (raw <= start) return 0;
       if (raw >= end) return 1;
@@ -231,29 +231,51 @@ export function useScroll(options = {}) {
   return () => offsetRef.current;
 }
 
-// ... (Resto dei componenti ScrollControls, ScrollControlsProxy, AttachCallbackToScrollEvent invariati) ...
-
 export default function ScrollControls({ children }) {
+  const snap = useSnapshot(scrollControlStore);
   const scrollRef = useRef(0);
   const scrollThresholdRef = useRef(1);
+
   const contextValue = useMemo(() => ({ scroll: scrollRef }), []);
+
   const handleScroll = useCallback(() => {
+    if (!scrollControlStore.controlReady) return;
     const currentScrollY = window.scrollY;
-    scrollRef.current = currentScrollY / scrollThresholdRef.current;
+    scrollRef.current = currentScrollY / getScrollThreshold();
   }, []);
+
   const handleResize = useCallback(() => {
     scrollThresholdRef.current = getScrollThreshold();
     handleScroll();
   }, [handleScroll]);
+
   useEffect(() => {
-    handleResize();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleResize, { passive: true });
-    return () => {
+    const currentState = snap.action;
+
+    if (currentState === "freeze" && snap.controlReady) {
+      console.log(window.scrollY);
+      const currentY = window.scrollY;
+      scrollControlStore.frozenScrollY = currentY;
+
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
-    };
-  }, [handleScroll, handleResize]);
+      scrollControlStore.controlReady = false;
+    } else if (currentState === "unfreeze" && snap.proxyReady) {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      window.addEventListener("resize", handleResize, { passive: true });
+
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: scrollControlStore.frozenScrollY,
+          behavior: "instant",
+        });
+        scrollThresholdRef.current = getScrollThreshold();
+        handleScroll();
+        scrollControlStore.controlReady = true;
+        scrollControlStore.action = null;
+      });
+    }
+  }, [snap.action, snap.proxyReady, snap.controlReady]);
   return (
     <ScrollContext.Provider value={contextValue}>
       {children}
@@ -262,7 +284,20 @@ export default function ScrollControls({ children }) {
 }
 
 export function ScrollControlsProxy({ pages = DEFAULT_PAGES }) {
+  const snap = useSnapshot(scrollControlStore);
   const style = useMemo(() => ({ minHeight: `${pages * 100}vh` }), [pages]);
+
+  useEffect(() => {
+    if (snap.action === "freeze" && !snap.controlReady) {
+      scrollControlStore.proxyReady = false;
+      scrollControlStore.action = null;
+    } else if (snap.action === "unfreeze" && !snap.proxyReady) {
+      scrollControlStore.proxyReady = true;
+    }
+  }, [snap.action, snap.controlReady, snap.proxyReady]);
+
+  if (!snap.proxyReady) return null;
+
   return (
     <div className="w-full pointer-events-none select-none" style={style} />
   );
@@ -271,18 +306,24 @@ export function ScrollControlsProxy({ pages = DEFAULT_PAGES }) {
 export function AttachCallbackToScrollEvent(callback) {
   const scrollThresholdRef = useRef(1);
   const callbackRef = useRef(callback);
+
   useEffect(() => {
     callbackRef.current = callback;
   }, [callback]);
+
   const handleScroll = useCallback(() => {
+    if (!scrollControlStore.controlReady) return;
+
     const scrollY = window.scrollY;
-    const normalizedScroll = Math.min(scrollY / scrollThresholdRef.current, 1);
+    const normalizedScroll = Math.min(scrollY / getScrollThreshold(), 1);
     callbackRef.current(normalizedScroll);
   }, []);
+
   const handleResize = useCallback(() => {
     scrollThresholdRef.current = getScrollThreshold();
     handleScroll();
   }, [handleScroll]);
+
   useEffect(() => {
     handleResize();
     window.addEventListener("scroll", handleScroll, { passive: true });

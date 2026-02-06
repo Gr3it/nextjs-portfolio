@@ -18,6 +18,8 @@ import { usePointerHover } from "@/hooks/usePointerHover";
 import { ProjectImagePreview } from "./projectImagePreview";
 import { useRouter } from "next/navigation";
 
+import { scrollControlStore } from "@/stores/scrollControlStorage";
+
 const PROJECT_COMPONENTS = {
   SpacePiratesPreview,
   SnipingBotPreview,
@@ -48,6 +50,7 @@ export default function ProjectCard({ project }) {
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
       onClick={() => {
+        scrollControlStore.action = "freeze";
         router.push(project.link || "");
       }}
     >

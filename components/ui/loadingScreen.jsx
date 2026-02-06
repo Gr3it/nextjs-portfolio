@@ -34,7 +34,7 @@ export default function LoadingScreen({ progress, onVideoReady }) {
 
         <div className="w-64 h-[2px] bg-[var(--borderColor)] relative overflow-hidden">
           <div
-            className="absolute inset-y-0 left-0 bg-[var(--accent-color)] transition-all duration-500 ease-out"
+            className="absolute inset-y-0 left-0 bg-[var(--accent-color)]"
             style={{ width: `${progress}%` }}
           />
         </div>

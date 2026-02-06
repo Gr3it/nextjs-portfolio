@@ -1,6 +1,9 @@
-import { preload } from "react-dom";
+"use client";
+
+import { useEffect } from "react";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import Experience from "@/components/experience";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -8,23 +11,14 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-export const metadata = {
-  title: "Emanuele Zini",
-  description: "My 3d portfolio experience",
-};
-
 export default function RootLayout({ children }) {
-  preload("/video/car-animation.webm", {
-    as: "video",
-    type: "video/webm",
-    fetchPriority: "high",
-  });
   return (
     <html lang="en">
       <body
         className={`${poppins.className} h-screen w-full flex flex-col items-center antialiased`}
       >
         {children}
+        <Experience />
       </body>
     </html>
   );

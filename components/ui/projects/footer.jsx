@@ -42,6 +42,7 @@ export default function ProjectFooter() {
         onMouseLeave={() => setIsHovered(false)}
         onFocus={() => setIsHovered(true)}
         onBlur={() => setIsHovered(false)}
+        scroll={false}
       >
         <h2
           className={`text-6xl md:text-8xl font-bold tracking-tighter transition-colors duration-500 

@@ -15,7 +15,7 @@
   --bg-contact: oklch(70.7% 0.165 254.624);
   --bg-footer: oklch(37.3% 0.034 259.733);
 
-  --accent-color: #000;
+  --accent-color: #49af8e;
 
   scrollbar-color: var(--accent-color) var(--background);
   scrollbar-width: thin;

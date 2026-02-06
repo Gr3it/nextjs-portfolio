@@ -32,6 +32,7 @@ const HUD = () => (
 );
 
 export default function App3d({ onReady, hide }) {
+  console.log("dowload  start");
   const snap = useSnapshot(debugStore);
   const scrollPages = useMemo(() => worldHeight / frustumHeightOnPlane, []);
   return (

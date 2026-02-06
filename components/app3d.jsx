@@ -38,11 +38,11 @@ export default function App3d({ onReady, hide }) {
     <>
       <main
         className={
-          "w-full h-full bg-[var(--background)] mr" + (hide ? " hidden" : "")
+          "h-screen bg-[var(--background)] mr" + (hide ? " hidden" : "")
         }
       >
         <HUD />
-        <div className="fixed inset-0">
+        <div className="fixed inset-0 w-screen">
           <Canvas shadows>
             <Suspense fallback={null}>
               <Scene />

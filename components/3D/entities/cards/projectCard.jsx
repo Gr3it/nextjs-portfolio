@@ -40,7 +40,6 @@ function getProjectComponent(type, options) {
 
 export default function ProjectCard({ project }) {
   const handlePointerOver = (e) => {
-    console.log("Enter");
     document.body.style.cursor = "none";
     window.dispatchEvent(
       new CustomEvent("showCustomCursor", { detail: "VIEW" }),
@@ -48,7 +47,6 @@ export default function ProjectCard({ project }) {
   };
 
   const handlePointerOut = (e) => {
-    console.log("Out");
     document.body.style.cursor = "auto";
     window.dispatchEvent(new CustomEvent("hideCustomCursor"));
   };

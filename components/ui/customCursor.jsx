@@ -1,119 +1,86 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [text, setText] = useState("VIEW");
 
   useEffect(() => {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    const moveCursor = (e) => {
-      cursor.style.setProperty("--mouse-x", `${e.clientX}px`);
-      cursor.style.setProperty("--mouse-y", `${e.clientY}px`);
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    const onMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     };
+
+    const tick = () => {
+      cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    };
+
+    const rafId = requestAnimationFrame(tick);
+    window.addEventListener("mousemove", onMouseMove);
 
     const handleShow = (e) => {
-      setText(e.detail || "VIEW");
-      setIsVisible(true);
+      cursor.classList.add("active");
     };
+    const handleHide = () => cursor.classList.remove("active");
 
-    const handleHide = () => setIsVisible(false);
-
-    window.addEventListener("mousemove", moveCursor);
     window.addEventListener("showCustomCursor", handleShow);
     window.addEventListener("hideCustomCursor", handleHide);
 
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("showCustomCursor", handleShow);
       window.removeEventListener("hideCustomCursor", handleHide);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
   return (
-    <>
-      <div
-        ref={cursorRef}
-        className={`custom-cursor ${isVisible ? "active" : ""}`}
-      >
-        <div className="cursor-content">
-          <span className="cursor-text">{text}</span>
+    <div
+      ref={cursorRef}
+      className={`custom-cursor-pos flex items-center justify-center`}
+    >
+      <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-2xl">
+        <div className={`absolute -top-2 -right-2 text-white arrow-bracket`}>
           <svg
-            className="cursor-icon"
+            className="h-5 w-5"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path d="M7 17L17 7M17 7H7M17 7V17" />
+            <path d="M7 7h10v10" />
           </svg>
         </div>
+
+        <div className={`absolute -bottom-2 -left-2 text-white arrow-bracket`}>
+          <svg
+            className="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M17 17H7V7" />
+          </svg>
+        </div>
+
+        <div className="relative z-10">
+          <span className="text-xs font-bold tracking-[0.3em] text-black uppercase leading-none ml-[0.3em]">
+            VIEW
+          </span>
+        </div>
       </div>
-
-      <style jsx>{`
-        .custom-cursor {
-          position: fixed;
-          left: 0;
-          top: 0;
-          width: 80px;
-          height: 80px;
-          pointer-events: none;
-          z-index: 9999;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          transform: translate3d(
-              calc(var(--mouse-x) - 50%),
-              calc(var(--mouse-y) - 50%),
-              0
-            )
-            scale(0);
-
-          transition:
-            transform 0.15s cubic-bezier(0.23, 1, 0.32, 1),
-            opacity 0.2s ease;
-          opacity: 0;
-        }
-
-        .custom-cursor.active {
-          transform: translate3d(
-              calc(var(--mouse-x) - 50%),
-              calc(var(--mouse-y) - 50%),
-              0
-            )
-            scale(1);
-          opacity: 1;
-        }
-
-        .cursor-content {
-          width: 100%;
-          height: 100%;
-          background: white;
-          border-radius: 50%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .cursor-text {
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.1em;
-          color: black;
-          margin-bottom: 2px;
-        }
-
-        .cursor-icon {
-          width: 14px;
-          height: 14px;
-          color: black;
-        }
-      `}</style>
-    </>
+    </div>
   );
 }

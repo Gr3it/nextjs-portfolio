@@ -129,3 +129,29 @@ body {
 .animate-car-bounce {
   animation: car-bounce 0.3s ease-in-out infinite;
 }
+
+@layer utilities {
+  .custom-cursor-pos {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    will-change: transform;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+
+  .custom-cursor-pos.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}

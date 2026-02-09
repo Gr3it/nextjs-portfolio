@@ -18,6 +18,7 @@
       "type": "SpacePiratesPreview"
     },
     "previewHeight": 11,
+
     "link": "projects/space-pirates"
   },
   {
@@ -38,6 +39,7 @@
       "type": "EventToolPreview"
     },
     "previewHeight": 9,
+    "previewImage": "/images/SurvivorIoEventTool/Preview.png",
     "link": "projects/survivor-io-event"
   },
 
@@ -99,6 +101,7 @@
       "type": "SmartParkingAppPreview"
     },
     "previewHeight": 4,
+    "previewImage": "/images/SmartParkingApp/Preview.jpg",
     "link": "projects/smart-parking-app"
   },
   {

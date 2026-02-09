@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect } from "react";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Experience from "@/components/experience";

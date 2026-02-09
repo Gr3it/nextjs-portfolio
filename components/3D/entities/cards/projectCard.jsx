@@ -14,8 +14,6 @@ import { ColorScreenTestPreview } from "@/models/projectPreviews/ColorScreenTest
 import { PlanItPreview } from "@/models/projectPreviews/PlanItPreview";
 import { WalletTrackerPreview } from "@/models/projectPreviews/WalletTrackerPreview";
 import { PortfolioPreview } from "@/models/projectPreviews/PortfolioPreview";
-import { usePointerHover } from "@/hooks/usePointerHover";
-import { ProjectImagePreview } from "./projectImagePreview";
 import { useRouter } from "next/navigation";
 
 import { scrollControlStore } from "@/stores/scrollControlStorage";
@@ -41,7 +39,19 @@ function getProjectComponent(type, options) {
 }
 
 export default function ProjectCard({ project }) {
-  const { hover, handlePointerOver, handlePointerOut } = usePointerHover();
+  const handlePointerOver = (e) => {
+    console.log("Enter");
+    document.body.style.cursor = "none";
+    window.dispatchEvent(
+      new CustomEvent("showCustomCursor", { detail: "VIEW" }),
+    );
+  };
+
+  const handlePointerOut = (e) => {
+    console.log("Out");
+    document.body.style.cursor = "auto";
+    window.dispatchEvent(new CustomEvent("hideCustomCursor"));
+  };
   const router = useRouter();
 
   return (
@@ -64,10 +74,6 @@ export default function ProjectCard({ project }) {
           project?.component?.type,
           project?.component?.options,
         )}
-      </group>
-
-      <group position={[9, project?.previewHeight || 8, 4.5]}>
-        <ProjectImagePreview images={project?.previewImage} hover={hover} />
       </group>
 
       <group position={[1, 0.01, 10]}>

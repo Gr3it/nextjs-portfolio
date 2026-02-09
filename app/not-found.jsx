@@ -5,6 +5,10 @@ import Link from "next/link";
 import { RiggedCar } from "@/models/vehicles/RiggedCar";
 import { MinimalCanvas } from "@/components/3D/core/minimalCanvas";
 
+export const metadata = {
+  title: "Are you lost?",
+};
+
 const CarScene = React.memo(({ hover }) => (
   <MinimalCanvas>
     <RiggedCar

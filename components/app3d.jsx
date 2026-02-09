@@ -17,6 +17,7 @@ import cameraConfig from "@/config/camera-config.json";
 import { ScrollControlsProxy } from "./3D/core/scrollControls";
 import VehicleSafeZone from "./ui/debug/vehicleSafeZone";
 import SceneReadyNotifier from "./3D/core/sceneReadyNotifier";
+import CustomCursor from "./ui/customCursor";
 
 const { height: worldHeight } = worldConfig;
 const { frustumHeightOnPlane } = cameraConfig;
@@ -54,6 +55,7 @@ export default function App3d({ onReady, hide }) {
         {snap.showVehicleSafeZone && <VehicleSafeZone />}
       </main>
       <ScrollControlsProxy pages={scrollPages} />
+      <CustomCursor />
     </>
   );
 }

@@ -253,7 +253,6 @@ export default function ScrollControls({ children }) {
     const currentState = snap.action;
 
     if (currentState === "freeze" && snap.controlReady) {
-      console.log(window.scrollY);
       const currentY = window.scrollY;
       scrollControlStore.frozenScrollY = currentY;
 

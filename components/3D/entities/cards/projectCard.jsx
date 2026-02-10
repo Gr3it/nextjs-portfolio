@@ -42,11 +42,13 @@ export default function ProjectCard({ project }) {
   const pathname = usePathname();
   const router = useRouter();
   const isHome = pathname === "/";
+  const prefetched = React.useRef(false);
 
   const handlePointerOver = (e) => {
     if (isHome) window.dispatchEvent(new CustomEvent("showCustomCursor"));
-    if (project.link) {
+    if (project.link && !prefetched.current) {
       router.prefetch(project.link);
+      prefetched.current = true;
     }
   };
 

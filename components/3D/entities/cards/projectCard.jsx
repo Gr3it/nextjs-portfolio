@@ -40,16 +40,19 @@ function getProjectComponent(type, options) {
 
 export default function ProjectCard({ project }) {
   const pathname = usePathname();
+  const router = useRouter();
   const isHome = pathname === "/";
 
   const handlePointerOver = (e) => {
     if (isHome) window.dispatchEvent(new CustomEvent("showCustomCursor"));
+    if (project.link) {
+      router.prefetch(project.link);
+    }
   };
 
   const handlePointerOut = (e) => {
     if (isHome) window.dispatchEvent(new CustomEvent("hideCustomCursor"));
   };
-  const router = useRouter();
 
   return (
     <group

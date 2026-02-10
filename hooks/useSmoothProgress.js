@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export function useSmoothProgress(startFetchingJS) {
   const [smoothProgress, setSmoothProgress] = useState(0);

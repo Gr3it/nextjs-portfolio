@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} h-screen w-full flex flex-col items-center antialiased overflow-x-hidden`}
       >
-        {children}
         <Experience />
+        {children}
       </body>
     </html>
   );

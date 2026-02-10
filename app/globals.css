@@ -7,6 +7,8 @@
   --borderColor: #ffffff1a;
   --hoverBg: var(--color-zinc-800);
 
+  --contentVisibility: 0;
+
   --bg-home: oklch(70.7% 0.022 261.325);
   --bg-project-sec-1: oklch(87.2% 0.01 258.338);
   --bg-project-sec-2: oklch(87.1% 0.15 154.449);
@@ -136,17 +138,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     will-change: transform;
-
-    position: fixed;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-    z-index: 9999;
     opacity: 0;
     transition:
       opacity 0.2s ease,
       transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-
     transform: translate3d(0, 0, 0) scale(0);
   }
 

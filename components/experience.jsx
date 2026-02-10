@@ -6,6 +6,7 @@ import { useSmoothProgress } from "@/hooks/useSmoothProgress";
 import LoadingScreen from "@/components/ui/loadingScreen";
 import { scrollControlStore } from "@/stores/scrollControlStorage";
 import { usePathname } from "next/navigation";
+import CustomCursor from "./ui/customCursor";
 
 const App3d = dynamic(() => import("@/components/app3d"), {
   ssr: false,
@@ -22,6 +23,14 @@ export default function Experience() {
   useEffect(() => {
     if (isHome) {
       if (isReady) scrollControlStore.action = "unfreeze";
+    } else {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(() => {
+          setStartFetchingJS(true);
+        });
+      } else {
+        setTimeout(() => setStartFetchingJS(true), 2000);
+      }
     }
   }, [isHome]);
 
@@ -38,15 +47,19 @@ export default function Experience() {
         />
       )}
 
-      {(startFetchingJS || !isHome) && (
+      {startFetchingJS && (
         <App3d
           onReady={() => {
-            if (isHome) scrollControlStore.action = "unfreeze";
+            if (isHome) {
+              scrollControlStore.action = "unfreeze";
+              window.dispatchEvent(new CustomEvent("startTransitionIn"));
+            }
             setIsReady(true);
+            setStartFetchingJS(true);
           }}
-          hide={!isHome}
         />
       )}
+      <CustomCursor pathname={pathname} loadingScreen={!isReady} />
     </>
   );
 }

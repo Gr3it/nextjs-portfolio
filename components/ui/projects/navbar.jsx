@@ -56,7 +56,7 @@ export default function ProjectNavbar() {
   };
 
   return (
-    <div className="fixed top-0 w-full z-50 px-8 flex justify-center bg-[var(--background)] border-b border-[var(--borderColor)] backdrop-blur-md">
+    <div className="fixed top-0 w-full z-50 px-8 flex justify-center bg-[var(--background)] border-b border-[var(--borderColor)]">
       <nav className="container w-full flex gap-4 py-2">
         <Link
           href="/"

@@ -14,7 +14,7 @@ import { ColorScreenTestPreview } from "@/models/projectPreviews/ColorScreenTest
 import { PlanItPreview } from "@/models/projectPreviews/PlanItPreview";
 import { WalletTrackerPreview } from "@/models/projectPreviews/WalletTrackerPreview";
 import { PortfolioPreview } from "@/models/projectPreviews/PortfolioPreview";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { scrollControlStore } from "@/stores/scrollControlStorage";
 
@@ -39,16 +39,15 @@ function getProjectComponent(type, options) {
 }
 
 export default function ProjectCard({ project }) {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   const handlePointerOver = (e) => {
-    document.body.style.cursor = "none";
-    window.dispatchEvent(
-      new CustomEvent("showCustomCursor", { detail: "VIEW" }),
-    );
+    if (isHome) window.dispatchEvent(new CustomEvent("showCustomCursor"));
   };
 
   const handlePointerOut = (e) => {
-    document.body.style.cursor = "auto";
-    window.dispatchEvent(new CustomEvent("hideCustomCursor"));
+    if (isHome) window.dispatchEvent(new CustomEvent("hideCustomCursor"));
   };
   const router = useRouter();
 

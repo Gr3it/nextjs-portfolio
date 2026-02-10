@@ -17,7 +17,6 @@ import cameraConfig from "@/config/camera-config.json";
 import { ScrollControlsProxy } from "./3D/core/scrollControls";
 import VehicleSafeZone from "./ui/debug/vehicleSafeZone";
 import SceneReadyNotifier from "./3D/core/sceneReadyNotifier";
-import CustomCursor from "./ui/customCursor";
 
 const { height: worldHeight } = worldConfig;
 const { frustumHeightOnPlane } = cameraConfig;
@@ -32,16 +31,12 @@ const HUD = () => (
   </div>
 );
 
-export default function App3d({ onReady, hide }) {
+export default function App3d({ onReady }) {
   const snap = useSnapshot(debugStore);
   const scrollPages = useMemo(() => worldHeight / frustumHeightOnPlane, []);
   return (
     <>
-      <main
-        className={
-          "h-screen bg-[var(--background)] mr" + (hide ? " hidden" : "")
-        }
-      >
+      <main className={"h-screen bg-[var(--background)] mr isolate"}>
         <HUD />
         <div className="fixed inset-0 w-screen">
           <Canvas shadows>
@@ -55,7 +50,6 @@ export default function App3d({ onReady, hide }) {
         {snap.showVehicleSafeZone && <VehicleSafeZone />}
       </main>
       <ScrollControlsProxy pages={scrollPages} />
-      <CustomCursor />
     </>
   );
 }

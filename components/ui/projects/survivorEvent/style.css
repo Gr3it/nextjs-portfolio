@@ -1,0 +1,167 @@
+:root {
+  --cell-border-color: #1f1f1f;
+  --cells-color: #cd79e1;
+}
+
+.cell {
+  background-color: var(--cells-color);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.selected-5 {
+  background-image: url("/images/SurvivorIoEventTool/box_2.png");
+  background-size: 80%;
+}
+.selected-11 {
+  background-image: url("/images/SurvivorIoEventTool/box_3.png");
+  background-size: 80%;
+}
+.selected-28 {
+  background-image: url("/images/SurvivorIoEventTool/box_4.png");
+  background-size: 90%;
+}
+.selected-character {
+  background-image: url("/images/SurvivorIoEventTool/Yelena_Hallowin.png");
+}
+
+.path-cell {
+  background-color: #6e3e2b;
+  z-index: 10;
+}
+.path-cell::after {
+  content: "";
+  position: absolute;
+  background-color: var(--cells-bg);
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  z-index: -1;
+}
+
+.arrow-l::before {
+  background-image: url("/icons/left.svg");
+  transform: translateX(20px);
+}
+.arrow-r::before {
+  background-image: url("/icons/right.svg");
+  transform: translateX(-20px);
+}
+.arrow-u::before {
+  background-image: url("/icons/up.svg");
+  transform: translateY(20px);
+}
+.arrow-d::before {
+  background-image: url("/icons/down.svg");
+  transform: translateY(-20px);
+}
+
+.ur::after {
+  border-bottom: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.ud::after {
+  border-right: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.ul::after {
+  border-right: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+}
+
+.ru::after {
+  border-bottom: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.rd::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.rl::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+}
+
+.du::after {
+  border-right: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.dr::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.dl::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-right: 4px solid var(--cell-border-color);
+}
+
+.lu::after {
+  border-right: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+}
+
+.lr::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+}
+
+.ld::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-right: 4px solid var(--cell-border-color);
+}
+
+.uf::after {
+  border-right: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.rf::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.df::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-right: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.lf::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-right: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+}
+
+.su::after {
+  border-right: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.sr::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.sd::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-right: 4px solid var(--cell-border-color);
+  border-left: 4px solid var(--cell-border-color);
+}
+
+.sl::after {
+  border-top: 4px solid var(--cell-border-color);
+  border-right: 4px solid var(--cell-border-color);
+  border-bottom: 4px solid var(--cell-border-color);
+}

@@ -1,4 +1,6 @@
+import ProjectDoubleImage from "@/components/ui/projects/doubleImage";
 import ProjectHero from "@/components/ui/projects/hero";
+import ProjectHighlight from "@/components/ui/projects/highlight";
 import React from "react";
 
 const PAGE_DATA = {
@@ -19,6 +21,12 @@ export default function Page() {
         title={PAGE_DATA.title}
         description={PAGE_DATA.description}
       />
+      <ProjectHighlight>
+        <ProjectDoubleImage
+          linkLeft={"/images/MetaEmpire/Roman.jpg"}
+          linkRight={"/images/MetaEmpire/Warrior.jpg"}
+        />
+      </ProjectHighlight>
     </>
   );
 }

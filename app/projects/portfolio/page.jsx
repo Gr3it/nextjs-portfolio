@@ -30,10 +30,6 @@ export default function Page() {
             "/images/Portfolio/Render.png",
           ]}
         />
-        {/*         <ProjectSingleImage
-          link={"/images/Portfolio/Preview.png"}
-          alt="Staged Render"
-        /> */}
       </ProjectHighlight>
     </>
   );

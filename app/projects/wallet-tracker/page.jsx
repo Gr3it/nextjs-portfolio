@@ -1,5 +1,6 @@
 import ProjectHero from "@/components/ui/projects/hero";
 import ProjectHighlight from "@/components/ui/projects/highlight";
+import ProjectSingleImage from "@/components/ui/projects/singleImage";
 import React from "react";
 
 const PAGE_DATA = {
@@ -20,7 +21,12 @@ export default function Page() {
         title={PAGE_DATA.title}
         description={PAGE_DATA.description}
       />
-      <ProjectHighlight></ProjectHighlight>
+      <ProjectHighlight>
+        <ProjectSingleImage
+          link={"/images/WalletTracker/Home.png"}
+          alt="Wallet Tracker Preview"
+        />
+      </ProjectHighlight>
     </>
   );
 }

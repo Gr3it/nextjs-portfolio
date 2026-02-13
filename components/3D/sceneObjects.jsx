@@ -21,6 +21,7 @@ import AboutCard from "./entities/cards/aboutCard";
 import VehicleManager from "./entities/vehicles/vehicleManager";
 import WorldFog from "./core/worldFog";
 import { RiggedCar } from "@/models/vehicles/RiggedCar";
+import Animals from "./entities/animals";
 
 const { height } = worldConfig;
 
@@ -91,6 +92,7 @@ export default function SceneObjects() {
         softness={5}
         margin={10}
       />
+      <Animals />
     </>
   );
 }

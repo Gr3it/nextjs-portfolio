@@ -2,32 +2,32 @@
   {
     "position": [7, 0, 354],
     "title": "About Me",
-    "description": "I am a bachelor's student based in Trento, Italy. While following an IT study formation, I am also a passionate in Blockchain Development, Web Development and UI/UX design. I have long been interested in the field of computer science, for instance by participating in a robotics competition.\n\nFurthermore, I am passionate about marketing and advertising, personal finance and investment, pc hardware, and cryptocurrency. In my free time, I enjoy reading books and sometimes playing video games with friends.",
+    "description": "As a CS graduate from Trento, I build cutting-edge software that rejects inefficiency. I avoid repetitive patterns to focus on high-value projects, from secure smart contracts to innovative web tools. My goal is to create \"state-of-the-art\" code that is purposeful, clean, and impactful.\n\nInspired by my thesis in Game Design, I bridge the gap between engineering and aesthetics. I enjoy using CSS for artistic expression ensuring that robust logic always meets a polished, engaging user experience.",
     "component": "Minecraft",
     "main": true
   },
   {
     "position": [-25, 0, 382],
     "title": "Blockchain",
-    "description": "In recent times I got more and more interested in cryptocurrency. I studied the characteristics of Defi and Cefi and, more specifically, the functioning and code behind smart contracts. With the expertise gained, I developed Web Applications that interact with Blockchains.",
+    "description": "I specialize in Solidity, building secure and gas-optimized smart contract architectures. I focus on modular systems that function like on-chain microservices, prioritizing trustless logic and transparent, flawless execution to solve complex problems within the EVM ecosystem.",
     "component": "Blockchain"
   },
   {
     "position": [7, 0, 410],
     "title": "Coding",
-    "description": "I am passionate about learning new programming languages, how they work, their diversity and strengths. My interest expanded to gaining basic knowledge in Machine Learning and Data Science.",
+    "description": "Coding is my blend of engineering and artistry. I am obsessed with clean, modular logic and the subtle details that turn a functional tool into a polished experience. Focusing on Solidity and JavaScript, I strive for technical elegance—where robust architecture meets creative, seamless design.",
     "component": "Coding"
   },
   {
     "position": [-25, 0, 438],
     "title": "Design",
-    "description": "In recent years I became more and more interested in the world of design. I learned how to use Photoshop and Illustrator while applying the skills learned in projects and the creation of this website. I additionally followed courses in logo and illustration creation and UI & UX Design.",
+    "description": "I specialize in interactive prototyping and spatial composition. Using Figma, I build high-fidelity, logic-driven prototypes that prioritize seamless user flows. My approach to 3D focuses on structural arrangement and scene composition, while my UI style remains clean and minimalist, ensuring harmony through simplicity and functional clarity.",
     "component": "Design"
   },
   {
     "position": [7, 0, 466],
     "title": "Gaming",
-    "description": "In my free time, I enjoy playing collaborative computer games. In particular, playing puzzles which require the coordination and mutual effort of six players to reach the goal. I have been often involved in the creation of strategies and management of the rest of my team.",
+    "description": "Gaming is my playground for optimization and analytical thinking. I don’t just play; I deconstruct mechanics, analyze damage systems, and build tools to maximize efficiency—from custom bots to viral ROI calculators. This passion for balance and system logic culminated in my thesis, where I designed and fine-tuned complex game mechanics for optimal player experiences.",
     "component": "Games"
   }
 ]

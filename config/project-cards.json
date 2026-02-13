@@ -13,7 +13,7 @@
   {
     "position": [-25, 0, 76],
     "title": "Space Pirates",
-    "description": "A booking system built with HTML, CSS, JS, PHP, and MySQL, featuring room management and reservations.",
+    "description": "A tactical RPG where space exploration meets seamless Web3 ownership. Deep squad building and cartoon-style combat, powered by a hidden blockchain layer for a frictionless, player-led economy.",
     "component": {
       "type": "SpacePiratesPreview"
     },
@@ -24,7 +24,7 @@
   {
     "position": [7, 0, 100],
     "title": "Survivor.Io Sniping Bot",
-    "description": "Bot for Survivor.io auctions event providing a live P/L profile to assist players in sniping optimal prices.",
+    "description": "A Python-based assistant for high-speed game auctions. Leveraging OCR and Regex for real-time data extraction, it calculates instant ROI, turning complex probability into a decisive competitive edge.",
     "component": {
       "type": "SnipingBotPreview"
     },
@@ -34,7 +34,7 @@
   {
     "position": [-25, 0, 124],
     "title": "Survivor.Io Event Tool",
-    "description": "Website tool for Survivor.io events that calculates the optimal path for players to follow during in-game challenges.",
+    "description": "A viral pathfinding tool with 750k+ views. Using backtracking to optimize rewards, it disrupted the game’s economy so effectively that developers introduced a paid feature to counter its impact.",
     "component": {
       "type": "EventToolPreview"
     },
@@ -46,7 +46,7 @@
   {
     "position": [7, 0, 148],
     "title": "Crypto Price Tracker",
-    "description": "Website tracking cryptocurrency prices in real-time and generating historical price graphs for analysis.",
+    "description": "A React-based crypto tracker featuring infinite scroll and real-time data validation via CoinGecko API. It delivers a fluid UX with interactive candlestick charting powered by amCharts 5 engines.",
     "component": { "type": "CryptoPriceTrackerPreview" },
     "previewHeight": 10,
     "previewImage": "/images/CryptoPriceTracker/BinanceCoin.png",
@@ -55,7 +55,7 @@
   {
     "position": [-25, 0, 172],
     "title": "Color Screen Test",
-    "description": "Mobile app allowing users to set the screen to preset or custom RGB colors for display testing and color analysis.",
+    "description": "A React Native utility for display testing. Featuring RGB control and presets to detect burn-in, it bypasses Android native themes for pure color accuracy and hardware-level visual comparisons.",
     "component": {
       "type": "ColorScreenTestPreview"
     },
@@ -66,7 +66,7 @@
   {
     "position": [7, 0, 196],
     "title": "Meta Empire",
-    "description": "NFT crypto collection featuring Dutch auction mechanics, allowing dynamic pricing and engaging minting experience.",
+    "description": "High-security NFT smart contract featuring Dutch Auctions and Merkle Tree whitelists. Optimized for gas efficiency with a 100% test coverage suite (900+ lines), ensuring robust, audit-ready code.",
     "component": {
       "type": "MetaEmpirePreview"
     },
@@ -76,7 +76,7 @@
   {
     "position": [-25, 0, 220],
     "title": "Wallet Tracker",
-    "description": "Cross-chain wallet analyzer enabling users to track and review all holdings from a single wallet address.",
+    "description": "A cross-chain DeFi portfolio tracker. It aggregates native and ERC20 balances across multiple EVM chains (ETH, BSC, Polygon, etc.) via direct contract queries and CoinMarketCap data integration.",
     "component": {
       "type": "WalletTrackerPreview"
     },
@@ -86,7 +86,7 @@
   {
     "position": [7, 0, 244],
     "title": "Plan It",
-    "description": "University project: Calendar app that auto-schedules tasks with full features, focused on requirements analysis.",
+    "description": "A smart calendar architected through rigorous software engineering. Using UML modeling and euristic-based scheduling logic, it manages complex multi-user constraints and priority-based tasking.",
     "component": {
       "type": "PlanItPreview"
     },
@@ -96,7 +96,7 @@
   {
     "position": [-25, 0, 268],
     "title": "Smart Parking App",
-    "description": "University project: designed a parking app prototype with booking, occupancy tracking, and user feedback tools.",
+    "description": "A Smart Parking solution focused on HCI. Based on user interviews and field research, it optimizes campus logistics via computer vision, slot reservations, and a community-driven reporting system.",
     "component": {
       "type": "SmartParkingAppPreview"
     },
@@ -107,7 +107,7 @@
   {
     "position": [7, 0, 292],
     "title": "Hotel Meano",
-    "description": "High school project: built a hotel website with booking system, service pages, and network infrastructure redesign.",
+    "description": "A hotel booking platform featuring a custom 3D interactive floor map. Built with a focus on UI/UX, it allows real-time room selection and status visualization through a dynamic CSS-based 3D engine.",
     "component": {
       "type": "HotelMeanoPreview"
     },
@@ -118,7 +118,7 @@
   {
     "position": [-25, 0, 316],
     "title": "Flynet",
-    "description": "High school project: designed an airport website with flight data, search features, and admin panel.",
+    "description": "A Java-based airport management system. Beyond core CRUD features for flight scheduling, it features a custom CSS parallax Hero section with dynamic cloud layers and a takeoff animation on scroll.",
     "component": {
       "type": "FlynetPreview"
     },

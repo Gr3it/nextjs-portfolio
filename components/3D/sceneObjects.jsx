@@ -86,12 +86,12 @@ export default function SceneObjects() {
       ))}
 
       <ConditionalGrid />
-      <WorldFog
+      {/*  <WorldFog
         topLeft={[-48, -16]}
         bottomRight={[48, 618]}
         softness={5}
         margin={10}
-      />
+      /> */}
       <Animals />
     </>
   );

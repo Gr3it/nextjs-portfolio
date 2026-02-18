@@ -1,7 +1,8 @@
-import ProjectHero from "@/components/ui/projects/hero";
-import ProjectHighlight from "@/components/ui/projects/highlight";
-import ProjectSingleImage from "@/components/ui/projects/singleImage";
-import ProjectTripleImageDiff from "@/components/ui/projects/tripleImageDiff";
+import {
+  ProjectHero,
+  ProjectHighlight,
+  ProjectTripleImageDiff,
+} from "@/components/ui/projects";
 import React from "react";
 
 const PAGE_DATA = {

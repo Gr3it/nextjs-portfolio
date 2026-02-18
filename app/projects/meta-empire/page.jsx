@@ -1,6 +1,8 @@
-import ProjectDoubleImage from "@/components/ui/projects/doubleImage";
-import ProjectHero from "@/components/ui/projects/hero";
-import ProjectHighlight from "@/components/ui/projects/highlight";
+import {
+  ProjectDoubleImage,
+  ProjectHero,
+  ProjectHighlight,
+} from "@/components/ui/projects";
 import React from "react";
 
 const PAGE_DATA = {

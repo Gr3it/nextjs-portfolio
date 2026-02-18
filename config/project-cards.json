@@ -118,7 +118,7 @@
   {
     "position": [-25, 0, 316],
     "title": "Flynet",
-    "description": "A Java-based airport management system. Beyond core CRUD features for flight scheduling, it features a custom CSS parallax Hero section with dynamic cloud layers and a takeoff animation on scroll.",
+    "description": "A Java-based airport management system. Beyond core CRUD features for flight scheduling, it features an immersive GSAP-powered parallax Hero section with dynamic cloud layers and a takeoff animation triggered by scroll.",
     "component": {
       "type": "FlynetPreview"
     },

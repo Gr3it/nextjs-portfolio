@@ -1,6 +1,8 @@
-import ProjectHero from "@/components/ui/projects/hero";
-import ProjectHighlight from "@/components/ui/projects/highlight";
-import ProjectSingleImage from "@/components/ui/projects/singleImage";
+import {
+  ProjectHero,
+  ProjectHighlight,
+  ProjectSingleImage,
+} from "@/components/ui/projects";
 import React from "react";
 
 const PAGE_DATA = {
@@ -24,6 +26,8 @@ export default function Page() {
       <ProjectHighlight>
         <ProjectSingleImage
           link={"/images/SpacePirates/preview.webp"}
+          width={1792}
+          height={1024}
           alt="Space Pirates banner"
         />
       </ProjectHighlight>

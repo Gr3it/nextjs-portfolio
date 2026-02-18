@@ -1,7 +1,8 @@
-import ProjectGridShowcase from "@/components/ui/projects/gridShowcase";
-import ProjectHero from "@/components/ui/projects/hero";
-import ProjectHighlight from "@/components/ui/projects/highlight";
-import ProjectSingleImage from "@/components/ui/projects/singleImage";
+import {
+  ProjectHero,
+  ProjectHighlight,
+  ProjectSingleImage,
+} from "@/components/ui/projects";
 import React from "react";
 
 const PAGE_DATA = {
@@ -24,6 +25,8 @@ export default function Page() {
       <ProjectHighlight>
         <ProjectSingleImage
           link={"/images/PlanIt/Calendar.png"}
+          height={982}
+          width={1512}
           alt="Plan It Homepage"
         />
       </ProjectHighlight>

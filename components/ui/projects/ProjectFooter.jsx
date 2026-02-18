@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { RiggedCar } from "@/models/vehicles/RiggedCar";
 import Link from "next/link";
 import { MinimalCanvas } from "@/components/3D/core/minimalCanvas";
+import { ProjectContainer } from ".";
 
 const CarScene = React.memo(({ hover }) => (
   <MinimalCanvas>
@@ -30,7 +31,11 @@ export default function ProjectFooter() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <footer className="w-full py-24 flex flex-col items-center justify-center border-t border-[var(--borderColor)] overflow-hidden">
+    <ProjectContainer
+      as="footer"
+      className="border-t border-[var(--borderColor)] overflow-hidden"
+      containerClassName="flex flex-col items-center justify-center"
+    >
       <p className="text-[var(--grey)] font-light text-xl mb-4 tracking-widest uppercase">
         Enjoyed the journey?
       </p>
@@ -63,6 +68,6 @@ export default function ProjectFooter() {
       <div
         className={`h-[2px] bg-[var(--accent-color)] transition-all duration-500 ease-in-out ${isHovered ? "w-1/2" : "w-0"}`}
       />
-    </footer>
+    </ProjectContainer>
   );
 }

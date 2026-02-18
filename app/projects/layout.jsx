@@ -1,5 +1,4 @@
-import ProjectFooter from "@/components/ui/projects/footer";
-import ProjectNavbar from "@/components/ui/projects/navbar";
+import { ProjectFooter, ProjectNavbar } from "@/components/ui/projects";
 
 export default function Layout({ children }) {
   return (

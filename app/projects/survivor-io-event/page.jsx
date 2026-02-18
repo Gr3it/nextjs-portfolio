@@ -1,5 +1,4 @@
-import ProjectHero from "@/components/ui/projects/hero";
-import ProjectHighlight from "@/components/ui/projects/highlight";
+import { ProjectHero, ProjectHighlight } from "@/components/ui/projects";
 import SurvivorEventDemo from "@/components/ui/projects/survivorEvent/Demo";
 import React from "react";
 

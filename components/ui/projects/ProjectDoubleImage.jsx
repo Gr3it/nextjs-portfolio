@@ -6,9 +6,12 @@ export default function ProjectDoubleImage({
   linkRight,
   altLeft = "Project detail left",
   altRight = "Project detail right",
+  className = "",
 }) {
   return (
-    <div className="relative container w-full h-full flex items-center justify-center m-auto">
+    <div
+      className={`relative w-full aspect-video md:aspect-[21/9] flex items-center justify-center ${className}`}
+    >
       <div className="absolute left-[25%] top-4 -translate-x-1/2 w-5/12 h-full transition-transform -rotate-6">
         <Image
           src={linkLeft}

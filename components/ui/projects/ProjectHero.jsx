@@ -3,7 +3,7 @@ import React from "react";
 export default function ProjectHero({ title, description }) {
   return (
     <section className="relative w-full h-[95vh] flex flex-col justify-center items-center">
-      <div className="container">
+      <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-6xl">
           <h1 className="text-[var(--grey)] font-light text-xl md:text-2xl tracking-[0.2em] uppercase mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             {title}

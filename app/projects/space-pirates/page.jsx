@@ -29,6 +29,7 @@ export default function Page() {
           width={1792}
           height={1024}
           alt="Space Pirates banner"
+          className="h-full"
         />
       </ProjectHighlight>
     </>

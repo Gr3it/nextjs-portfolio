@@ -6,9 +6,10 @@ export default function ProjectSingleImage({
   height,
   width,
   alt = "Project detail",
+  className,
 }) {
   return (
-    <div className="drop-shadow-2xl h-auto">
+    <div className={`drop-shadow-2xl h-auto ${className}`}>
       <Image
         src={link}
         alt={alt}

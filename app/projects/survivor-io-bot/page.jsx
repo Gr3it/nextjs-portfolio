@@ -29,6 +29,7 @@ export default function Page() {
           width={2539}
           height={1382}
           alt="Bot Running Img"
+          className="h-full"
         />
       </ProjectHighlight>
     </>

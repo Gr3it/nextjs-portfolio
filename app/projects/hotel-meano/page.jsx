@@ -37,6 +37,7 @@ export default function Page() {
           height={927}
           width={1903}
           alt="Hotel Meano Home"
+          className="h-full"
         />
       </ProjectHighlight>
 

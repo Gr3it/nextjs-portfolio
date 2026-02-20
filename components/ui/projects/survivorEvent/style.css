@@ -3,6 +3,10 @@
   --cells-color: #cd79e1;
 }
 
+body.iframe-active {
+  overflow: hidden;
+}
+
 .cell {
   background-color: var(--cells-color);
   background-size: contain;

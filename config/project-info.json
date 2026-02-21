@@ -2,6 +2,11 @@
   "portfolio": {
     "links": [
       {
+        "label": "Old Portfolio",
+        "type": "live",
+        "url": "https://emanuelezini-old.netlify.app"
+      },
+      {
         "label": "3D World (Godot)",
         "type": "github",
         "url": "https://github.com/Gr3it/godot-portfolio-world"

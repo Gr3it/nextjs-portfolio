@@ -44,11 +44,12 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography variant="eyebrow" content="The Context" />
-              <ProjectTypography
-                variant="title"
-                content="Architecture for the Ancient World"
-              />
+              <ProjectTypography variant="eyebrow">
+                The Context
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                Architecture for the Ancient World
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 In March 2022, during the height of the NFT movement, I was
                 commissioned to architect the smart contract layer for Meta
@@ -85,20 +86,20 @@ export default function Page() {
         {/* Section 2: Security & The 100% Coverage Mandate */}
         <ProjectSection>
           <div className="mb-12">
-            <ProjectTypography variant="eyebrow" content="The Engineering" />
-            <ProjectTypography
-              variant="title"
-              content="Bulletproof Security Through Extreme Testing"
-            />
+            <ProjectTypography variant="eyebrow">
+              The Engineering
+            </ProjectTypography>
+            <ProjectTypography variant="title">
+              Bulletproof Security Through Extreme Testing
+            </ProjectTypography>
           </div>
 
           <ProjectVerticalStack className="gap-24">
             <ProjectLayout cols="2" alignItems="center">
               <div>
-                <ProjectTypography
-                  variant="subtitle"
-                  content="The 900+ Line Test Suite"
-                />
+                <ProjectTypography variant="subtitle">
+                  The 900+ Line Test Suite
+                </ProjectTypography>
                 <ProjectTypography variant="body">
                   In blockchain, code is law and bugs are permanent. To combat
                   this, I developed an extensive testing suite using Hardhat,
@@ -135,11 +136,12 @@ export default function Page() {
 
             <ProjectVerticalStack className="gap-8">
               <div>
-                <ProjectTypography variant="eyebrow" content="Innovation" />
-                <ProjectTypography
-                  variant="title"
-                  content="Revolutionizing Whitelist Efficiency"
-                />
+                <ProjectTypography variant="eyebrow">
+                  Innovation
+                </ProjectTypography>
+                <ProjectTypography variant="title">
+                  Revolutionizing Whitelist Efficiency
+                </ProjectTypography>
                 <ProjectTypography variant="body">
                   At the time, traditional whitelisting methods were often
                   gas-intensive. I implemented a Merkle Tree system for reducing
@@ -166,11 +168,12 @@ export default function Page() {
           <ProjectLayout cols="2" alignItems="center">
             <ProjectVerticalStack className="gap-8">
               <div>
-                <ProjectTypography variant="eyebrow" content="Distribution" />
-                <ProjectTypography
-                  variant="title"
-                  content="Dynamic Pricing for Fair Discovery"
-                />
+                <ProjectTypography variant="eyebrow">
+                  Distribution
+                </ProjectTypography>
+                <ProjectTypography variant="title">
+                  Dynamic Pricing for Fair Discovery
+                </ProjectTypography>
                 <ProjectTypography variant="body">
                   For the public sale, I implemented a Dutch Auction mechanism.
                   The price was calculated dynamically based on time passed
@@ -215,11 +218,12 @@ export default function Page() {
 
             <ProjectVerticalStack className="gap-8">
               <div>
-                <ProjectTypography variant="eyebrow" content="Functionality" />
-                <ProjectTypography
-                  variant="title"
-                  content="Silent Staking & Interaction"
-                />
+                <ProjectTypography variant="eyebrow">
+                  Functionality
+                </ProjectTypography>
+                <ProjectTypography variant="title">
+                  Silent Staking & Interaction
+                </ProjectTypography>
                 <ProjectTypography variant="body">
                   Beyond the minting process, I integrated a custom staking
                   logic directly into the main contract. This "Silent Staking"
@@ -242,13 +246,14 @@ export default function Page() {
 
         {/* Section 6: Outcomes & Growth */}
         <ProjectSection>
-          <ProjectLayout cols="2-1">
+          <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography variant="eyebrow" content="Retrospective" />
-              <ProjectTypography
-                variant="title"
-                content="A Foundation of Security"
-              />
+              <ProjectTypography variant="eyebrow">
+                Retrospective
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                A Foundation of Security
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Meta Empire was a cornerstone project in my development as a
                 Web3 engineer. It taught me the critical importance of proactive

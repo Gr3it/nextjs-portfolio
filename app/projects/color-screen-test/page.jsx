@@ -44,11 +44,12 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography variant="eyebrow" content="The Context" />
-              <ProjectTypography
-                variant="title"
-                content="From Classroom Debates to Mobile Development"
-              />
+              <ProjectTypography variant="eyebrow">
+                The Context
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                From Classroom Debates to Mobile Development
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 The idea for Color Screen Test was born during my high school
                 years. My classmates and I frequently debated which smartphone
@@ -86,11 +87,12 @@ export default function Page() {
         {/* Section 2: Core Utility & Features */}
         <ProjectSection>
           <div className="mb-12">
-            <ProjectTypography variant="eyebrow" content="The Solution" />
-            <ProjectTypography
-              variant="title"
-              content="A Pure Visualizer for Display Testing"
-            />
+            <ProjectTypography variant="eyebrow">
+              The Solution
+            </ProjectTypography>
+            <ProjectTypography variant="title">
+              A Pure Visualizer for Display Testing
+            </ProjectTypography>
           </div>
 
           <ProjectLayout cols="2" alignItems="center">
@@ -106,10 +108,9 @@ export default function Page() {
               </ProjectTypography>
             </ProjectVerticalStack>
             <div>
-              <ProjectTypography
-                variant="subtitle"
-                content="Presets and Precision Control"
-              />
+              <ProjectTypography variant="subtitle">
+                Presets and Precision Control
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 The application provides two main modes of interaction. Users
                 can either manually dial in an exact color using RGB sliders or
@@ -135,11 +136,12 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2" alignItems="center">
             <div className="order-2 md:order-1">
-              <ProjectTypography variant="eyebrow" content="Engineering" />
-              <ProjectTypography
-                variant="title"
-                content="Bypassing Native Constraints"
-              />
+              <ProjectTypography variant="eyebrow">
+                Engineering
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                Bypassing Native Constraints
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 As my first React Native project, I quickly discovered that
                 high-level abstractions sometimes get in the way of low-level
@@ -185,11 +187,12 @@ export default function Page() {
               />
             </div>
             <div>
-              <ProjectTypography variant="eyebrow" content="User Experience" />
-              <ProjectTypography
-                variant="title"
-                content="Designed for Seamless Interaction"
-              />
+              <ProjectTypography variant="eyebrow">
+                User Experience
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                Designed for Seamless Interaction
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 The UI was designed to stay out of the way. I implemented a
                 gesture-based system where a simple click anywhere on the screen
@@ -211,11 +214,12 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography variant="eyebrow" content="Retrospective" />
-              <ProjectTypography
-                variant="title"
-                content="The Value of Shipping"
-              />
+              <ProjectTypography variant="eyebrow">
+                Retrospective
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                The Value of Shipping
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Color Screen Test was successfully published on the Google Play
                 Store. While it was never intended to be a mass-market success,

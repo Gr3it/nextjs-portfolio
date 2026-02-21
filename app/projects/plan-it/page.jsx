@@ -43,15 +43,16 @@ export default function Page() {
       </ProjectHighlight>
 
       <ProjectContainer>
-        {/* Section 1: Context & Vision */}
+        {/* Section 1: The Scheduling Paradox */}
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography variant="eyebrow" content="The Context" />
-              <ProjectTypography
-                variant="title"
-                content="From Scheduling Burden to Automated Flow"
-              />
+              <ProjectTypography variant="eyebrow">
+                The Context
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                The Scheduling Paradox
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Developed as a collaborative project for the Software
                 Engineering course at the University of Trento, Plan It was born

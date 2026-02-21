@@ -7,7 +7,6 @@ import {
   ProjectTypography,
   ProjectInsight,
   ProjectTechStack,
-  ProjectMedia,
   ProjectSingleImage,
   ProjectVerticalStack,
 } from "@/components/ui/projects";
@@ -45,7 +44,7 @@ export default function Page() {
       <ProjectContainer>
         {/* Section 1: Context & The Opportunity */}
         <ProjectSection>
-          <ProjectLayout cols="2-1">
+          <ProjectLayout cols="2-1" alignItems="center">
             <div>
               <ProjectTypography variant="eyebrow">
                 The Auction Challenge
@@ -144,7 +143,7 @@ export default function Page() {
 
         {/* Section 4: Economic Impact */}
         <ProjectSection>
-          <ProjectLayout cols="1-2">
+          <ProjectLayout cols="1-2" alignItems="center">
             <ProjectInsight
               title="Hidden ROI"
               content="While top-tier prizes were the main focus, the bot revealed that lower tiers (B to G) often accounted for over 40% of the cost ammortization. Mental math usually misses these, but the bot factored every single item into the final profit projection."

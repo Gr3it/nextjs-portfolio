@@ -45,11 +45,12 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography variant="eyebrow" content="The Challenge" />
-              <ProjectTypography
-                variant="title"
-                content="Reimagining the Booking Experience"
-              />
+              <ProjectTypography variant="eyebrow">
+                The Challenge
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                Reimagining the Booking Experience
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Developed as a high school graduation project from 5 years ago,
                 this assignment originally requested a network infrastructure
@@ -83,14 +84,12 @@ export default function Page() {
           <ProjectLayout cols="1">
             <ProjectLayout cols="1">
               <div>
-                <ProjectTypography
-                  variant="eyebrow"
-                  content="The Core Innovation"
-                />
-                <ProjectTypography
-                  variant="title"
-                  content="Pure CSS 3D Architecture"
-                />
+                <ProjectTypography variant="eyebrow">
+                  The Core Innovation
+                </ProjectTypography>
+                <ProjectTypography variant="title">
+                  Pure CSS 3D Architecture
+                </ProjectTypography>
                 <ProjectTypography variant="body">
                   The centerpiece of the application is the interactive booking
                   map. Instead of using 3D rendering engines, I utilized CSS
@@ -111,11 +110,12 @@ export default function Page() {
                   alt="User Data Entry"
                 />
                 <div className="mb-auto">
-                  <ProjectTypography variant="eyebrow" content="System Logic" />
-                  <ProjectTypography
-                    variant="title"
-                    content="Real-time Availability"
-                  />
+                  <ProjectTypography variant="eyebrow">
+                    System Logic
+                  </ProjectTypography>
+                  <ProjectTypography variant="title">
+                    Real-time Availability
+                  </ProjectTypography>
                   <ProjectTypography variant="body">
                     The booking flow is technically rigorous. When a user
                     selects their dates, an AJAX call queries the custom MySQL
@@ -149,11 +149,12 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="flex-start">
             <div>
-              <ProjectTypography variant="eyebrow" content="Retrospective" />
-              <ProjectTypography
-                variant="title"
-                content="Foundations of Full Stack"
-              />
+              <ProjectTypography variant="eyebrow">
+                Retrospective
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                Foundations of Full Stack
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Looking back, Hotel Meano was a pivotal step in my journey. It
                 taught me how to bridge the gap between creative frontend

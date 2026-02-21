@@ -48,11 +48,10 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography variant="eyebrow" content="Context" />
-              <ProjectTypography
-                variant="title"
-                content="The Data Visualization Sandbox"
-              />
+              <ProjectTypography variant="eyebrow">Context</ProjectTypography>
+              <ProjectTypography variant="title">
+                The Data Visualization Sandbox
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Developed in November 2021 as a personal deep-dive into the
                 React ecosystem, this project served as a playground for
@@ -83,11 +82,12 @@ export default function Page() {
               alt="Crypto Dashboard Home"
             />
             <div>
-              <ProjectTypography variant="eyebrow" content="Architecture" />
-              <ProjectTypography
-                variant="title"
-                content="Bypassing CORS with Custom Proxy"
-              />
+              <ProjectTypography variant="eyebrow">
+                Architecture
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                Bypassing CORS with Custom Proxy
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 To interact with external market data securely, I architected a
                 backend middleware using Express. This marked my first
@@ -103,14 +103,12 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography
-                variant="eyebrow"
-                content="Technical Challenge"
-              />
-              <ProjectTypography
-                variant="title"
-                content="Synchronizing Paginated Ranking"
-              />
+              <ProjectTypography variant="eyebrow">
+                Technical Challenge
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                Synchronizing Paginated Ranking
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 The most significant hurdle was maintaining data integrity
                 during infinite scrolling. Because crypto rankings are highly
@@ -134,11 +132,10 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="1">
             <div className="mb-12">
-              <ProjectTypography variant="eyebrow" content="Features" />
-              <ProjectTypography
-                variant="title"
-                content="High-Fidelity Trading Charts"
-              />
+              <ProjectTypography variant="eyebrow">Features</ProjectTypography>
+              <ProjectTypography variant="title">
+                High-Fidelity Trading Charts
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Built with the amCharts 5 engine, the application provides
                 interactive candlestick charts that allow users to analyze price
@@ -168,11 +165,10 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="flex-start">
             <div>
-              <ProjectTypography variant="eyebrow" content="Evolution" />
-              <ProjectTypography
-                variant="title"
-                content="Growth & Refactoring Philosophy"
-              />
+              <ProjectTypography variant="eyebrow">Evolution</ProjectTypography>
+              <ProjectTypography variant="title">
+                Growth & Refactoring Philosophy
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Looking back at this project, it represents a crucial milestone
                 in my development journey. While the original "Single Component"

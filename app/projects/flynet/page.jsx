@@ -40,11 +40,10 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="center">
             <div>
-              <ProjectTypography variant="eyebrow" content="The Brief" />
-              <ProjectTypography
-                variant="title"
-                content="Legacy Tech meets Creative Vision"
-              />
+              <ProjectTypography variant="eyebrow">The Brief</ProjectTypography>
+              <ProjectTypography variant="title">
+                Legacy Tech meets Creative Vision
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Born as a high school assignment, Flynet was designed to manage
                 a real-world-inspired airport database. While the core
@@ -70,8 +69,12 @@ export default function Page() {
           <ProjectLayout cols="1">
             <ProjectLayout cols="1">
               <div>
-                <ProjectTypography variant="eyebrow" content="The Experience" />
-                <ProjectTypography variant="title" content="Data at a Glance" />
+                <ProjectTypography variant="eyebrow">
+                  The Experience
+                </ProjectTypography>
+                <ProjectTypography variant="title">
+                  Data at a Glance
+                </ProjectTypography>
                 <ProjectTypography variant="body">
                   The platform features dedicated Arrival and Departure boards,
                   meticulously styled for readability. Using alternating row
@@ -104,8 +107,12 @@ export default function Page() {
                 alt="Administrative Panel"
               />
               <div>
-                <ProjectTypography variant="eyebrow" content="Management" />
-                <ProjectTypography variant="title" content="Secure Control" />
+                <ProjectTypography variant="eyebrow">
+                  Management
+                </ProjectTypography>
+                <ProjectTypography variant="title">
+                  Secure Control
+                </ProjectTypography>
                 <ProjectTypography variant="body">
                   A private administration area allows authorized users to
                   manage the airport's ecosystem. Using dedicated Java Servlets,
@@ -120,11 +127,12 @@ export default function Page() {
         <ProjectSection>
           <ProjectLayout cols="2-1" alignItems="flex-start">
             <div>
-              <ProjectTypography variant="eyebrow" content="Reflection" />
-              <ProjectTypography
-                variant="title"
-                content="From JSP to the Modern Web"
-              />
+              <ProjectTypography variant="eyebrow">
+                Reflection
+              </ProjectTypography>
+              <ProjectTypography variant="title">
+                From JSP to the Modern Web
+              </ProjectTypography>
               <ProjectTypography variant="body">
                 Working with JSP highlighted the challenges of server-side
                 rendering in legacy environments. Today, I would architect this

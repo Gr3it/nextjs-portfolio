@@ -38,7 +38,7 @@ export default function Page() {
       <ProjectContainer>
         {/* Section 1: Context & Speed */}
         <ProjectSection>
-          <ProjectLayout cols="2-1">
+          <ProjectLayout cols="2-1" alignItems="center">
             <div>
               <ProjectTypography variant="eyebrow">
                 The Opportunity
@@ -107,7 +107,7 @@ export default function Page() {
 
         {/* Section 3: Vision Engineering */}
         <ProjectSection>
-          <ProjectLayout cols="2-1">
+          <ProjectLayout cols="2-1" alignItems="center">
             <div>
               <ProjectTypography variant="eyebrow">
                 Computer Vision
@@ -164,31 +164,32 @@ export default function Page() {
 
         {/* Section 5: Professional Growth */}
         <ProjectSection>
-          <ProjectLayout cols="1-2">
-            <ProjectInsight
-              title="Disruptive Innovation"
-              content="Beyond the technical challenge, this project taught me about the power of transparency. By keeping the code in plain text, I invited the community to trust and analyze the tool, fostering a loyal user base that defended and shared the work."
-            />
-            <div>
-              <ProjectTypography variant="title">
-                Scaling & Sustainability
-              </ProjectTypography>
-              <ProjectTypography variant="body">
-                Building a tool that handles 750,000 views on a{" "}
-                <strong>zero-cost infrastructure</strong> (Netlify Free Tier +
-                Client-side logic) was a masterclass in scalable architecture.
-                It proved that complex utility doesn't always require expensive
-                cloud backends.
-              </ProjectTypography>
-              <ProjectTypography variant="body">
-                Today, I look back at the project not just as a successful tool,
-                but as a testament to the importance of speed, community trust,
-                and resilient engineering in the face of evolving digital
-                environments.
-              </ProjectTypography>
-            </div>
-          </ProjectLayout>
           <ProjectVerticalStack>
+            <ProjectLayout cols="1-2" alignItems="center">
+              <ProjectInsight
+                title="Disruptive Innovation"
+                content="Beyond the technical challenge, this project taught me about the power of transparency. By keeping the code in plain text, I invited the community to trust and analyze the tool, fostering a loyal user base that defended and shared the work."
+              />
+              <div>
+                <ProjectTypography variant="title">
+                  Scaling & Sustainability
+                </ProjectTypography>
+                <ProjectTypography variant="body">
+                  Building a tool that handles 750,000 views on a{" "}
+                  <strong>zero-cost infrastructure</strong> (Netlify Free Tier +
+                  Client-side logic) was a masterclass in scalable architecture.
+                  It proved that complex utility doesn't always require
+                  expensive cloud backends.
+                </ProjectTypography>
+                <ProjectTypography variant="body">
+                  Today, I look back at the project not just as a successful
+                  tool, but as a testament to the importance of speed, community
+                  trust, and resilient engineering in the face of evolving
+                  digital environments.
+                </ProjectTypography>
+              </div>
+            </ProjectLayout>
+
             <div className="relative rounded-xl shadow-lg overflow-hidden aspect-video">
               <iframe
                 src="https://lookerstudio.google.com/embed/reporting/4d7dd794-c59d-4511-b02a-d7bd83cead2b/page/kIV1C"

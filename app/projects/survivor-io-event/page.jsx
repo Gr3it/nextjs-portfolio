@@ -159,23 +159,6 @@ export default function Page() {
                 effectiveness.
               </ProjectTypography>
             </div>
-            <ProjectVerticalStack>
-              <div className="relative rounded-xl shadow-lg overflow-hidden aspect-video">
-                <iframe
-                  src="https://lookerstudio.google.com/embed/reporting/4d7dd794-c59d-4511-b02a-d7bd83cead2b/page/kIV1C"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    border: "none",
-                  }}
-                  allowFullScreen
-                  tabIndex={-1}
-                />
-              </div>
-              <ProjectTypography variant="caption">
-                Google Analytics Dashboard
-              </ProjectTypography>
-            </ProjectVerticalStack>
           </ProjectLayout>
         </ProjectSection>
 
@@ -205,6 +188,23 @@ export default function Page() {
               </ProjectTypography>
             </div>
           </ProjectLayout>
+          <ProjectVerticalStack>
+            <div className="relative rounded-xl shadow-lg overflow-hidden aspect-video">
+              <iframe
+                src="https://lookerstudio.google.com/embed/reporting/4d7dd794-c59d-4511-b02a-d7bd83cead2b/page/kIV1C"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: "none",
+                }}
+                allowFullScreen
+                tabIndex={-1}
+              />
+            </div>
+            <ProjectTypography variant="caption">
+              Google Analytics Dashboard
+            </ProjectTypography>
+          </ProjectVerticalStack>
         </ProjectSection>
       </ProjectContainer>
     </>

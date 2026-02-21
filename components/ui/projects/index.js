@@ -17,3 +17,4 @@ export { default as ProjectSingleVideo } from "./ProjectSingleVideo";
 export { default as ProjectTripleImageDiff } from "./ProjectTripleImageDiff";
 export { default as ProjectVerticalStack } from "./ProjectVerticalStack";
 export { default as ProjectZoomableImage } from "./ProjectZoomableImage";
+export { default as ProjectModelViewer } from "./ProjectModelViewer";

@@ -24,6 +24,7 @@ function Loader() {
 
 export default function ProjectModelViewer({
   modelPath,
+  children,
   className = "",
   aspect = "aspect-square",
 }) {
@@ -31,11 +32,11 @@ export default function ProjectModelViewer({
     <div
       className={`relative w-full ${aspect} bg-white/[0.03] rounded-3xl border border-white/10 overflow-hidden group transition-all duration-500 hover:bg-white/[0.05] ${className}`}
     >
-      <Canvas dpr={[1, 2]} camera={{ fov: 45 }}>
+      <Canvas dpr={[1, 2]} camera={{ fov: 45, position: [10, 10, 10] }}>
         <color attach="background" args={["#0a0a0a"]} />
         <Suspense fallback={<Loader />}>
-          <Stage intensity={0.5} environment="city" adjustCamera={true}>
-            <Model url={modelPath} />
+          <Stage intensity={0.5} environment="city" adjustCamera={true} center>
+            {modelPath ? <Model url={modelPath} /> : children}
           </Stage>
         </Suspense>
         <OrbitControls
@@ -43,8 +44,8 @@ export default function ProjectModelViewer({
           enableZoom={false}
           autoRotate
           autoRotateSpeed={0.5}
-          minPolarAngle={Math.PI / 4}
-          maxPolarAngle={Math.PI / 1.5}
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI / 2.5}
         />
       </Canvas>
 

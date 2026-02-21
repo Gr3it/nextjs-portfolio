@@ -9,7 +9,7 @@ import { useGLTF } from "@react-three/drei";
 
 export function Train(props) {
   const { nodes, materials } = useGLTF(
-    "/models/vehicles/train-transformed.glb"
+    "/models/vehicles/train-transformed.glb",
   );
   return (
     <group {...props} dispose={null}>

@@ -4,23 +4,45 @@ Command: npx gltfjsx@6.5.3 spaceship.glb --transform --shadows --keepgroups --ou
 Files: spaceship.glb [34.03KB] > C:\Users\emanu\next-portfolio\public\spaceship-transformed.glb [5.18KB] (85%)
 */
 
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import React from "react";
+import { useGLTF } from "@react-three/drei";
 
 export function Spaceship(props) {
-  const { nodes, materials } = useGLTF('/models/vehicles/spaceship-transformed.glb')
+  const { nodes, materials } = useGLTF(
+    "/models/vehicles/spaceship-transformed.glb",
+  );
   return (
     <group {...props} dispose={null}>
       <group>
         <group rotation={[-Math.PI, 0, -Math.PI]}>
-          <mesh castShadow receiveShadow geometry={nodes.mesh_0.geometry} material={materials.metal} />
-          <mesh castShadow receiveShadow geometry={nodes.mesh_0_1.geometry} material={materials.metalDark} />
-          <mesh castShadow receiveShadow geometry={nodes.mesh_0_2.geometry} material={materials.dark} />
-          <mesh castShadow receiveShadow geometry={nodes.mesh_0_3.geometry} material={materials.metalRed} />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.mesh_0.geometry}
+            material={materials.metal}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.mesh_0_1.geometry}
+            material={materials.metalDark}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.mesh_0_2.geometry}
+            material={materials.dark}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.mesh_0_3.geometry}
+            material={materials.metalRed}
+          />
         </group>
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/vehicles/spaceship-transformed.glb')
+useGLTF.preload("/models/vehicles/spaceship-transformed.glb");

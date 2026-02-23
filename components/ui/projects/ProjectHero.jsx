@@ -1,18 +1,20 @@
-import React from "react";
+import { ProjectContainer } from ".";
 
 export default function ProjectHero({ title, description }) {
   return (
-    <section className="relative w-full h-[95vh] flex flex-col justify-center items-center">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-6xl">
-          <h1 className="text-[var(--grey)] font-light text-xl md:text-2xl tracking-[0.2em] uppercase mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            {title}
-          </h1>
-          <p className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] md:leading-[1.05]">
-            {description}
-            <span className="text-[var(--accent-color)] ml-1">.</span>
-          </p>
-        </div>
+    <ProjectContainer
+      as="section"
+      noPadding
+      className="relative w-full h-[95vh] flex flex-col justify-center items-center"
+    >
+      <div className="max-w-6xl w-full">
+        <h1 className="text-[var(--grey)] font-light text-xl md:text-2xl tracking-[0.2em] uppercase mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          {title}
+        </h1>
+        <p className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] md:leading-[1.05]">
+          {description}
+          <span className="text-[var(--accent-color)] ml-1">.</span>
+        </p>
       </div>
 
       <div className="absolute bottom-12 right-12 hidden lg:block">
@@ -23,6 +25,6 @@ export default function ProjectHero({ title, description }) {
           <div className="w-[1px] h-12 bg-gradient-to-b from-[var(--accent-color)] to-transparent opacity-60" />
         </div>
       </div>
-    </section>
+    </ProjectContainer>
   );
 }

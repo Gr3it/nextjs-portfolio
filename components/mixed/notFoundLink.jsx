@@ -31,30 +31,30 @@ export default function NotFoundLink() {
   return (
     <Link
       href="/"
-      className="group flex flex-col items-center cursor-pointer outline-none -mt-4"
+      className="group flex flex-col items-center cursor-pointer outline-none"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
       onBlur={() => setIsHovered(false)}
     >
       <div
-        className={`w-[320px] h-[180px] md:w-[550px] md:h-[280px] transition-transform duration-700 ease-out 
+        className={`m-6 w-[16.25rem] h-[10rem] xs:w-[20rem] xs:h-[11.25rem] md:w-[34.375rem] md:h-[17.5rem] transition-transform duration-700 ease-out 
             ${isHovered ? "scale-105 rotate-2" : "scale-100"}`}
       >
         <CarScene hover={isHovered} />
       </div>
 
-      <div className="flex flex-col items-center -mt-6">
+      <div className="flex flex-col items-center">
         <span
-          className={`text-2xl md:text-3xl font-bold tracking-tight transition-all duration-500 
+          className={`text-xl xs:text-2xl md:text-3xl font-black tracking-tighter sm:tracking-tight transition-all duration-500 uppercase
             ${isHovered ? "text-[var(--accent-color)] scale-110" : "text-inherit"}`}
         >
-          BACK TO HOME
+          Back to Home
         </span>
 
         <div
-          className={`h-[3px] mt-1 bg-[var(--accent-color)] transition-all duration-500 ease-in-out 
-              ${isHovered ? "w-full" : "w-12"}`}
+          className={`h-[3px] mt-2 bg-[var(--accent-color)] transition-all duration-500 ease-in-out 
+              ${isHovered ? "w-full" : "w-10 sm:w-12"}`}
         />
       </div>
     </Link>

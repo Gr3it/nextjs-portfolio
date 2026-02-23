@@ -385,15 +385,15 @@ export default function Page() {
                   height={1024}
                   alt="2D Concept"
                 />
+                <ProjectModelViewer modelPath="/models/spacePirates/Azureon-transformed.glb" />
+              </ProjectVerticalStack>
+              <ProjectVerticalStack>
                 <ProjectSingleImage
                   link="/images/SpacePirates/Kragor.jpeg"
                   width={1024}
                   height={1024}
                   alt="2D Concept"
                 />
-              </ProjectVerticalStack>
-              <ProjectVerticalStack>
-                <ProjectModelViewer modelPath="/models/spacePirates/Azureon-transformed.glb" />
                 <ProjectModelViewer modelPath="/models/spacePirates/Kragor-transformed.glb" />
               </ProjectVerticalStack>
             </ProjectLayout>

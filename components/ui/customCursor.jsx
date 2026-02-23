@@ -141,7 +141,7 @@ export default function CustomCursor({ pathname }) {
   return (
     <div
       ref={cursorRef}
-      className="flex items-center justify-center pointer-events-none fixed top-0 left-0 z-[9999]"
+      className="flex items-center justify-center pointer-events-none fixed top-0 left-0 z-[9000]"
     >
       <div
         ref={containerRef}

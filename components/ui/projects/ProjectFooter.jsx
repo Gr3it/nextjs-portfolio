@@ -36,13 +36,13 @@ export default function ProjectFooter() {
       className="border-t border-[var(--borderColor)] overflow-hidden"
       containerClassName="flex flex-col items-center justify-center"
     >
-      <p className="text-[var(--grey)] font-light text-xl mb-4 tracking-widest uppercase">
+      <p className="text-[var(--grey)] font-light text-sm md:text-xl mb-4 md:mb-6 tracking-[0.2em] md:tracking-widest uppercase opacity-70">
         Enjoyed the journey?
       </p>
 
       <Link
         href="/"
-        className="group relative flex flex-col md:flex-row items-center gap-6 cursor-pointer outline-none"
+        className="group relative flex flex-col md:flex-row items-center gap-6 md:gap-8 cursor-pointer outline-none mb-2 md:mb-4"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onFocus={() => setIsHovered(true)}
@@ -50,7 +50,7 @@ export default function ProjectFooter() {
         scroll={false}
       >
         <h2
-          className={`text-6xl md:text-8xl font-bold tracking-tighter transition-colors duration-500 
+          className={`text-4xl xs:text-5xl md:text-8xl font-bold tracking-tighter text-center md:text-left transition-all duration-500 leading-[0.9] md:leading-tight
             ${isHovered ? "text-[var(--accent-color)]" : "text-inherit"}`}
         >
           See other projects
@@ -58,8 +58,8 @@ export default function ProjectFooter() {
         </h2>
 
         <div
-          className={`w-64 h-40 transition-transform duration-700 ease-out 
-            ${isHovered ? "scale-110 rotate-2" : "scale-100"}`}
+          className={`w-[256px] h-[128px] transition-transform duration-700 ease-out 
+            ${isHovered ? "scale-110 rotate-3" : "scale-100"}`}
         >
           <CarScene hover={isHovered} />
         </div>

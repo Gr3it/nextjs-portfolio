@@ -24,11 +24,6 @@
   scroll-behavior: smooth;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -50,8 +45,8 @@ body {
 }
 
 .code {
-  width: 58rem;
-  height: 31rem;
+  width: 928px;
+  height: 496px;
   padding: 16px;
   font-family: "JetBrains Mono", monospace;
   font-size: 20px;
@@ -148,5 +143,30 @@ body {
   .custom-cursor-pos.active {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Height-based scaling for low viewports (e.g. mobile landscape) */
+@media (max-height: 800px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-height: 600px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 450px) {
+  :root {
+    font-size: 11px;
+  }
+}
+
+@media (max-height: 350px) {
+  :root {
+    font-size: 10px;
   }
 }

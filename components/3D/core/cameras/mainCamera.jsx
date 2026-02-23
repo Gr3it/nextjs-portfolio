@@ -7,12 +7,19 @@ import { useSnapshot } from "valtio";
 import { cameraStore } from "@/stores/cameraStorage";
 import cameraConfig from "@/config/camera-config.json";
 import { useResponsiveZoom } from "./useResponsiveZoom";
+import { useThree } from "@react-three/fiber";
 
 const { lookAtDirection, FOV, position, near, far } = cameraConfig;
 
 export default function MainCamera() {
   const cameraRef = useRef();
   const zoom = useResponsiveZoom(0.13);
+  const { size } = useThree();
+  const aspect = size.width / size.height;
+
+  // Increase far plane when the screen is vertical (aspect < 1)
+  const farFactor = aspect < 1 ? 1 / aspect : 1;
+  const dynamicFar = 1.25 * far * farFactor;
 
   const { isSupportCameraActive } = useSnapshot(cameraStore);
 
@@ -32,7 +39,7 @@ export default function MainCamera() {
     if (cameraRef.current) {
       cameraRef.current.updateProjectionMatrix();
     }
-  }, [zoom]);
+  }, [zoom, dynamicFar]);
 
   return (
     <PerspectiveCamera
@@ -41,7 +48,7 @@ export default function MainCamera() {
       fov={FOV}
       position={position}
       near={near}
-      far={1.25 * far}
+      far={dynamicFar}
       zoom={zoom}
     >
       {!isActive && <Helper type={CameraHelper} />}

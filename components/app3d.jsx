@@ -38,7 +38,7 @@ export default function App3d({ onReady }) {
     <>
       <main className={"h-screen bg-[var(--background)] mr isolate"}>
         <HUD />
-        <div className="fixed inset-0 w-screen">
+        <div className="fixed inset-0 w-screen bg-white">
           <Canvas shadows>
             <Suspense fallback={null}>
               <Scene />

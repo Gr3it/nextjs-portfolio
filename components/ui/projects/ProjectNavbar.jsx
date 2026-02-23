@@ -9,6 +9,7 @@ import ArrowBack from "../icons/arrowBack";
 import Github from "../icons/github";
 import OpenInNew from "../icons/openInNew";
 import Document from "../icons/document";
+import { ProjectContainer } from ".";
 
 const ICON_MAP = {
   github: Github,
@@ -56,28 +57,39 @@ export default function ProjectNavbar() {
   };
 
   return (
-    <div className="fixed top-0 w-full z-50 flex justify-center bg-[var(--background)] border-b border-[var(--borderColor)]">
-      <nav className="container mx-auto px-4 md:px-8 w-full flex gap-4 py-2">
+    <nav className="fixed top-0 w-full z-50 flex justify-center bg-[var(--background)] border-b border-[var(--borderColor)]">
+      <ProjectContainer
+        noPadding
+        className="py-2"
+        containerClassName="flex items-center"
+      >
         <Link
           href="/"
-          className={`${BASE_BUTTON_CLASS} mr-auto`}
+          className={`${BASE_BUTTON_CLASS} shrink-0 sm:mr-auto`}
           scroll={false}
         >
           <span className={ICON_WRAPPER_CLASS}>
             <ArrowBack />
           </span>
-          <p>Back</p>
+          <p className="hidden sm:block">Back</p>
         </Link>
 
-        {project?.links?.map((link, index) => (
-          <NavLink
-            key={index}
-            href={link.url}
-            label={link.label}
-            type={link.type}
-          />
-        ))}
-      </nav>
-    </div>
+        {/* Vertical Separator - Only visible on mobile when 'Back' text is hidden */}
+        <div className="w-[1px] h-5 bg-[var(--borderColor)] mx-2 shrink-0 sm:hidden" />
+
+        <div className="flex-1 flex items-center overflow-x-auto no-scrollbar scroll-smooth">
+          <div className="flex items-center gap-2 md:gap-4 ml-auto min-w-max">
+            {project?.links?.map((link, index) => (
+              <NavLink
+                key={index}
+                href={link.url}
+                label={link.label}
+                type={link.type}
+              />
+            ))}
+          </div>
+        </div>
+      </ProjectContainer>
+    </nav>
   );
 }

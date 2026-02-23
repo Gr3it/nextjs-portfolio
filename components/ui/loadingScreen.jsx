@@ -5,7 +5,7 @@ import React from "react";
 export default function LoadingScreen({ progress, onVideoReady }) {
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--background)] text-[var(--foreground)] overflow-hidden">
-      <div className="h-72 w-2xl flex items-center justify-center overflow-hidden">
+      <div className="h-48 md:h-72 w-full max-w-2xl px-8 flex items-center justify-center overflow-hidden">
         <video
           autoPlay
           loop
@@ -13,7 +13,7 @@ export default function LoadingScreen({ progress, onVideoReady }) {
           playsInline
           fetchPriority="high"
           preload="metadata"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           onCanPlayThrough={() => {
             onVideoReady();
           }}
@@ -24,10 +24,10 @@ export default function LoadingScreen({ progress, onVideoReady }) {
 
       <div className="mt-8 flex flex-col items-center gap-4">
         <div className="flex flex-col items-center">
-          <span className="font-mono text-6xl font-black italic tracking-tighter transition-all duration-300">
+          <span className="font-mono text-4xl md:text-6xl font-black italic tracking-tighter transition-all duration-300">
             {Math.round(progress)}%
           </span>
-          <span className="text-[10px] uppercase tracking-[0.5em] font-bold opacity-40 ml-2">
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.5em] font-bold opacity-40 ml-2">
             Loading World
           </span>
         </div>

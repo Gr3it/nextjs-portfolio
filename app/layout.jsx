@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Experience from "@/components/experience";
+import DeviceWarning from "@/components/ui/DeviceWarning";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} h-screen w-full flex flex-col items-center antialiased overflow-x-hidden`}
       >
+        <DeviceWarning />
         <Experience />
         {children}
       </body>

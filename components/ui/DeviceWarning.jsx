@@ -8,7 +8,7 @@ export default function DeviceWarning() {
 
   useEffect(() => {
     // Check if user has already dismissed the warning in this session
-    //if (sessionStorage.getItem("device-warning-dismissed")) return;
+    if (sessionStorage.getItem("device-warning-dismissed")) return;
 
     // Mobile check: usually < 1024px width or vertical orientation
     const isSmallScreen = window.innerWidth < 1024;

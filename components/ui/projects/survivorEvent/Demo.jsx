@@ -156,38 +156,43 @@ export default function SurvivorEventDemo() {
   };
 
   return (
-    <div className="container relative w-full flex flex-col justify-center items-center gap-20">
-      <p className="font-bold text-6xl">App Demo</p>
-      <div className="w-full h-full flex flex-row items-center justify-center gap-10">
-        <div className="h-full grid grid-cols-7 gap-1 bg-[#6e3e2b] p-2 rounded-lg shadow-2xl">
+    <div className="relative w-full h-full flex flex-col justify-center items-center gap-4 sm:gap-10 xl:gap-20">
+      <p className="font-bold text-2xl sm:text-4xl xl:text-6xl text-center">
+        App Demo
+      </p>
+      <div className="w-full h-full flex flex-row items-center justify-center gap-3 md:gap-6 xl:gap-10">
+        <div className="grid grid-cols-7 gap-[1px] sm:gap-1 bg-[#6e3e2b] p-1 sm:p-2 rounded-lg shadow-2xl shrink-0">
           {grid.map((val, i) => (
             <div
               key={i}
               onClick={() => cycleChest(i)}
-              className={`relative cell w-16 h-16 flex items-center justify-center cursor-pointer ${
+              className={`relative cell w-[22px] h-[22px] sm:w-[32px] sm:h-[32px] md:w-10 md:h-10 xl:w-16 xl:h-16 flex items-center justify-center cursor-pointer ${
                 i === 31 ? "selected-character" : `selected-${val}`
               } ${pathClasses[i]}`}
             />
           ))}
         </div>
 
-        <div className="flex flex-col gap-6 max-w-xs p-6 border-2 rounded-2xl bg-white/5">
-          <div className="flex flex-col gap-3 p-4 bg-black/10  rounded-xl">
-            <p className="text-sm uppercase tracking-wider font-bold">
+        <div className="flex flex-col gap-2 sm:gap-4 xl:gap-6 w-[160px] sm:w-[220px] xl:w-full max-w-xs p-2 sm:p-4 xl:p-6 border-2 rounded-xl xl:rounded-2xl bg-white/5 shrink-0">
+          <div className="flex flex-col gap-1 sm:gap-2 xl:gap-3 p-2 sm:p-3 xl:p-4 bg-black/10 rounded-lg xl:rounded-xl">
+            <p className="text-[10px] sm:text-xs xl:text-sm uppercase tracking-wider font-bold">
               Instructions
             </p>
-            <p className="text-md font-light">
+            <p className="text-[10px] sm:text-xs xl:text-md font-light leading-snug">
               Click on the squares to cycle through chest types.
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 p-4 bg-black/10 rounded-xl">
-            <p className="text-sm uppercase tracking-wider font-bold">
+          <div className="flex flex-col gap-1.5 sm:gap-2 xl:gap-3 p-2 sm:p-3 xl:p-4 bg-black/10 rounded-lg xl:rounded-xl">
+            <p className="text-[10px] sm:text-xs xl:text-sm uppercase tracking-wider font-bold">
               Chest Legend
             </p>
             {chestLegend.map((chest) => (
-              <div key={chest.id} className="flex items-center gap-4">
-                <div className="w-10 h-10 flex-shrink-0 bg-[#6e3e2b] rounded-md overflow-hidden p-1">
+              <div
+                key={chest.id}
+                className="flex items-center gap-2 sm:gap-3 xl:gap-4"
+              >
+                <div className="w-5 h-5 sm:w-8 sm:h-8 xl:w-10 xl:h-10 flex-shrink-0 bg-[#6e3e2b] rounded-md overflow-hidden p-0.5 sm:p-1">
                   <img
                     src={`/images/SurvivorIoEventTool/${chest.img}`}
                     alt={chest.label}
@@ -195,10 +200,10 @@ export default function SurvivorEventDemo() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs font-normal uppercase">
+                  <span className="text-[8px] sm:text-[10px] xl:text-xs font-normal uppercase leading-tight">
                     {chest.label}
                   </span>
-                  <span className="text-sm font-mono font-light">
+                  <span className="text-[8px] sm:text-[10px] xl:text-sm font-mono font-light leading-tight">
                     Value: {chest.displayValue}
                   </span>
                 </div>
@@ -206,16 +211,16 @@ export default function SurvivorEventDemo() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2 xl:gap-3">
             <button
               onClick={handleCalculate}
-              className="h-14 w-full bg-foreground text-[var(--accent-color)] rounded-xl font-bold uppercase tracking-wide transition-transform cursor-pointer hover:bg-foreground/70 active:scale-95"
+              className="h-8 md:h-10 xl:h-14 text-[10px] sm:text-xs xl:text-base w-full bg-[var(--foreground)] text-[var(--accent-color)] rounded-lg xl:rounded-xl font-bold uppercase tracking-wide transition-transform cursor-pointer hover:bg-[var(--foreground)]/80 active:scale-95"
             >
               Calculate
             </button>
             <button
               onClick={handleReset}
-              className="h-14 w-full border-2 rounded-xl font-bold uppercase tracking-wide hover:bg-foreground/10 transition-all cursor-pointer active:scale-95"
+              className="h-8 md:h-10 xl:h-14 text-[10px] sm:text-xs xl:text-base w-full border-2 rounded-lg xl:rounded-xl font-bold uppercase tracking-wide transition-all cursor-pointer hover:bg-[var(--foreground)]/10 active:scale-95"
             >
               Reset
             </button>

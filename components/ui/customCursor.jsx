@@ -11,8 +11,10 @@ export default function CustomCursor({ pathname }) {
   const containerRef = useRef(null);
   const transitionRef = useRef(null);
   const isFirstRender = useRef(true);
+  const isTouchDevice = useRef(false);
 
   const handleShow = useCallback(() => {
+    if (isTouchDevice.current) return;
     const container = containerRef.current;
     if (!container) return;
     document.body.style.cursor = "none";
@@ -20,6 +22,7 @@ export default function CustomCursor({ pathname }) {
   }, []);
 
   const handleHide = useCallback(() => {
+    if (isTouchDevice.current) return;
     const container = containerRef.current;
     if (!container) return;
     document.body.style.cursor = "auto";
@@ -106,6 +109,11 @@ export default function CustomCursor({ pathname }) {
   }, [pathname, triggerTransitionIn, triggerTransitionOut]);
 
   useEffect(() => {
+    isTouchDevice.current =
+      typeof window !== "undefined" &&
+      (window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+        "ontouchstart" in window);
+
     const cursor = cursorRef.current;
     if (!cursor) return;
 

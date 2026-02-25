@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { Preload } from "@react-three/drei";
 
 import ZoomControls from "./ui/hud/zoomControls";
+import Credits from "./ui/hud/credits";
 import Navbar from "./ui/hud/navbar";
 import CameraSwitchButton from "./ui/debug/cameraSwitchButton";
 import Scene from "./3D/scene";
@@ -26,7 +27,14 @@ const HUD = () => (
     <div className="pointer-events-auto">
       <Navbar />
       <CameraSwitchButton />
-      <ZoomControls />
+    </div>
+    <div className="absolute bottom-6 right-6 flex flex-col items-end gap-4 pointer-events-none">
+      <div className="pointer-events-auto">
+        <ZoomControls />
+      </div>
+      <div className="pointer-events-auto">
+        <Credits />
+      </div>
     </div>
   </div>
 );

@@ -1,18 +1,518 @@
-{
-  "assets3D": [
-    {
-      "Asset": "Nome asset",
-      "Author": "Nome autore",
-      "Source": "link",
-      "License": "CC BY-SA 3.0",
-      "Changes": "yes (modellazione / texture / scale)"
-    },
-    {
-      "Asset": "Clair Obscur Expedition 33 | Esquie head",
-      "Author": "Marko3DStudio",
-      "Source": "https://skfb.ly/pwQ7v",
-      "License": "Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)",
-      "Changes": "no"
-    }
-  ]
-}
+[
+  {
+    "author": "Kenney",
+    "link": "https://kenney.nl/assets",
+    "assets": [
+      {
+        "name": "Car Kit",
+        "source": "https://kenney.nl/assets/car-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "yes (rigged, custom animation)"
+      },
+      {
+        "name": "City Kit (Commercial)",
+        "source": "https://kenney.nl/assets/city-kit-commercial",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "City Kit (Suburban)",
+        "source": "https://kenney.nl/assets/city-kit-suburban",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "City Kit (Roads)",
+        "source": "https://kenney.nl/assets/city-kit-roads",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Coaster Kit",
+        "source": "https://kenney.nl/assets/coaster-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Conveyor Kit",
+        "source": "https://kenney.nl/assets/conveyor-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Fantasy Town Kit",
+        "source": "https://kenney.nl/assets/fantasy-town-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "yes (fixed transparency issue)"
+      },
+      {
+        "name": "Graveyard Kit",
+        "source": "https://kenney.nl/assets/graveyard-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "yes (edited mesh, texture)"
+      },
+      {
+        "name": "Holiday Kit",
+        "source": "https://kenney.nl/assets/holiday-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Mini Arcade",
+        "source": "https://kenney.nl/assets/mini-arcade",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Platformer Kit",
+        "source": "https://kenney.nl/assets/platformer-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Prototype Kit",
+        "source": "https://kenney.nl/assets/prototype-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Space Kit",
+        "source": "https://kenney.nl/assets/space-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "yes (texture)"
+      },
+      {
+        "name": "Mini Arena",
+        "source": "https://kenney.nl/assets/mini-arena",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Mini Dungeon",
+        "source": "https://kenney.nl/assets/mini-dungeon",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Pirate Kit",
+        "source": "https://kenney.nl/assets/pirate-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Survival Kit",
+        "source": "https://kenney.nl/assets/survival-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Train Kit",
+        "source": "https://kenney.nl/assets/train-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "yes (uv mapping)"
+      },
+      {
+        "name": "Watercraft Kit",
+        "source": "https://kenney.nl/assets/watercraft-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Nature Kit",
+        "source": "https://kenney.nl/assets/nature-kit",
+        "license": "CC0 1.0 Universal",
+        "changes": "yes (material)"
+      }
+    ]
+  },
+  {
+    "author": "Kay Lousberg",
+    "link": "https://kaylousberg.itch.io/",
+    "assets": [
+      {
+        "name": "KayKit : City Builder Bits",
+        "source": "https://kaylousberg.itch.io/city-builder-bits",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit - Dungeon Remastered Pack",
+        "source": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit - Dungeon Pack",
+        "source": "https://kaylousberg.itch.io/kaykit-dungeon",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit : Furniture Bits",
+        "source": "https://kaylousberg.itch.io/furniture-bits",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit - Medieval Hexagon Pack",
+        "source": "https://kaylousberg.itch.io/kaykit-medieval-hexagon",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit - Mini-Game Variety Pack",
+        "source": "https://kaylousberg.itch.io/kay-kit-mini-game-variety-pack",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit - Forest Nature Pack",
+        "source": "https://kaylousberg.itch.io/kaykit-forest",
+        "license": "CC0 1.0 Universal",
+        "changes": "yes (changed texture color)"
+      },
+      {
+        "name": "KayKit : Prototype Bits",
+        "source": "https://kaylousberg.itch.io/prototype-bits",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit : Resource Bits",
+        "source": "https://kaylousberg.itch.io/resource-bits",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit : Restaurant Bits",
+        "source": "https://kaylousberg.itch.io/restaurant-bits",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "KayKit : Space Base Bits",
+        "source": "https://kaylousberg.itch.io/space-base-bits",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "Quaternius",
+    "link": "https://quaternius.com/index.html",
+    "assets": [
+      {
+        "name": "Cat",
+        "source": "https://poly.pizza/m/qKICY6xla2",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Dog",
+        "source": "https://poly.pizza/m/2kUk0QqpCg",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Raccoon",
+        "source": "https://poly.pizza/m/xMmx6VQP3r",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Sheep",
+        "source": "https://poly.pizza/m/rgJXF570ZK",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Horse",
+        "source": "https://poly.pizza/m/D3hAeqeDBE",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Wolf",
+        "source": "https://poly.pizza/m/XU7oNeKShV",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Pig",
+        "source": "https://poly.pizza/m/u35l6uP5vj",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Chick",
+        "source": "https://poly.pizza/m/LH96IMq0rE",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Chicken",
+        "source": "https://poly.pizza/m/Z3RCoCYss4",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "AssetHunts!",
+    "link": "https://assethunts.com/",
+    "assets": [
+      {
+        "name": "GameDev Starter Kit: Farming (Free Edition)",
+        "source": "https://assetstore.unity.com/packages/3d/environments/gamedev-starter-kit-farming-free-edition-243035",
+        "license": "Unity Asset Store License",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "William Zaldivar",
+    "link": "https://www.artstation.com/wizp",
+    "assets": [
+      {
+        "name": "Stylized medieval village",
+        "source": "https://wizp.itch.io/stylized-medieval-village",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      },
+      {
+        "name": "Lowpoly stylized fantasy enviroment pack",
+        "source": "https://wizp.itch.io/lowpoly-stylized-fantasy-enviroment-pack",
+        "license": "CC0 1.0 Universal",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "GoLotusArt",
+    "link": "https://www.instagram.com/lotustridi",
+    "assets": [
+      {
+        "name": "3D Balatro Assets Library",
+        "source": "https://ko-fi.com/s/953cec995d",
+        "license": "CC-BY",
+        "changes": "yes (texture)"
+      }
+    ]
+  },
+  {
+    "author": "Marko3DStudio",
+    "link": "https://sketchfab.com/Marko3DStudio",
+    "assets": [
+      {
+        "name": "Clair Obscur Expedition 33 | Esquie head",
+        "source": "https://skfb.ly/pwQ7v",
+        "license": "CC Attribution",
+        "changes": "yes (decimated, texture)"
+      }
+    ]
+  },
+  {
+    "author": "Boobynette",
+    "link": "https://makerworld.com/it/@boobynette",
+    "assets": [
+      {
+        "name": "Expedition 33 Alicia mask",
+        "source": "https://makerworld.com/it/models/1455101-expedition-33-alicia-mask",
+        "license": "Makerworld STANDARD DIGITAL FILE LICENSE",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "Villager No. 37 | 37号村民",
+    "link": "https://sketchfab.com/thenoiseman",
+    "assets": [
+      {
+        "name": "Destiny 2 Ghost | 天命2 機靈 3D 模型",
+        "source": "https://sketchfab.com/3d-models/destiny-2-ghost-2-3d-7aa34f05b481464ab39030c653efec46",
+        "license": "CC BY 4.0",
+        "changes": "yes (decimated, texture)"
+      }
+    ]
+  },
+  {
+    "author": "DeltaDesigns",
+    "link": "https://sketchfab.com/DeltaDesigns",
+    "assets": [
+      {
+        "name": "Outbreak Perfected (Destiny 2)",
+        "source": "https://sketchfab.com/3d-models/outbreak-perfected-destiny-2-ddf30888cd59440bb980ff14ab04276f",
+        "license": "CC BY 4.0",
+        "changes": "yes (decimated, texture)"
+      }
+    ]
+  },
+  {
+    "author": "MrBeckRO",
+    "link": "https://sketchfab.com/Knecls",
+    "assets": [
+      {
+        "name": "Hollow Knight",
+        "source": "https://sketchfab.com/3d-models/hollow-knight-a5d13c01e60a48f3a0050a4df2e212cb",
+        "license": "CC BY-NC 4.0",
+        "changes": "yes (texture)"
+      }
+    ]
+  },
+  {
+    "author": "mail.iou",
+    "link": "https://makerworld.com/it/@mail.iou",
+    "assets": [
+      {
+        "name": "Hornet - Hollow Knight : Silksong",
+        "source": "https://makerworld.com/it/models/1772891-hornet-hollow-knight-silksong",
+        "license": "Makerworld STANDARD DIGITAL FILE LICENSE",
+        "changes": "yes (topology)"
+      }
+    ]
+  },
+  {
+    "author": "Blender3D",
+    "link": "https://sketchfab.com/Blender3D",
+    "assets": [
+      {
+        "name": "Minecraft Diamond Axe",
+        "source": "https://sketchfab.com/3d-models/minecraft-diamond-axe-0d62f4d3676545c88ec8523213c055dd",
+        "license": "CC BY 4.0",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "OFFDucky3D",
+    "link": "https://sketchfab.com/OFFDucky3D",
+    "assets": [
+      {
+        "name": "Peak-BingBong-Model",
+        "source": "https://sketchfab.com/3d-models/peak-bingbong-model-6d4f626e6c6946958fb80441ea7da27b",
+        "license": "CC BY 4.0",
+        "changes": "yes (texture, decimate)"
+      }
+    ]
+  },
+  {
+    "author": "KonAwako",
+    "link": "https://sketchfab.com/konawako",
+    "assets": [
+      {
+        "name": "Pokemon",
+        "source": "https://sketchfab.com/3d-models/pokemon-3b1454c699cb422a9432b3edf3344c23",
+        "license": "CC BY-NC-SA 4.0",
+        "changes": "yes (decimated)"
+      }
+    ]
+  },
+  {
+    "author": "BodeMAN",
+    "link": "https://sketchfab.com/dioguinifrsilva",
+    "assets": [
+      {
+        "name": "Pokémon Giratina (origin)",
+        "source": "https://sketchfab.com/3d-models/pokemon-giratina-origin-240a861506294310b0e323a10a28fceb",
+        "license": "CC BY 4.0",
+        "changes": "yes (decimated, texture, material)"
+      }
+    ]
+  },
+  {
+    "author": "Igrium",
+    "link": "https://sketchfab.com/Sam54123",
+    "assets": [
+      {
+        "name": "HD Portalgun Remastered",
+        "source": "https://sketchfab.com/3d-models/hd-portalgun-remastered-073ba676dd364b6e96c2d0a9b9991362",
+        "license": "CC BY 4.0",
+        "changes": "yes (decimated, texture)"
+      }
+    ]
+  },
+  {
+    "author": "Typur",
+    "link": "https://sketchfab.com/Typur",
+    "assets": [
+      {
+        "name": "Portal cube",
+        "source": "https://sketchfab.com/3d-models/portal-cube-c31fbc4fe0c542fb9e94c6ede00e3c8e",
+        "license": "CC BY 4.0",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "Ojochris",
+    "link": "https://makerworld.com/it/@Ojochris",
+    "assets": [
+      {
+        "name": "Slay the spire key magnets",
+        "source": "https://makerworld.com/it/models/1691396-slay-the-spire-key-magnets",
+        "license": "Makerworld STANDARD DIGITAL FILE LICENSE",
+        "changes": "yes (material)"
+      }
+    ]
+  },
+  {
+    "author": "None",
+    "link": "https://sketchfab.com/None_Yaroslav",
+    "assets": [
+      {
+        "name": "Minecraft Allay",
+        "source": "https://sketchfab.com/3d-models/minecraft-allay-957cbc08d30f4c6d808911f98225ab58",
+        "license": "CC BY 4.0",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "Vincent Yanez",
+    "link": "https://sketchfab.com/vinceyanez",
+    "assets": [
+      {
+        "name": "Minecraft - Sheep",
+        "source": "https://sketchfab.com/3d-models/minecraft-sheep-5f06884e82394845bb1a4706a7ef548e",
+        "license": "CC BY 4.0",
+        "changes": "no"
+      }
+    ]
+  },
+  {
+    "author": "kuzneciv",
+    "link": "https://sketchfab.com/kuzneciv",
+    "assets": [
+      {
+        "name": "Bee Minecraft",
+        "source": "https://sketchfab.com/3d-models/bee-minecraft-b883baf691204b4d9a618e5e5841adf1",
+        "license": "CC BY 4.0",
+        "changes": "yes (material)"
+      }
+    ]
+  },
+  {
+    "author": "Minimoku",
+    "link": "https://sketchfab.com/minimoku",
+    "assets": [
+      {
+        "name": "Stationary",
+        "source": "https://sketchfab.com/3d-models/stationary-1c611e6f059b4265a26a3c13019e53ba",
+        "license": "Sketchfab Free Standard",
+        "changes": "yes (material)"
+      }
+    ]
+  },
+  {
+    "author": "Apple User",
+    "link": "https://sketchfab.com/apple-user",
+    "assets": [
+      {
+        "name": "MacBook Pro 14-inch M5",
+        "source": "https://sketchfab.com/3d-models/macbook-pro-14-inch-m5-652a992f4f244122ae251f9cbb81da1e",
+        "license": "Sketchfab Free Standard",
+        "changes": "yes (texture, hidden geometry removed)"
+      }
+    ]
+  }
+]

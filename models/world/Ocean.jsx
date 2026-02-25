@@ -213,14 +213,14 @@ export function Ocean(props) {
         position={[25.5, 0, 73.5]}
         rotation={[0, -Math.PI / 3, 0]}
       />
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes["palm-detailed-bend6"].geometry}
         material={materials.colormap3}
         position={[5, 0, 86.5]}
         rotation={[0, Math.PI / 6, 0]}
-      />
+      /> */}
       <mesh
         castShadow
         receiveShadow

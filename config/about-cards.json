@@ -2,7 +2,7 @@
   {
     "position": [7, 0, 354],
     "title": "About Me",
-    "description": "As a CS graduate from Trento, I build cutting-edge software that rejects inefficiency. I avoid repetitive patterns to focus on high-value projects, from secure smart contracts to innovative web tools. My goal is to create \"state-of-the-art\" code that is purposeful, clean, and impactful.\n\nInspired by my thesis in Game Design, I bridge the gap between engineering and aesthetics. I enjoy using CSS for artistic expression ensuring that robust logic always meets a polished, engaging user experience.",
+    "description": "As a CS graduate from Trento, I build efficient, cutting-edge software. I focus on high-value projects, from secure smart contracts to innovative web tools, aiming for clean and impactful code.\n\nInspired by my Game Design thesis, I bridge engineering and aesthetics, ensuring robust logic always meets a polished, engaging user experience.",
     "component": "Minecraft",
     "main": true
   },
@@ -27,7 +27,7 @@
   {
     "position": [7, 0, 466],
     "title": "Gaming",
-    "description": "Gaming is my playground for optimization and analytical thinking. I don’t just play; I deconstruct mechanics, analyze damage systems, and build tools to maximize efficiency—from custom bots to viral ROI calculators. This passion for balance and system logic culminated in my thesis, where I designed and fine-tuned complex game mechanics for optimal player experiences.",
+    "description": "Gaming is my playground for optimization. I deconstruct mechanics, analyze systems, and build tools to maximize efficiency—from custom bots to ROI calculators. This passion for balance and logic culminated in my thesis, where I designed and fine-tuned complex game mechanics for optimal player experiences.",
     "component": "Games"
   }
 ]

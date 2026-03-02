@@ -86,6 +86,7 @@ export default function ProjectCard({ project }) {
           rotation={[-1.5707963267948966, 0, 0]}
           fontSize={1.4}
           lineHeight={1.2}
+          color={"#000"}
           maxWidth={16}
           font={fontMap[600]}
         >
@@ -97,6 +98,7 @@ export default function ProjectCard({ project }) {
           anchorY={"top"}
           rotation={[-1.5707963267948966, 0, 0]}
           fontSize={0.7}
+          color={"#000"}
           maxWidth={16}
           font={fontMap[400]}
         >

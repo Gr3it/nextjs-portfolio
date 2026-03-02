@@ -9,7 +9,7 @@ import { useGLTF } from "@react-three/drei";
 
 export function LinkedinLogo(props) {
   const { nodes, materials } = useGLTF(
-    "/models/footerCards/Linkedin-transformed.glb"
+    "/models/footerCards/Linkedin-transformed.glb",
   );
   return (
     <group {...props} dispose={null}>

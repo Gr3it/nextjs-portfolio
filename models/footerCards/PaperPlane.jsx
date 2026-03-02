@@ -9,7 +9,7 @@ import { useGLTF } from "@react-three/drei";
 
 export function PaperPlaneLogo(props) {
   const { nodes, materials } = useGLTF(
-    "/models/footerCards/PaperPlane-transformed.glb"
+    "/models/footerCards/PaperPlane-transformed.glb",
   );
   return (
     <group {...props} dispose={null}>

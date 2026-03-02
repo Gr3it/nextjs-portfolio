@@ -3,12 +3,14 @@ import { Text } from "@react-three/drei";
 import React, { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { useSpring, animated } from "@react-spring/three";
 
 import { LinkedinLogo } from "@/models/footerCards/Linkedin";
 import { GithubLogo } from "@/models/footerCards/Github";
 import { PaperPlaneLogo } from "@/models/footerCards/PaperPlane";
 import { DocumentLogo } from "@/models/footerCards/Document";
 import { usePointerHover } from "@/hooks/usePointerHover";
+import { useTargetReached } from "@/hooks/useTargetReached";
 
 const CARD_COMPONENTS = {
   LinkedinLogo,
@@ -26,6 +28,14 @@ export default function FooterCard({ card }) {
   const groupRef = useRef();
   const { hover, handlePointerOver, handlePointerOut } = usePointerHover();
 
+  const targetZ = card.position[2] - 15;
+  const isReached = useTargetReached(targetZ);
+
+  const { scale } = useSpring({
+    scale: isReached ? 1 : 0,
+    config: { tension: 250, friction: 15 },
+  });
+
   useFrame((_, delta) => {
     if (!groupRef.current) return;
 
@@ -38,7 +48,8 @@ export default function FooterCard({ card }) {
   });
 
   return (
-    <group
+    <animated.group
+      scale={scale}
       position={card.position}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
@@ -79,6 +90,6 @@ export default function FooterCard({ card }) {
           {card.title}
         </Text>
       </group>
-    </group>
+    </animated.group>
   );
 }

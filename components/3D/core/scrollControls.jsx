@@ -302,7 +302,7 @@ export function ScrollControlsProxy({ pages = DEFAULT_PAGES }) {
   );
 }
 
-export function AttachCallbackToScrollEvent(callback) {
+export function AttachCallbackToScrollEvent(callback, active = true) {
   const scrollThresholdRef = useRef(1);
   const callbackRef = useRef(callback);
 
@@ -324,6 +324,8 @@ export function AttachCallbackToScrollEvent(callback) {
   }, [handleScroll]);
 
   useEffect(() => {
+    if (!active) return;
+
     handleResize();
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize, { passive: true });
@@ -331,5 +333,5 @@ export function AttachCallbackToScrollEvent(callback) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [handleScroll, handleResize]);
+  }, [handleScroll, handleResize, active]);
 }

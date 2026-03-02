@@ -9,7 +9,7 @@ import { useGLTF } from "@react-three/drei";
 
 export function GithubLogo(props) {
   const { nodes, materials } = useGLTF(
-    "/models/footerCards/Github-transformed.glb"
+    "/models/footerCards/Github-transformed.glb",
   );
   return (
     <group {...props} dispose={null}>

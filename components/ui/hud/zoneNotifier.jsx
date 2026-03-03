@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import worldConfig from "@/config/world-config.json";
 import { useTargetReached } from "@/hooks/useTargetReached";
 
@@ -17,76 +17,63 @@ export default function ZoneNotifier() {
   const handleZoneReached = (section) => {
     setActiveZone(section);
     setVisible(true);
-
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = setTimeout(() => {
-      setVisible(false);
-    }, 2500); // The title stays visible for 2.5 seconds
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setVisible(false), 2500);
   };
 
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
+  useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
   return (
     <>
-      {/* Invisible triggers that monitor scroll position */}
-      {worldConfig.sections.map((sec, index) => (
+      {worldConfig.sections.map((sec, i) => (
         <ZoneTrigger
-          key={`zone-trigger-${index}`}
+          key={i}
           section={sec}
           onReached={() => handleZoneReached(sec)}
         />
       ))}
 
-      {/* Cinematic Black Radial Shadow */}
+      {/* Cinematic shadow overlay */}
       <div
-        className={`fixed inset-0 w-full h-screen pointer-events-none flex flex-col items-center justify-start pt-[15vh] transition-opacity duration-700 z-10`}
+        className="fixed inset-0 pointer-events-none transition-opacity duration-700 z-10"
         style={{
+          // Ellipse: 1338×366px (70%×40% of 1912×914), centered horizontally, Y at 15%
           background:
-            "radial-gradient(ellipse 70% 40% at 50% 20%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 80%)   ",
+            "radial-gradient(ellipse 1338px 366px at 50% 15%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 80%)",
           opacity: visible ? 1 : 0,
         }}
       >
-        <div className="relative w-full flex justify-center">
-          {worldConfig.sections.map((sec, index) => {
-            const isActive = activeZone?.section === sec.section && visible;
+        {worldConfig.sections.map((sec, i) => {
+          const isActive = activeZone?.section === sec.section && visible;
+          const title = sec.section?.replace(/-/g, " ").toUpperCase() ?? "";
+          const subtitle = sec.text?.toUpperCase() ?? "";
 
-            // Formats to match the "Hollow Knight" feel
-            const titleText = sec.section
-              ? sec.section.replace(/-/g, " ").toUpperCase()
-              : "";
-            const subtitleText = sec.text ? sec.text.toUpperCase() : "";
-
-            return (
-              <div
-                key={`zone-title-${index}`}
-                className={`absolute top-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
-                  isActive
-                    ? "opacity-100 translate-y-0 scale-100 blur-none"
-                    : "opacity-0 -translate-y-2 scale-95 blur-[2px]"
-                }`}
-              >
-                <h1 className="text-gray-100 text-4xl md:text-5xl tracking-[0.3em] font-medium">
-                  {titleText}
-                </h1>
-                {subtitleText && (
-                  <h2
-                    className="text-gray-300 text-lg md:text-xl tracking-[0.4em] mt-3 font-light"
-                    style={{ textShadow: "0px 2px 5px rgba(0,0,0,1)" }}
-                  >
-                    {subtitleText}
-                  </h2>
-                )}
-              </div>
-            );
-          })}
-        </div>
+          return (
+            <div
+              key={i}
+              className="absolute inset-x-4 flex flex-col items-center text-center px-4 transition-all duration-700 ease-in-out"
+              style={{
+                top: "15%",
+                transform: `translateY(-50%) translateY(${isActive ? "0px" : "-8px"})`,
+                opacity: isActive ? 1 : 0,
+                filter: isActive ? "none" : "blur(2px)",
+                scale: isActive ? "1" : "0.95",
+              }}
+            >
+              <h1 className="text-gray-100 text-3xl md:text-5xl tracking-[0.3em] font-medium">
+                {title}
+              </h1>
+              {subtitle && (
+                <h2
+                  className="text-gray-300 text-base md:text-xl tracking-[0.4em] mt-3 font-light"
+                  style={{ textShadow: "0px 2px 5px rgba(0,0,0,1)" }}
+                >
+                  {subtitle}
+                </h2>
+              )}
+            </div>
+          );
+        })}
       </div>
     </>
   );

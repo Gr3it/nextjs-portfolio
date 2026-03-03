@@ -30,7 +30,7 @@ export function Skylands(props) {
         position={[-10.5, 0.5, 21.5]}
         scale={3}
       />
-      <group position={[-9.5, 2.7, 30.5]} scale={2}>
+      {/*  <group position={[-9.5, 2.7, 30.5]} scale={2}>
         <mesh
           castShadow
           receiveShadow
@@ -55,7 +55,7 @@ export function Skylands(props) {
           geometry={nodes.mesh_2_3.geometry}
           material={materials.PaletteMaterial001}
         />
-      </group>
+      </group> */}
       <mesh
         castShadow
         receiveShadow

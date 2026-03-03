@@ -22,6 +22,7 @@ import VehicleManager from "./entities/vehicles/vehicleManager";
 import WorldFog from "./core/worldFog";
 import { RiggedCar } from "@/models/vehicles/RiggedCar";
 import Animals from "./entities/animals";
+import Contacts from "./entities/contacts";
 
 const { height } = worldConfig;
 
@@ -93,6 +94,7 @@ export default function SceneObjects() {
         margin={10}
       />
       <Animals />
+      <Contacts />
     </>
   );
 }

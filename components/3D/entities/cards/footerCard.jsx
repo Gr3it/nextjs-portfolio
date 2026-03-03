@@ -28,8 +28,8 @@ export default function FooterCard({ card }) {
   const groupRef = useRef();
   const { hover, handlePointerOver, handlePointerOut } = usePointerHover();
 
-  const targetZ = card.position[2] - 15;
-  const isReached = useTargetReached(targetZ);
+  const targetZ = card.position[2];
+  const isReached = useTargetReached(targetZ, null, 50);
 
   const { scale } = useSpring({
     scale: isReached ? 1 : 0,

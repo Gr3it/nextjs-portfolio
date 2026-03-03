@@ -6,33 +6,28 @@ import Star from "../../icons/star";
 const typesConfig = {
   circle: {
     Component: null,
-    className: "h-3 w-3 rounded-full top-1/2 -translate-y-1/2",
+    className:
+      "h-3 w-3 rounded-full top-1/2 -translate-y-1/2 drop-shadow-[0_0_1px_rgba(0,0,0,0.25)]",
     useBgColor: true,
   },
   checkpoint: {
     Component: Checkpoint,
-    className: "w-9 bottom-1/2 translate-y-0",
+    className:
+      "w-8 origin-bottom bottom-1/2 drop-shadow-[0_0_1px_rgba(0,0,0,0.25)] -ml-1.25",
     useBgColor: false,
   },
   flagpole: {
     Component: FlagPole,
-    className: "w-9 bottom-1/2 translate-y-0",
+    className:
+      "w-8 origin-bottom bottom-1/2 drop-shadow-[0_0_1px_rgba(0,0,0,0.25)] ml-1.25",
     useBgColor: false,
   },
   star: {
     Component: Star,
-    className: "w-6 bottom-1/2 translate-y-1/2",
+    className: "w-6 top-1/2 -translate-y-1/2 animate-star-glow",
     useBgColor: false,
     fixedColor: "#FFD700",
   },
-};
-
-const getAlignmentClass = (alignment) => {
-  const map = {
-    left: " ml-1",
-    center: " -translate-x-1/2",
-  };
-  return map[alignment] || "";
 };
 
 export default function ProgressBarObj({
@@ -42,7 +37,6 @@ export default function ProgressBarObj({
   type = "circle",
   reached = false,
   text = "",
-  textAlignment = "left",
 }) {
   const config = typesConfig[type];
   if (!config) return null;
@@ -58,28 +52,24 @@ export default function ProgressBarObj({
       : "text-black";
 
   return (
-    <>
+    <div
+      onClick={callback}
+      style={{ top: `${positionPercentage}%` }}
+      className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center group cursor-pointer w-10 h-10 z-20"
+    >
       <div
         id={start ? `animate-perc-${start}` : undefined}
-        onClick={callback}
-        style={{
-          left: `${positionPercentage}%`,
-          color: fixedColor || undefined,
-        }}
-        className={`absolute origin-bottom cursor-pointer -translate-x-1/2 transition-colors duration-300 ${className} ${dynamicColorClass}`}
+        style={{ color: fixedColor || undefined }}
+        className={`absolute left-1/2 -translate-x-1/2 transition-colors duration-300 ${className} ${dynamicColorClass}`}
       >
         {Component && <Component />}
       </div>
 
       {text && (
-        <div
-          onClick={callback}
-          style={{ left: `${positionPercentage}%` }}
-          className={`absolute top-full cursor-pointer text-sm font-medium mt-0.5 whitespace-nowrap ${getAlignmentClass(textAlignment)}`}
-        >
+        <div className="absolute left-full ml-2 top-1/2 -translate-y-1/2 -translate-x-2 opacity-0 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover/navbar:opacity-100 group-hover/navbar:translate-x-0 text-sm font-semibold tracking-wide whitespace-nowrap bg-[var(--background)] px-4 py-2 rounded-xl text-[var(--foreground)]">
           {text}
         </div>
       )}
-    </>
+    </div>
   );
 }

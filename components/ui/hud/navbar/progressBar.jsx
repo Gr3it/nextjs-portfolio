@@ -42,7 +42,7 @@ export default function ProgressBar() {
 
   const mainGradient = useMemo(
     () => ({
-      background: `linear-gradient(to right, ${worldConfig.sections.at(0).color} 47%, ${worldConfig.sections.at(-1).color} 53%)`,
+      background: `linear-gradient(to bottom, ${worldConfig.sections.at(0).color} 47%, ${worldConfig.sections.at(-1).color} 53%)`,
     }),
     [],
   );
@@ -73,9 +73,12 @@ export default function ProgressBar() {
   AttachCallbackToScrollEvent(handleScroll);
 
   return (
-    <div className="shadow-md bg-zinc-800/80 flex flex-col w-full h-full rounded-2xl p-2 select-none">
-      <div className="w-full mt-6 rounded-lg h-6 px-4" style={mainGradient}>
-        <div className="w-full relative h-full" style={gradientStyle}>
+    <nav className="fixed inset-y-4 left-4 sm:inset-y-8 sm:left-8 z-50 flex flex-col justify-center">
+      <div
+        className="w-7 h-full max-h-[1000px] py-3 rounded-xl border-3 border-[var(--background)] group/navbar pointer-events-auto"
+        style={mainGradient}
+      >
+        <div className="w-full h-full relative" style={gradientStyle}>
           {sections.map(({ start, text, type, textAlignment }) => (
             <ProgressBarObj
               key={start}
@@ -91,13 +94,16 @@ export default function ProgressBar() {
                 const targetPosition =
                   (window.innerHeight * start) /
                   cameraConfig.frustumHeightOnPlane;
-                window.scrollTo({ top: targetPosition, behavior: "smooth" });
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth",
+                });
               }}
             />
           ))}
           <ScrollCursor />
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

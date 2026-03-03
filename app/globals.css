@@ -127,6 +127,20 @@ body {
   animation: car-bounce 0.3s ease-in-out infinite;
 }
 
+@keyframes star-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 1));
+  }
+}
+
+.animate-star-glow {
+  animation: star-glow 2s ease-in-out infinite;
+}
+
 @layer utilities {
   .custom-cursor-pos {
     backface-visibility: hidden;

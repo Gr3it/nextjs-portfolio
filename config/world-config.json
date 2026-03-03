@@ -8,55 +8,63 @@
       "text": "Start",
       "type": "circle",
       "color": "#B8745B",
-      "textAlignment": "center"
+      "textAlignment": "center",
+      "section": "forgotten-village"
     },
 
     {
       "start": 32,
       "text": "My Projects",
       "type": "checkpoint",
-      "color": "#48bc8d"
+      "color": "#48bc8d",
+      "section": "whispering-woods"
     },
 
     {
       "start": 142,
       "text": null,
       "type": null,
-      "color": "#8ed9a3"
+      "color": "#8ed9a3",
+      "section": "tranquil-plains"
     },
 
     {
       "start": 238,
       "text": null,
       "type": null,
-      "color": "#c8855f"
+      "color": "#c8855f",
+      "section": "shattered-badlands"
     },
 
     {
       "start": 286,
       "text": null,
       "type": null,
-      "color": "#daae7e"
+      "color": "#daae7e",
+      "section": "golden-dunes"
     },
 
     {
       "start": 334,
       "text": "About Me",
       "type": "checkpoint",
-      "color": "#48d6e1"
+      "color": "#48d6e1",
+      "section": "sapphire-depths"
     },
 
     {
       "start": 484,
-      "text": "Contacts",
+      "text": "Get in touch",
       "type": "checkpoint",
-      "color": "#e0e9ee"
+      "color": "#e0e9ee",
+      "section": "ethereal-heights"
     },
     {
       "start": 522,
       "text": "Links",
       "type": "checkpoint",
-      "color": "#A0A8C9"
+      "color": "#A0A8C9",
+      "section": "terminal-district"
     },
 
     {
@@ -64,7 +72,8 @@
       "text": "End",
       "type": "flagpole",
       "color": "#A0A8C9",
-      "textAlignment": "center"
+      "textAlignment": "center",
+      "section": "journeys-end"
     }
   ]
 }

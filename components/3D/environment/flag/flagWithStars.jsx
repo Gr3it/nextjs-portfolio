@@ -14,7 +14,7 @@ export function FlagWithStars({ position = [0, 0, 0], threshold, ...props }) {
     playCheckpointSound();
   }, []);
 
-  const reached = useTargetReached(threshold, handleReached, 0.05);
+  const reached = useTargetReached(threshold, handleReached, 1);
 
   return (
     <FlagStars flagPosition={position} isReached={reached}>

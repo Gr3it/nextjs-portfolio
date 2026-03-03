@@ -7,6 +7,7 @@ import { Preload } from "@react-three/drei";
 import ZoomControls from "./ui/hud/zoomControls";
 import Credits from "./ui/hud/credits";
 import Navbar from "./ui/hud/navbar";
+import ZoneNotifier from "./ui/hud/zoneNotifier";
 import CameraSwitchButton from "./ui/debug/cameraSwitchButton";
 import Scene from "./3D/scene";
 
@@ -24,6 +25,7 @@ const { frustumHeightOnPlane } = cameraConfig;
 
 const HUD = () => (
   <div className="fixed inset-0 z-50 pointer-events-none w-screen ">
+    <ZoneNotifier />
     <div className="pointer-events-auto">
       <Navbar />
       <CameraSwitchButton />

@@ -16,7 +16,7 @@ import React from "react";
 const PAGE_DATA = {
   title: "Color Screen Test",
   description:
-    "A React Native utility for display testing and color accuracy comparison on hardware-level screens.",
+    "A React Native utility for display testing and color accuracy comparison on hardware-level screens",
 };
 
 export const metadata = {

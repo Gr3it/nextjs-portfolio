@@ -15,7 +15,7 @@ import React from "react";
 const PAGE_DATA = {
   title: "Hotel Meano",
   description:
-    "A pioneering hospitality platform featuring a pure CSS 3D interactive booking engine.",
+    "A pioneering hospitality platform featuring a pure CSS 3D interactive booking engine",
 };
 
 export const metadata = {

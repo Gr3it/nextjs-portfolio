@@ -16,7 +16,7 @@ import React from "react";
 const PAGE_DATA = {
   title: "Meta Empire",
   description:
-    "Engineering a high-security NFT ecosystem with gas-optimized smart contracts and Merkle Tree whitelisting.",
+    "Engineering a high-security NFT ecosystem with gas-optimized smart contracts and Merkle Tree whitelisting",
 };
 
 export const metadata = {

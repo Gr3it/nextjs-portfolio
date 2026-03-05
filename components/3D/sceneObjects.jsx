@@ -19,8 +19,8 @@ import World from "@/models/World";
 import FooterCard from "./entities/cards/footerCard";
 import AboutCard from "./entities/cards/aboutCard";
 import VehicleManager from "./entities/vehicles/vehicleManager";
+import CityVehicleManager from "./entities/vehicles/cityVehicleManager";
 import WorldFog from "./core/worldFog";
-import { RiggedCar } from "@/models/vehicles/RiggedCar";
 import Animals from "./entities/animals";
 import Contacts from "./entities/contacts";
 
@@ -72,6 +72,7 @@ export default function SceneObjects() {
     <>
       <World />
       <VehicleManager />
+      <CityVehicleManager />
       <TextElements />
       <Flags />
       {projectCards.map((project) => (

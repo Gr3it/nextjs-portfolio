@@ -1,0 +1,465 @@
+{
+  "settings": {
+    "loop_duration": 60,
+    "reccomended_speed": 3,
+    "fade_out_duration": 1.5,
+    "fade_in_duration": 1.5,
+    "version": "1.0",
+    "description": "Vehicle animation system — 60s loop, Catmull-Rom paths, time→progress keyframes"
+  },
+
+  "segments": {
+    "HW_1": [
+      { "x": 48, "z": 88, "y": 0.06 },
+      { "x": -48, "z": 88, "y": 0.06 }
+    ],
+    "HW_2": [
+      { "x": -48, "z": 90, "y": 0.06 },
+      { "x": 48, "z": 90, "y": 0.06 }
+    ],
+    "HW_3": [
+      { "x": 48, "z": 94, "y": 0.06 },
+      { "x": -48, "z": 94, "y": 0.06 }
+    ],
+    "HW_4": [
+      { "x": -48, "z": 96, "y": 0.06 },
+      { "x": 48, "z": 96, "y": 0.06 }
+    ],
+    "TL_TM": [
+      { "x": -49, "z": 42, "y": 0.06 },
+      { "x": -48, "z": 42, "y": 0.06 },
+      { "x": -46, "z": 44, "y": 0.06 },
+      { "x": -46, "z": 50, "y": 0.06 },
+      { "x": -42, "z": 54, "y": 0.06 },
+      { "x": 6, "z": 54, "y": 0.06 },
+      { "x": 10, "z": 50, "y": 0.06 },
+      { "x": 10, "z": 44, "y": 0.06 },
+      { "x": 12, "z": 42, "y": 0.06 },
+      { "x": 18, "z": 42, "y": 0.06 }
+    ],
+    "TM_TL": [
+      { "x": 18, "z": 40, "y": 0.06 },
+      { "x": 12, "z": 40, "y": 0.06 },
+      { "x": 8, "z": 44, "y": 0.06 },
+      { "x": 8, "z": 50, "y": 0.06 },
+      { "x": 6, "z": 52, "y": 0.06 },
+      { "x": -42, "z": 52, "y": 0.06 },
+      { "x": -44, "z": 50, "y": 0.06 },
+      { "x": -44, "z": 44, "y": 0.06 },
+      { "x": -48, "z": 40, "y": 0.06 }
+    ],
+    "TM_TR": [
+      { "x": 24, "z": 42, "y": 0.06 },
+      { "x": 48, "z": 42, "y": 0.06 }
+    ],
+    "TR_TM": [
+      { "x": 48, "z": 40, "y": 0.06 },
+      { "x": 24, "z": 40, "y": 0.06 }
+    ],
+    "BL_BM": [
+      { "x": -48, "z": 72, "y": 0.06 },
+      { "x": -42, "z": 72, "y": 0.06 },
+      { "x": -40, "z": 74, "y": 0.06 },
+      { "x": -36, "z": 78, "y": 0.06 },
+      { "x": -18, "z": 78, "y": 0.06 },
+      { "x": -14, "z": 74, "y": 0.06 },
+      { "x": -12, "z": 72, "y": 0.06 },
+      { "x": 0, "z": 72, "y": 0.06 }
+    ],
+    "BM_BL": [
+      { "x": -0, "z": 70, "y": 0.06 },
+      { "x": -12, "z": 70, "y": 0.06 },
+      { "x": -16, "z": 74, "y": 0.06 },
+      { "x": -18, "z": 76, "y": 0.06 },
+      { "x": -36, "z": 76, "y": 0.06 },
+      { "x": -38, "z": 74, "y": 0.06 },
+      { "x": -42, "z": 70, "y": 0.06 },
+      { "x": -48, "z": 70, "y": 0.06 }
+    ],
+    "BM_BR": [
+      { "x": 2, "z": 74, "y": 0.06 },
+      { "x": 6, "z": 78, "y": 0.06 },
+      { "x": 48, "z": 78, "y": 0.06 }
+    ],
+    "BR_BM": [
+      { "x": 48, "z": 76, "y": 0.06 },
+      { "x": 6, "z": 76, "y": 0.06 },
+      { "x": 4, "z": 74, "y": 0.06 }
+    ],
+    "TM_BM": [
+      { "x": 20, "z": 44, "y": 0.06 },
+      { "x": 20, "z": 50, "y": 0.06 },
+      { "x": 20, "z": 52, "y": 0.2 },
+      { "x": 20, "z": 54, "y": 0.71 },
+      { "x": 20, "z": 56, "y": 1.56 },
+      { "x": 20, "z": 58, "y": 2.41 },
+      { "x": 20, "z": 60, "y": 2.92 },
+      { "x": 20, "z": 62, "y": 3.06 },
+      { "x": 18, "z": 64, "y": 3.06 },
+      { "x": 16, "z": 64, "y": 2.92 },
+      { "x": 14, "z": 64, "y": 2.41 },
+      { "x": 12, "z": 64, "y": 1.56 },
+      { "x": 10, "z": 64, "y": 0.71 },
+      { "x": 8, "z": 64, "y": 0.2 },
+      { "x": 6, "z": 64, "y": 0.06 },
+      { "x": 2, "z": 68, "y": 0.06 }
+    ],
+    "BM_TM": [
+      { "x": 4, "z": 68, "y": 0.06 },
+      { "x": 6, "z": 66, "y": 0.06 },
+      { "x": 8, "z": 66, "y": 0.2 },
+      { "x": 10, "z": 66, "y": 0.71 },
+      { "x": 12, "z": 66, "y": 1.56 },
+      { "x": 14, "z": 66, "y": 2.41 },
+      { "x": 16, "z": 66, "y": 2.92 },
+      { "x": 18, "z": 66, "y": 3.06 },
+      { "x": 22, "z": 62, "y": 3.06 },
+      { "x": 22, "z": 60, "y": 2.92 },
+      { "x": 22, "z": 58, "y": 2.41 },
+      { "x": 22, "z": 56, "y": 1.56 },
+      { "x": 22, "z": 54, "y": 0.71 },
+      { "x": 22, "z": 52, "y": 0.2 },
+      { "x": 22, "z": 50, "y": 0.06 },
+      { "x": 22, "z": 44, "y": 0.06 }
+    ]
+  },
+
+  "paths": {
+    "HW_1": ["HW_1"],
+    "HW_2": ["HW_2"],
+    "HW_3": ["HW_3"],
+    "HW_4": ["HW_4"],
+    "TL_TR": ["TL_TM", "TM_TR"],
+    "TR_TL": ["TR_TM", "TM_TL"],
+    "BL_BR": ["BL_BM", "BM_BR"],
+    "BR_BL": ["BR_BM", "BM_BL"],
+    "TL_BL": ["TL_TM", "TM_BM", "BM_BL"],
+    "TR_BR": ["TR_TM", "TM_BM", "BM_BR"],
+    "BL_TL": ["BL_BM", "BM_TM", "TM_TL"],
+    "BR_TR": ["BR_BM", "BM_TM", "TM_TR"],
+    "TL_BR": ["TL_TM", "TM_BM", "BM_BR"],
+    "TR_BL": ["TR_TM", "TM_BM", "BM_BL"],
+    "BL_TR": ["BL_BM", "BM_TM", "TM_TR"],
+    "BR_TL": ["BR_BM", "BM_TM", "TM_TL"]
+  },
+
+  "lengths": {
+    "HW_1": 96.0,
+    "HW_2": 96.0,
+    "HW_3": 96.0,
+    "HW_4": 96.0,
+    "TL_TR": 109.85,
+    "TR_TL": 108.85,
+    "BL_BR": 103.13,
+    "BR_BL": 99.99,
+    "TL_BL": 181.09,
+    "TR_BR": 112.68,
+    "BL_TL": 180.09,
+    "BR_TR": 109.53,
+    "TL_BR": 174.53,
+    "TR_BL": 119.24,
+    "BL_TR": 119.24,
+    "BR_TL": 170.38
+  },
+
+  "vehicles": [
+    {
+      "type": "suv",
+      "path": "HW_1",
+      "timeline": [
+        { "time": 0, "progress": 0 },
+        { "time": 16, "progress": 100 }
+      ]
+    },
+    {
+      "type": "sedan",
+      "path": "HW_1",
+      "timeline": [
+        { "time": 20, "progress": 0 },
+        { "time": 36, "progress": 100 }
+      ]
+    },
+    {
+      "type": "truck",
+      "path": "HW_1",
+      "timeline": [
+        { "time": 40, "progress": 0 },
+        { "time": 56, "progress": 100 }
+      ]
+    },
+
+    {
+      "type": "van",
+      "path": "HW_2",
+      "timeline": [
+        { "time": 5, "progress": 0 },
+        { "time": 21, "progress": 100 }
+      ]
+    },
+    {
+      "type": "suv-luxury",
+      "path": "HW_2",
+      "timeline": [
+        { "time": 25, "progress": 0 },
+        { "time": 41, "progress": 100 }
+      ]
+    },
+    {
+      "type": "sedan-sports",
+      "path": "HW_2",
+      "timeline": [
+        { "time": 0, "progress": 93.75 },
+        { "time": 1, "progress": 100 },
+        { "time": 45, "progress": 0 },
+        { "time": 60, "progress": 93.75 }
+      ]
+    },
+
+    {
+      "type": "suv",
+      "path": "HW_3",
+      "timeline": [
+        { "time": 10, "progress": 0 },
+        { "time": 26, "progress": 100 }
+      ]
+    },
+    {
+      "type": "truck",
+      "path": "HW_3",
+      "timeline": [
+        { "time": 30, "progress": 0 },
+        { "time": 46, "progress": 100 }
+      ]
+    },
+    {
+      "type": "sedan",
+      "path": "HW_3",
+      "timeline": [
+        { "time": 0, "progress": 62.5 },
+        { "time": 6, "progress": 100 },
+        { "time": 50, "progress": 0 },
+        { "time": 60, "progress": 62.5 }
+      ]
+    },
+
+    {
+      "type": "van",
+      "path": "HW_4",
+      "timeline": [
+        { "time": 15, "progress": 0 },
+        { "time": 31, "progress": 100 }
+      ]
+    },
+    {
+      "type": "sedan-sports",
+      "path": "HW_4",
+      "timeline": [
+        { "time": 35, "progress": 0 },
+        { "time": 51, "progress": 100 }
+      ]
+    },
+    {
+      "type": "suv-luxury",
+      "path": "HW_4",
+      "timeline": [
+        { "time": 0, "progress": 31.25 },
+        { "time": 11, "progress": 100 },
+        { "time": 55, "progress": 0 },
+        { "time": 60, "progress": 31.25 }
+      ]
+    },
+
+    {
+      "type": "police",
+      "path": "TL_TR",
+      "timeline": [
+        { "time": 0, "progress": 0 },
+        { "time": 36.62, "progress": 100 }
+      ]
+    },
+    {
+      "type": "taxi",
+      "path": "TL_TR",
+      "timeline": [
+        { "time": 0, "progress": 81.92 },
+        { "time": 6.62, "progress": 100 },
+        { "time": 30, "progress": 0 },
+        { "time": 60, "progress": 81.92 }
+      ]
+    },
+
+    {
+      "type": "delivery",
+      "path": "TR_TL",
+      "timeline": [
+        { "time": 5, "progress": 0 },
+        { "time": 41.28, "progress": 100 }
+      ]
+    },
+    {
+      "type": "sedan",
+      "path": "TR_TL",
+      "timeline": [
+        { "time": 0, "progress": 96.44 },
+        { "time": 1.28, "progress": 100 },
+        { "time": 25, "progress": 0 },
+        { "time": 60, "progress": 96.44 }
+      ]
+    },
+
+    {
+      "type": "firetruck",
+      "path": "BL_BR",
+      "timeline": [
+        { "time": 10, "progress": 0 },
+        { "time": 44.38, "progress": 100 }
+      ]
+    },
+    {
+      "type": "suv",
+      "path": "BL_BR",
+      "timeline": [
+        { "time": 0, "progress": 58.17 },
+        { "time": 14.38, "progress": 100 },
+        { "time": 40, "progress": 0 },
+        { "time": 60, "progress": 58.17 }
+      ]
+    },
+
+    {
+      "type": "garbage-truck",
+      "path": "BR_BL",
+      "timeline": [
+        { "time": 20, "progress": 0 },
+        { "time": 53.33, "progress": 100 }
+      ]
+    },
+    {
+      "type": "hatchback-sports",
+      "path": "BR_BL",
+      "timeline": [
+        { "time": 0, "progress": 0 },
+        { "time": 33.33, "progress": 100 }
+      ]
+    },
+
+    {
+      "type": "sedan-sports",
+      "path": "TR_BR",
+      "timeline": [
+        { "time": 0, "progress": 0 },
+        { "time": 37.56, "progress": 100 }
+      ]
+    },
+    {
+      "type": "van",
+      "path": "TR_BR",
+      "timeline": [
+        { "time": 0, "progress": 79.87 },
+        { "time": 7.56, "progress": 100 },
+        { "time": 30, "progress": 0 },
+        { "time": 60, "progress": 79.87 }
+      ]
+    },
+
+    {
+      "type": "taxi",
+      "path": "BR_TR",
+      "timeline": [
+        { "time": 15, "progress": 0 },
+        { "time": 51.51, "progress": 100 }
+      ]
+    },
+    {
+      "type": "police",
+      "path": "BR_TR",
+      "timeline": [
+        { "time": 0, "progress": 41.08 },
+        { "time": 21.51, "progress": 100 },
+        { "time": 45, "progress": 0 },
+        { "time": 60, "progress": 41.08 }
+      ]
+    },
+
+    {
+      "type": "ambulance",
+      "path": "TR_BL",
+      "timeline": [
+        { "time": 8, "progress": 0 },
+        { "time": 47.75, "progress": 100 }
+      ]
+    },
+    {
+      "type": "sedan",
+      "path": "TR_BL",
+      "timeline": [
+        { "time": 0, "progress": 62.89 },
+        { "time": 14.75, "progress": 100 },
+        { "time": 35, "progress": 0 },
+        { "time": 60, "progress": 62.89 }
+      ]
+    },
+
+    {
+      "type": "suv",
+      "path": "BL_TR",
+      "timeline": [
+        { "time": 0, "progress": 88.05 },
+        { "time": 4.75, "progress": 100 },
+        { "time": 25, "progress": 0 },
+        { "time": 60, "progress": 88.05 }
+      ]
+    },
+    {
+      "type": "hatchback-sports",
+      "path": "BL_TR",
+      "timeline": [
+        { "time": 0, "progress": 12.58 },
+        { "time": 34.75, "progress": 100 },
+        { "time": 55, "progress": 0 },
+        { "time": 60, "progress": 12.58 }
+      ]
+    },
+
+    {
+      "type": "firetruck",
+      "path": "TL_BL",
+      "timeline": [
+        { "time": 0, "progress": 91.82 },
+        { "time": 4.9, "progress": 100 },
+        { "time": 5, "progress": 0 },
+        { "time": 60, "progress": 91.82 }
+      ]
+    },
+    {
+      "type": "garbage-truck",
+      "path": "BL_TL",
+      "timeline": [
+        { "time": 0, "progress": 50.08 },
+        { "time": 29.9, "progress": 100 },
+        { "time": 30, "progress": 0 },
+        { "time": 60, "progress": 50.08 }
+      ]
+    },
+    {
+      "type": "delivery",
+      "path": "TL_BR",
+      "timeline": [
+        { "time": 0, "progress": 42.97 },
+        { "time": 33.18, "progress": 100 },
+        { "time": 35, "progress": 0 },
+        { "time": 60, "progress": 42.97 }
+      ]
+    },
+    {
+      "type": "taxi",
+      "path": "BR_TL",
+      "timeline": [
+        { "time": 0, "progress": 17.61 },
+        { "time": 46.79, "progress": 100 },
+        { "time": 50, "progress": 0 },
+        { "time": 60, "progress": 17.61 }
+      ]
+    }
+  ]
+}

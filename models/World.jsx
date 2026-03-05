@@ -19,7 +19,7 @@ export default function MyScene(props) {
       <Desert position={[0, 0, 286]} />
       <Ocean position={[0, 0, 334]} />
       <Skylands position={[0, 0, 484]} />
-      <City position={[0, 0, 521]} />
+      <City position={[0, 0, 522]} />
     </group>
   );
 }

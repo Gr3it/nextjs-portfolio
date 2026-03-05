@@ -338,8 +338,8 @@
       "type": "hatchback-sports",
       "path": "BR_BL",
       "timeline": [
-        { "time": 0, "progress": 0 },
-        { "time": 33.33, "progress": 100 }
+        { "time": 4, "progress": 0 },
+        { "time": 37.33, "progress": 100 }
       ]
     },
 

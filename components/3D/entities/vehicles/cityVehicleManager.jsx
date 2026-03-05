@@ -77,27 +77,6 @@ export default function CityVehicleManager() {
       // Parse: merge segments → add pinch points for turns and slopes
       const controlPoints = pathParser(rawPoints);
 
-      // ── Debug output ──────────────────────────────────────────────────────
-      const fmt = (p) =>
-        `  { x:${String(p.x).padStart(7)}, z:${String(p.z).padStart(7)}, y:${p.y} }${p._tag ? " ← " + p._tag : ""}`;
-
-      console.groupCollapsed(
-        `%c[PathParser] Vehicle #${idx} — type="${vehicle.type}" path="${vehicle.path}" (${segmentNames.join(" → ")})`,
-        "color:#7ecfff;font-weight:bold",
-      );
-      console.log(
-        `%cBEFORE (${rawPoints.length} raw pts):`,
-        "color:#aaa;font-style:italic",
-        "\n" + rawPoints.map(fmt).join("\n"),
-      );
-      console.log(
-        `%cAFTER  (${controlPoints.length} ctrl pts):`,
-        "color:#7dffb3;font-style:italic",
-        "\n" + controlPoints.map(fmt).join("\n"),
-      );
-      console.groupEnd();
-      // ─────────────────────────────────────────────────────────────────────
-
       if (controlPoints.length < 2) {
         console.warn(
           `[CityVehicleManager] Vehicle #${idx} (path "${vehicle.path}") produced < 2 control points after parsing.`,

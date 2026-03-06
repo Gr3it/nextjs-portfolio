@@ -43,8 +43,16 @@ export default function ProjectCard({ project }) {
   const router = useRouter();
   const isHome = pathname === "/";
   const prefetched = React.useRef(false);
+  const clicked = React.useRef(false);
+
+  React.useEffect(() => {
+    if (isHome) {
+      clicked.current = false;
+    }
+  }, [isHome]);
 
   const handlePointerOver = (e) => {
+    if (clicked.current) return;
     if (isHome) window.dispatchEvent(new CustomEvent("showCustomCursor"));
     if (project.link && !prefetched.current) {
       router.prefetch(project.link);
@@ -53,7 +61,7 @@ export default function ProjectCard({ project }) {
   };
 
   const handlePointerOut = (e) => {
-    if (isHome) window.dispatchEvent(new CustomEvent("hideCustomCursor"));
+    window.dispatchEvent(new CustomEvent("hideCustomCursor"));
   };
 
   return (
@@ -62,6 +70,8 @@ export default function ProjectCard({ project }) {
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
       onClick={() => {
+        clicked.current = true;
+        window.dispatchEvent(new CustomEvent("hideCustomCursor"));
         scrollControlStore.action = "freeze";
         router.push(project.link || "");
       }}

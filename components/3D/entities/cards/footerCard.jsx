@@ -11,6 +11,7 @@ import { PaperPlaneLogo } from "@/models/footerCards/PaperPlane";
 import { DocumentLogo } from "@/models/footerCards/Document";
 import { usePointerHover } from "@/hooks/usePointerHover";
 import { useTargetReached } from "@/hooks/useTargetReached";
+import worldConfig from "@/config/world-config.json";
 
 const CARD_COMPONENTS = {
   LinkedinLogo,
@@ -28,8 +29,9 @@ export default function FooterCard({ card }) {
   const groupRef = useRef();
   const { hover, handlePointerOver, handlePointerOut } = usePointerHover();
 
-  const targetZ = card.position[2];
-  const isReached = useTargetReached(targetZ, null, 50);
+  const Z_OFFSET = worldConfig.sections["City"]?.start || 0;
+
+  const isReached = useTargetReached(card.position[2] + Z_OFFSET, null, 50);
 
   const { scale } = useSpring({
     scale: isReached ? 1 : 0,
@@ -50,7 +52,11 @@ export default function FooterCard({ card }) {
   return (
     <animated.group
       scale={scale}
-      position={card.position}
+      position={[
+        card.position[0],
+        card.position[1],
+        card.position[2] + Z_OFFSET,
+      ]}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
       onClick={(e) => {

@@ -17,6 +17,7 @@ import { PortfolioPreview } from "@/models/projectPreviews/PortfolioPreview";
 import { usePathname, useRouter } from "next/navigation";
 
 import { scrollControlStore } from "@/stores/scrollControlStorage";
+import worldConfig from "@/config/world-config.json";
 
 const PROJECT_COMPONENTS = {
   SpacePiratesPreview,
@@ -45,6 +46,13 @@ export default function ProjectCard({ project }) {
   const prefetched = React.useRef(false);
   const clicked = React.useRef(false);
 
+  const Z_OFFSET = worldConfig.sections["Forest"]?.start || 0;
+  const globalPosition = [
+    project.position[0],
+    project.position[1],
+    project.position[2] + Z_OFFSET,
+  ];
+
   React.useEffect(() => {
     if (isHome) {
       clicked.current = false;
@@ -66,7 +74,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <group
-      position={project.position}
+      position={globalPosition}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
       onClick={() => {

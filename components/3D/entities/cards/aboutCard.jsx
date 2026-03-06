@@ -7,6 +7,7 @@ import { Blockchain } from "@/models/aboutCards/Blockchain";
 import { Games } from "@/models/aboutCards/Games";
 import { Design } from "@/models/aboutCards/Design";
 import Coding from "@/models/aboutCards/Coding";
+import worldConfig from "@/config/world-config.json";
 
 const PROJECT_COMPONENTS = {
   Minecraft,
@@ -22,8 +23,16 @@ function getCardComponent(type) {
 }
 
 export default function AboutCard({ card }) {
+  const Z_OFFSET = worldConfig.sections["Ocean"]?.start || 0;
+
   return (
-    <group position={card.position}>
+    <group
+      position={[
+        card.position[0],
+        card.position[1],
+        card.position[2] + Z_OFFSET,
+      ]}
+    >
       <mesh position={[9, 0.002, 9]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[18, 18]} />
         <meshBasicMaterial transparent opacity={0} color={"hotpink"} />

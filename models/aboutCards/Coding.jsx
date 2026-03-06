@@ -4,9 +4,12 @@ import LightsWindow from "./coding/LightWindow";
 import DebugWindow from "./coding/DebugWindow";
 import ClickBoundary from "@/components/3D/core/clickBoundary";
 import { useTargetReached } from "@/hooks/useTargetReached";
+import worldConfig from "@/config/world-config.json";
 import aboutCards from "@/config/about-cards.json";
 
-const WORLD_Z = aboutCards.find((c) => c.title === "Coding").position[2];
+const Z_OFFSET = worldConfig.sections["Ocean"]?.start || 0;
+const WORLD_Z =
+  aboutCards.find((c) => c.title === "Coding").position[2] + Z_OFFSET;
 
 export default function Coding() {
   const [focusedWindow, setFocusedWindow] = useState(null);

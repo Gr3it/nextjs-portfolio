@@ -1,31 +1,31 @@
 [
   {
-    "position": [7, 0, 354],
+    "position": [7, 0, 20],
     "title": "About Me",
     "description": "As a CS graduate from Trento, I build efficient, cutting-edge software. I focus on high-value projects, from secure smart contracts to innovative web tools, aiming for clean and impactful code.\n\nInspired by my Game Design thesis, I bridge engineering and aesthetics, ensuring robust logic always meets a polished, engaging user experience.",
     "component": "Minecraft",
     "main": true
   },
   {
-    "position": [-25, 0, 382],
+    "position": [-25, 0, 48],
     "title": "Blockchain",
     "description": "I specialize in Solidity, building secure and gas-optimized smart contract architectures. I focus on modular systems that function like on-chain microservices, prioritizing trustless logic and transparent, flawless execution to solve complex problems within the EVM ecosystem.",
     "component": "Blockchain"
   },
   {
-    "position": [7, 0, 410],
+    "position": [7, 0, 76],
     "title": "Coding",
     "description": "Coding is my blend of engineering and artistry. I am obsessed with clean, modular logic and the subtle details that turn a functional tool into a polished experience. Focusing on Solidity and JavaScript, I strive for technical elegance—where robust architecture meets creative, seamless design.",
     "component": "Coding"
   },
   {
-    "position": [-25, 0, 438],
+    "position": [-25, 0, 104],
     "title": "Design",
     "description": "I specialize in interactive prototyping and spatial composition. Using Figma, I build high-fidelity, logic-driven prototypes that prioritize seamless user flows. My approach to 3D focuses on structural arrangement and scene composition, while my UI style remains clean and minimalist, ensuring harmony through simplicity and functional clarity.",
     "component": "Design"
   },
   {
-    "position": [7, 0, 466],
+    "position": [7, 0, 132],
     "title": "Gaming",
     "description": "Gaming is my playground for optimization. I deconstruct mechanics, analyze systems, and build tools to maximize efficiency—from custom bots to ROI calculators. This passion for balance and logic culminated in my thesis, where I designed and fine-tuned complex game mechanics for optimal player experiences.",
     "component": "Games"

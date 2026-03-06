@@ -25,7 +25,7 @@ export default function ZoneNotifier() {
 
   return (
     <>
-      {worldConfig.sections.map((sec, i) => (
+      {Object.values(worldConfig.sections).map((sec, i) => (
         <ZoneTrigger
           key={i}
           section={sec}
@@ -43,7 +43,7 @@ export default function ZoneNotifier() {
           opacity: visible ? 1 : 0,
         }}
       >
-        {worldConfig.sections.map((sec, i) => {
+        {Object.values(worldConfig.sections).map((sec, i) => {
           const isActive = activeZone?.section === sec.section && visible;
           const title = sec.section?.replace(/-/g, " ").toUpperCase() ?? "";
           const subtitle = sec.text?.toUpperCase() ?? "";

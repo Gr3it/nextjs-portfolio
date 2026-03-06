@@ -2,8 +2,8 @@
   "width": 64,
   "maxWidth": 96,
   "height": 604,
-  "sections": [
-    {
+  "sections": {
+    "Village": {
       "start": 0,
       "text": "Start",
       "type": "circle",
@@ -11,63 +11,56 @@
       "textAlignment": "center",
       "section": "forgotten-village"
     },
-
-    {
+    "Forest": {
       "start": 32,
       "text": "My Projects",
       "type": "checkpoint",
       "color": "#48bc8d",
       "section": "whispering-woods"
     },
-
-    {
+    "Plains": {
       "start": 142,
       "text": null,
       "type": null,
       "color": "#8ed9a3",
       "section": "tranquil-plains"
     },
-
-    {
+    "Badlands": {
       "start": 238,
       "text": null,
       "type": null,
       "color": "#c8855f",
       "section": "shattered-badlands"
     },
-
-    {
+    "Desert": {
       "start": 286,
       "text": null,
       "type": null,
       "color": "#daae7e",
       "section": "golden-dunes"
     },
-
-    {
+    "Ocean": {
       "start": 334,
       "text": "About Me",
       "type": "checkpoint",
       "color": "#48d6e1",
       "section": "sapphire-depths"
     },
-
-    {
+    "Skylands": {
       "start": 484,
       "text": "Get in touch",
       "type": "checkpoint",
       "color": "#e0e9ee",
       "section": "ethereal-heights"
     },
-    {
+    "City": {
       "start": 522,
       "text": "Links",
       "type": "checkpoint",
       "color": "#A0A8C9",
       "section": "terminal-district"
     },
-
-    {
+    "End": {
       "start": 604,
       "text": "End",
       "type": "flagpole",
@@ -75,5 +68,5 @@
       "textAlignment": "center",
       "section": "journeys-end"
     }
-  ]
+  }
 }

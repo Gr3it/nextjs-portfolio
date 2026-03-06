@@ -40,7 +40,7 @@ const ARC_LENGTH_DIVISIONS = 5000;
 
 // ─── Derive city Z offset from world-config "Links" section ──────────────────
 
-const linksSection = worldConfig.sections.find((s) => s.text === "Links");
+const linksSection = worldConfig.sections["City"];
 const CITY_Z_OFFSET = linksSection?.start ?? 0;
 
 // ─── Config shortcuts ─────────────────────────────────────────────────────────

@@ -36,16 +36,17 @@ export default function ProgressBar() {
   );
 
   const sections = useMemo(
-    () => worldConfig.sections.filter(({ text }) => text != null),
+    () =>
+      Object.values(worldConfig.sections).filter(({ text }) => text != null),
     [],
   );
 
-  const mainGradient = useMemo(
-    () => ({
-      background: `linear-gradient(to bottom, ${worldConfig.sections.at(0).color} 47%, ${worldConfig.sections.at(-1).color} 53%)`,
-    }),
-    [],
-  );
+  const mainGradient = useMemo(() => {
+    const sectionsArray = Object.values(worldConfig.sections);
+    return {
+      background: `linear-gradient(to bottom, ${sectionsArray.at(0).color} 47%, ${sectionsArray.at(-1).color} 53%)`,
+    };
+  }, []);
 
   const handleScroll = useCallback((offset) => {
     const percentage = offset * 100;
@@ -53,7 +54,7 @@ export default function ProgressBar() {
 
     let hasNewReached = false;
 
-    worldConfig.sections.forEach(({ start, text }) => {
+    Object.values(worldConfig.sections).forEach(({ start, text }) => {
       if (
         text &&
         percentage >= getPositionInPercentage(start) - 0.1 &&

@@ -1,6 +1,6 @@
 [
   {
-    "position": [7, 0, 52],
+    "position": [7, 0, 20],
     "title": "Portfolio",
     "description": "A 3D journey through code. Each section unfolds via unique vehicles, turning standard scrolling into an immersive exploration. High performance, game-inspired UX, zero friction.",
     "component": {
@@ -11,18 +11,17 @@
     "link": "projects/portfolio"
   },
   {
-    "position": [-25, 0, 76],
+    "position": [-25, 0, 44],
     "title": "Space Pirates",
     "description": "A tactical RPG where space exploration meets seamless Web3 ownership. Deep squad building and cartoon-style combat, powered by a hidden blockchain layer for a frictionless, player-led economy.",
     "component": {
       "type": "SpacePiratesPreview"
     },
     "previewHeight": 11,
-
     "link": "projects/space-pirates"
   },
   {
-    "position": [7, 0, 100],
+    "position": [7, 0, 68],
     "title": "Survivor.Io Sniping Bot",
     "description": "A Python-based assistant for high-speed game auctions. Leveraging OCR and Regex for real-time data extraction, it calculates instant ROI, turning complex probability into a decisive competitive edge.",
     "component": {
@@ -32,7 +31,7 @@
     "link": "projects/survivor-io-bot"
   },
   {
-    "position": [-25, 0, 124],
+    "position": [-25, 0, 92],
     "title": "Survivor.Io Event Tool",
     "description": "A viral pathfinding tool with 750k+ views. Using backtracking to optimize rewards, it disrupted the game’s economy so effectively that developers introduced a paid feature to counter its impact.",
     "component": {
@@ -43,7 +42,7 @@
     "link": "projects/survivor-io-event"
   },
   {
-    "position": [7, 0, 148],
+    "position": [7, 0, 116],
     "title": "Meta Empire",
     "description": "High-security NFT smart contract featuring Dutch Auctions and Merkle Tree whitelists. Optimized for gas efficiency with a 100% test coverage suite (900+ lines), ensuring robust, audit-ready code.",
     "component": {
@@ -53,7 +52,7 @@
     "link": "projects/meta-empire"
   },
   {
-    "position": [-25, 0, 172],
+    "position": [-25, 0, 140],
     "title": "Color Screen Test",
     "description": "A React Native utility for display testing. Featuring RGB control and presets to detect burn-in, it bypasses Android native themes for pure color accuracy and hardware-level visual comparisons.",
     "component": {
@@ -64,7 +63,7 @@
     "link": "projects/color-screen-test"
   },
   {
-    "position": [7, 0, 196],
+    "position": [7, 0, 164],
     "title": "Wallet Tracker",
     "description": "A cross-chain DeFi portfolio tracker. It aggregates native and ERC20 balances across multiple EVM chains (ETH, BSC, Polygon, etc.) via direct contract queries and CoinMarketCap data integration.",
     "component": {
@@ -74,16 +73,18 @@
     "link": "projects/wallet-tracker"
   },
   {
-    "position": [-25, 0, 220],
+    "position": [-25, 0, 188],
     "title": "Crypto Price Tracker",
     "description": "A React-based crypto tracker featuring infinite scroll and real-time data validation via CoinGecko API. It delivers a fluid UX with interactive candlestick charting powered by amCharts 5 engines.",
-    "component": { "type": "CryptoPriceTrackerPreview" },
+    "component": {
+      "type": "CryptoPriceTrackerPreview"
+    },
     "previewHeight": 10,
     "previewImage": "/images/CryptoPriceTracker/BinanceCoin.png",
     "link": "projects/crypto-price-tracker"
   },
   {
-    "position": [7, 0, 244],
+    "position": [7, 0, 212],
     "title": "Plan It",
     "description": "A smart calendar architected through rigorous software engineering. Using UML modeling and euristic-based scheduling logic, it manages complex multi-user constraints and priority-based tasking.",
     "component": {
@@ -93,7 +94,7 @@
     "link": "projects/plan-it"
   },
   {
-    "position": [-25, 0, 268],
+    "position": [-25, 0, 236],
     "title": "Smart Parking App",
     "description": "A Smart Parking solution focused on HCI. Based on user interviews and field research, it optimizes campus logistics via computer vision, slot reservations, and a community-driven reporting system.",
     "component": {
@@ -104,7 +105,7 @@
     "link": "projects/smart-parking-app"
   },
   {
-    "position": [7, 0, 292],
+    "position": [7, 0, 260],
     "title": "Hotel Meano",
     "description": "A hotel booking platform featuring a custom 3D interactive floor map. Built with a focus on UI/UX, it allows real-time room selection and status visualization through a dynamic CSS-based 3D engine.",
     "component": {
@@ -115,7 +116,7 @@
     "link": "projects/hotel-meano"
   },
   {
-    "position": [-25, 0, 316],
+    "position": [-25, 0, 284],
     "title": "Flynet",
     "description": "A Java-based airport management system. Beyond core CRUD features for flight scheduling, it features an immersive GSAP-powered parallax Hero section with dynamic cloud layers and a takeoff animation triggered by scroll.",
     "component": {

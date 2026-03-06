@@ -1,24 +1,24 @@
 [
   {
-    "position": [15, 0.12, 547],
+    "position": [15, 0.12, 25],
     "title": "Linkedin",
     "link": "https://linkedin.com/in/emanuele-zini",
     "component": "LinkedinLogo"
   },
   {
-    "position": [-15, 0.12, 557],
+    "position": [-15, 0.12, 35],
     "title": "Github",
     "link": "https://github.com/Gr3it",
     "component": "GithubLogo"
   },
   {
-    "position": [15, 0.12, 571],
+    "position": [15, 0.12, 49],
     "title": "Email",
     "link": "mailto:emanuele.zini11+work@gmail.com",
     "component": "PaperPlaneLogo"
   },
   {
-    "position": [-15, 0.12, 581],
+    "position": [-15, 0.12, 59],
     "title": "CV",
     "document": "Emanuele Zini CV.pdf",
     "component": "DocumentLogo"

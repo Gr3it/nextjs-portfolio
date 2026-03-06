@@ -75,17 +75,23 @@ export default function SceneObjects() {
       <CityVehicleManager />
       <TextElements />
       <Flags />
-      {projectCards.map((project) => (
-        <ProjectCard project={project} key={project.title} />
-      ))}
+      <group position={[0, 0, worldConfig.sections["Forest"]?.start]}>
+        {projectCards.map((project) => (
+          <ProjectCard project={project} key={project.title} />
+        ))}
+      </group>
 
-      {footerCards.map((card) => (
-        <FooterCard card={card} key={card.title} />
-      ))}
+      <group position={[0, 0, worldConfig.sections["City"]?.start]}>
+        {footerCards.map((card) => (
+          <FooterCard card={card} key={card.title} />
+        ))}
+      </group>
 
-      {aboutCards.map((card) => (
-        <AboutCard card={card} key={card.title} />
-      ))}
+      <group position={[0, 0, worldConfig.sections["Ocean"]?.start]}>
+        {aboutCards.map((card) => (
+          <AboutCard card={card} key={card.title} />
+        ))}
+      </group>
 
       <ConditionalGrid />
       <WorldFog

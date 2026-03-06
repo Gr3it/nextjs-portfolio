@@ -7,7 +7,9 @@ import { Flame } from "./Flame";
 import { CloudParticles } from "./CloudParticles";
 import { ContactForm } from "./ContactForm";
 
-const Z_OFFSET = 484;
+import worldConfig from "@/config/world-config.json";
+
+const Z_OFFSET = worldConfig.sections["Skylands"]?.start;
 const ROCKET_Z = 30.5 + Z_OFFSET;
 
 export default function Contacts() {

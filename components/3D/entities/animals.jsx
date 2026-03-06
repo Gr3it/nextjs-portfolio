@@ -9,9 +9,13 @@ import { Horse } from "@/models/animals/horse";
 import { Chicken } from "@/models/animals/chicken";
 import { Chick } from "@/models/animals/chick";
 
+import worldConfig from "@/config/world-config.json";
+
+const PLAINS_Z_OFFSET = worldConfig.sections["Plains"]?.start ?? 142;
+
 export default function Animals() {
   return (
-    <group position={[0, 0, 142]}>
+    <group position={[0, 0, PLAINS_Z_OFFSET]}>
       <Cat position={[-2.5, 0, 20.5]} rotation={[0, Math.PI / -4, 0]} />
       <Dog position={[-13.5, 0, 27]} rotation={[0, Math.PI / 4, 0]} />
       <Pig position={[-4.5, 0, 36.5]} rotation={[0, Math.PI / 4, 0]} />

@@ -28,20 +28,28 @@ export default function VehicleManager() {
 
   return (
     <>
-      {snap.enablePathEditor
-        ? vehicleCurvesData.map((vehicle) => (
-            <CurveEditor key={vehicle.id} {...vehicle} />
-          ))
-        : !snap.hideVehicle &&
-          vehicleCurvesData.map((vehicle) => (
-            <VehicleRenderer
-              key={vehicle.id}
-              curve={vehicle.curve}
-              start={(vehicle.start || 0) / worldHeight}
-              end={(vehicle.end || worldHeight) / worldHeight}
-              type={vehicle.type}
-            />
-          ))}
+      {vehicleCurvesData.map((vehicle) => {
+        const sectionStart = worldConfig.sections[vehicle.section]?.start || 0;
+        const globalStart = vehicle.start + sectionStart;
+        const globalEnd = vehicle.end + sectionStart;
+
+        return (
+          <group key={vehicle.id} position={[0, 0, sectionStart]}>
+            {snap.enablePathEditor ? (
+              <CurveEditor {...vehicle} start={globalStart} end={globalEnd} />
+            ) : (
+              !snap.hideVehicle && (
+                <VehicleRenderer
+                  curve={vehicle.curve}
+                  start={globalStart / worldHeight}
+                  end={globalEnd / worldHeight}
+                  type={vehicle.type}
+                />
+              )
+            )}
+          </group>
+        );
+      })}
     </>
   );
 }
